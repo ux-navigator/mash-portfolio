@@ -1,8 +1,14 @@
+/* External dependencies */
 import React from 'react'
+
+/* Internal dependencies */
+import Layout from 'components/Layout'
 
 function IndexPage() {
   return (
-    <div>asdasd</div>
+    <Layout>
+      <div>페이지</div>
+    </Layout>
   )
 }
 
