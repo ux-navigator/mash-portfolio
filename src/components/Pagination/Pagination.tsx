@@ -1,10 +1,13 @@
 /* External dependencies */
 import React, { useRef, useMemo, useEffect, useContext } from 'react'
+import smoothscroll from 'smoothscroll-polyfill'
 
 /* Internal dependencies */
 import { setScrolled } from 'reducers/globalReducer'
 import { GlobalContext } from 'contexts/globalContext'
 import useThrottle from 'hooks/useThrottle'
+
+smoothscroll.polyfill()
 
 interface PaginationProps {
   children: React.ReactElement | React.ReactElement[]

@@ -10,7 +10,7 @@ function Navigation() {
   const { state: { isScrolled } } = useContext(GlobalContext)
   
   return (
-    <Styled.NavigationWrapper>
+    <Styled.NavigationWrapper isScrolled={isScrolled}>
       <Styled.NavigationContent>
         <Styled.LogoWrapper>
           <img width={40} src={logo} />

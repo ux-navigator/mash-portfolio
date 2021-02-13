@@ -1,14 +1,24 @@
 /* External dependencies */
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
-export const NavigationWrapper = styled.div`
+interface NavigationWrapperProps {
+  isScrolled: boolean
+}
+
+export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 0;
+  padding: ${({ isScrolled }) => isScrolled ? 20 : 50}px 0;
+  background-color: #FFFFFF;
+  transition: padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+  ${({ isScrolled }) => isScrolled && css`
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .2);
+  `}
 `
 
 export const NavigationContent = styled.div`
