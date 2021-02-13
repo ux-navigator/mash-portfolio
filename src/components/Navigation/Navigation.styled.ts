@@ -15,6 +15,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   padding: ${({ isScrolled }) => isScrolled ? 20 : 50}px 0;
   background-color: #FFFFFF;
   transition: padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  z-index: 9999;
 
   ${({ isScrolled }) => isScrolled && css`
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .2);
@@ -42,10 +43,11 @@ export const Title = styled.p`
 export const LinkItem = styled(Link)`
   font-size: 24px;
   font-weight: bold;
+  border-bottom: 3px solid #FFF;
 
-  &.active {
+  &.active, &:hover {
     color: #3370E8;
-    border-bottom: 3px solid #3370E8;
+    border-color: #3370E8;
   }
 `
 
