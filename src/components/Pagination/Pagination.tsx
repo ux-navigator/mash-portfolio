@@ -1,7 +1,9 @@
 /* External dependencies */
-import React, { useRef, useMemo, useEffect, useState } from 'react'
+import React, { useRef, useMemo, useEffect, useContext } from 'react'
 
 /* Internal dependencies */
+import { setScrolled } from 'reducers/globalReducer'
+import { GlobalContext } from 'contexts/globalContext'
 import useThrottle from 'hooks/useThrottle'
 
 interface PaginationProps {
@@ -11,6 +13,8 @@ interface PaginationProps {
 const SCROLLING_DURATION = 1000
 
 function Pagination({ children }: PaginationProps) {
+  const { dispatch } = useContext(GlobalContext)
+
   const pageRefs = useRef<HTMLDivElement[]>([])
   const currentScrollTop = useRef(window.pageYOffset)
   const currentPageIndex = useRef(0)
@@ -23,6 +27,8 @@ function Pagination({ children }: PaginationProps) {
     } else {
       currentPageIndex.current = Math.max(currentPageIndex.current - 1, 0)
     }
+
+    dispatch(setScrolled({ isScrolled: currentPageIndex.current !== 0 }))
 
     const nextPage = pageRefs.current[currentPageIndex.current]
     const nextScrollTop = nextPage.getBoundingClientRect().top + window.pageYOffset

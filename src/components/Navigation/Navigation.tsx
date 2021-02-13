@@ -1,11 +1,14 @@
 /* External dependencies */
-import React from 'react'
+import React, { useContext } from 'react'
 
 /* Internal dependencies */
+import { GlobalContext } from 'contexts/globalContext'
 import * as Styled from './Navigation.styled'
 import logo from 'images/logo.png'
 
 function Navigation() {
+  const { state: { isScrolled } } = useContext(GlobalContext)
+  
   return (
     <Styled.NavigationWrapper>
       <Styled.NavigationContent>
