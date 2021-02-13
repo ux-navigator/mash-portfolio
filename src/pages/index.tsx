@@ -3,11 +3,16 @@ import React from 'react'
 
 /* Internal dependencies */
 import Layout from 'components/Layout'
+import Pagination, { Page } from 'components/Pagination'
 
 function IndexPage() {
   return (
     <Layout>
-      <div>페이지</div>
+      <Pagination>
+        <Page>first</Page>
+        <Page>second</Page>
+        <Page>third</Page>
+      </Pagination>
     </Layout>
   )
 }
