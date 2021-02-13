@@ -50,4 +50,9 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+  body.nonScrollable {
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+  }
 `

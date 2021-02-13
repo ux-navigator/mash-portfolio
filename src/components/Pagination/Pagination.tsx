@@ -3,7 +3,6 @@ import React, { useRef, useMemo, useEffect, useState } from 'react'
 
 /* Internal dependencies */
 import useThrottle from 'hooks/useThrottle'
-import HiddenScroll from './HiddenScroll'
 
 interface PaginationProps {
   children: React.ReactElement | React.ReactElement[]
@@ -12,14 +11,12 @@ interface PaginationProps {
 const SCROLLING_DURATION = 1000
 
 function Pagination({ children }: PaginationProps) {
-  const [isScrolling, setScrolling] = useState(false)
-
   const pageRefs = useRef<HTMLDivElement[]>([])
   const currentScrollTop = useRef(window.pageYOffset)
   const currentPageIndex = useRef(0)
 
   const handleScroll = useThrottle(() => {
-    setScrolling(true)
+    document.body.classList.add('nonScrollable')
     
     if (currentScrollTop.current < window.pageYOffset) {
       currentPageIndex.current = Math.min(currentPageIndex.current + 1, pageRefs.current.length - 1)
@@ -36,7 +33,7 @@ function Pagination({ children }: PaginationProps) {
     })
 
     setTimeout(() => {
-      setScrolling(false)
+      document.body.classList.remove('nonScrollable')
       currentScrollTop.current = window.pageYOffset
     }, SCROLLING_DURATION)
   }, SCROLLING_DURATION, [])
@@ -61,7 +58,6 @@ function Pagination({ children }: PaginationProps) {
 
   return (
     <>
-      { isScrolling && <HiddenScroll /> }
       {PagesComponent}
     </>
   )
