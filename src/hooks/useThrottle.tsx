@@ -4,7 +4,7 @@ import { useCallback, useRef } from 'react'
 function useThrottle(
   callback: (...args: any[]) => any,
   duration: number,
-  dependencies: []
+  dependencies: any[],
 ) {
   const isThrottling = useRef(false)
 

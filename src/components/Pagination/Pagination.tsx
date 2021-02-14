@@ -3,7 +3,7 @@ import React, { useRef, useMemo, useEffect, useContext } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
 /* Internal dependencies */
-import { setScrolled } from 'reducers/globalReducer'
+import { setScrolled, setCurrentPage } from 'reducers/globalReducer'
 import { GlobalContext } from 'contexts/globalContext'
 import useThrottle from 'hooks/useThrottle'
 
@@ -13,7 +13,7 @@ interface PaginationProps {
   children: React.ReactElement | React.ReactElement[]
 }
 
-const SCROLLING_DURATION = 1000
+export const SCROLLING_DURATION = 1000
 
 function Pagination({ children }: PaginationProps) {
   const { dispatch } = useContext(GlobalContext)
@@ -31,6 +31,7 @@ function Pagination({ children }: PaginationProps) {
       currentPageIndex.current = Math.max(currentPageIndex.current - 1, 0)
     }
 
+    dispatch(setCurrentPage({ currentPage: currentPageIndex.current}))
     dispatch(setScrolled({ isScrolled: currentPageIndex.current !== 0 }))
 
     const nextPage = pageRefs.current[currentPageIndex.current]
@@ -45,7 +46,7 @@ function Pagination({ children }: PaginationProps) {
       document.body.classList.remove('nonScrollable')
       currentScrollTop.current = window.pageYOffset
     }, SCROLLING_DURATION)
-  }, SCROLLING_DURATION, [])
+  }, SCROLLING_DURATION, [dispatch])
 
   const PagesComponent = useMemo(() => (
     React.Children.map(children, (child: React.ReactElement, index) => (

@@ -5,9 +5,10 @@ import Img from "gatsby-image"
 interface ImageProps {
   name: string
   alt?: string
+  className?: string
 }
 
-const Image = ({ name, alt }: ImageProps) => {
+const Image = ({ name, alt, className }: ImageProps) => {
   return (
     <StaticQuery
       query={graphql`
@@ -35,6 +36,7 @@ const Image = ({ name, alt }: ImageProps) => {
         
         return (
           <Img
+            className={className}
             fluid={image.node.childImageSharp.fluid}
             alt={alt}
           />
