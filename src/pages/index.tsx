@@ -8,6 +8,7 @@ import { SCROLLING_DURATION } from 'components/Pagination'
 import Layout from 'components/Layout'
 import Pagination, { Page } from 'components/Pagination'
 import Image from 'components/Image'
+import SVGIcon, { Size } from 'components/SVGIcon'
 import * as Styled from 'styles/pageStyles/index.styled'
 import ship from 'images/ship.png'
 import Config from '../../config'
@@ -85,12 +86,14 @@ function PaginationComponent() {
           <Styled.IntroWrapper>
             <Styled.IntroTitle>{ Config.main_third.title }</Styled.IntroTitle>
             <Styled.IntroContent>
-              <Styled.ContentTitle>{ Config.main_second.paragraphTitle }</Styled.ContentTitle>
-              <Styled.ContentList>
-                { Config.main_second.paragraphs.map((paragraph, index) => (
-                  <Styled.ContentItem key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
-                ))}
-              </Styled.ContentList>
+              {Config.main_third.paragraphs.map((paragraph, index) => (
+                <Styled.IntroListItem key={index}>
+                  <Styled.Icon>
+                    <SVGIcon name="check" size={Size.XLarge} />
+                  </Styled.Icon>
+                  {paragraph}
+                </Styled.IntroListItem>
+              ))}
             </Styled.IntroContent>
           </Styled.IntroWrapper>
         </Styled.IntroPageInnerWrapper>

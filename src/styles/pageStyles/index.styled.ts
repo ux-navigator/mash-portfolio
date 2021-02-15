@@ -65,7 +65,7 @@ export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
   margin: 0 auto;
   padding-top: 79px;
   box-sizing: border-box;
-  transition: opacity 0.3s;
+  transition: opacity 1s;
 
   ${({ fixed }) => fixed && css`
     position: fixed;
@@ -106,10 +106,21 @@ export const IntroTitle = styled.p`
   color: #3370E8;
 `
 
+export const IntroListItem = styled.p`
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+`
+
 export const IntroContent = styled.div`
   width: 650px;
   margin-top: 400px;
   color: #2C3E50;
+
+  ${IntroListItem} + ${IntroListItem} {
+    margin-top: 70px;
+  }
 `
 
 export const ContentTitle = styled.p`
@@ -131,4 +142,8 @@ export const ContentList = styled.div`
   ${ContentItem} + ${ContentItem} {
     margin-top: 18px;
   }
+`
+
+export const Icon = styled.div`
+  margin-right: 6px;
 `
