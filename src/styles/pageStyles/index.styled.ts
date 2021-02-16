@@ -6,6 +6,10 @@ interface IntroPageInnerWrapperProps {
   hidden: boolean
 }
 
+interface IntroImageItemWrapperProps {
+  width: number
+}
+
 export const FirstPageInnerWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -146,4 +150,73 @@ export const ContentList = styled.div`
 
 export const Icon = styled.div`
   margin-right: 6px;
+`
+
+export const CommonPageInnerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 79px;
+  box-sizing: border-box;
+`
+
+export const IntroParagraph1 = styled.p`
+  margin-top: 110px;
+  font-size: 28px;
+  color: #919FAD;
+`
+
+export const IntroParagraph2 = styled.p`
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+`
+
+export const IntroItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const IntroItemsWrapper = styled.div`
+  display: flex;
+  margin-top: 90px;
+
+  ${IntroItemWrapper} + ${IntroItemWrapper} {
+    margin-left: 80px;
+  }
+`
+
+export const IntroImageItemWrapper = styled.div<IntroImageItemWrapperProps>`
+  width: ${({ width }) => width}px;
+  height: 240px;
+  margin-bottom: 40px;
+`
+
+export const IntroItemTitle = styled.p`
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bolder;
+  color: #3370E8;
+`
+
+export const IntroItemContent = styled.p`
+  width: 375px;
+  font-size: 24px;
+  color: #4F5A65;
+`
+
+export const ChattingImageWrapper = styled.div`
+  width: 600px;
+  height: auto;
+  margin-top: 60px;
+`
+
+export const PeopleImageWrapper = styled.div`
+  width: 580px;
+  height: auto;
+  margin-top: auto;
 `

@@ -98,6 +98,67 @@ function PaginationComponent() {
           </Styled.IntroWrapper>
         </Styled.IntroPageInnerWrapper>
       </Page>
+      <Page>
+        <Styled.CommonPageInnerWrapper>
+          <Styled.IntroParagraph1>
+            {Config.main_fourth.paragraph1}
+          </Styled.IntroParagraph1>
+          <Styled.IntroParagraph2>
+            {Config.main_fourth.paragraph2}
+          </Styled.IntroParagraph2>
+          <Styled.IntroItemsWrapper>
+            <Styled.IntroItemWrapper>
+              <Styled.IntroImageItemWrapper width={312} style={{ transform: 'translateY(10px)'}}>
+                <Image name="meeting.png" />
+              </Styled.IntroImageItemWrapper>
+              <Styled.IntroItemTitle>
+                {Config.main_fourth.items[0].title}
+              </Styled.IntroItemTitle>
+              <Styled.IntroItemContent>
+                {Config.main_fourth.items[0].content}
+              </Styled.IntroItemContent>
+            </Styled.IntroItemWrapper>
+            <Styled.IntroItemWrapper>
+              <Styled.IntroImageItemWrapper width={238}>
+                <Image name="thinking.png" />
+              </Styled.IntroImageItemWrapper>
+              <Styled.IntroItemTitle>
+                {Config.main_fourth.items[1].title}
+              </Styled.IntroItemTitle>
+              <Styled.IntroItemContent>
+                {Config.main_fourth.items[1].content}
+              </Styled.IntroItemContent>
+            </Styled.IntroItemWrapper>
+            <Styled.IntroItemWrapper>
+              <Styled.IntroImageItemWrapper width={247} style={{ transform: 'translateY(10px)'}}>
+                <Image name="study.png" />
+              </Styled.IntroImageItemWrapper>
+              <Styled.IntroItemTitle>
+                {Config.main_fourth.items[2].title}
+              </Styled.IntroItemTitle>
+              <Styled.IntroItemContent>
+                {Config.main_fourth.items[2].content}
+              </Styled.IntroItemContent>
+            </Styled.IntroItemWrapper>
+          </Styled.IntroItemsWrapper>
+        </Styled.CommonPageInnerWrapper>
+      </Page>
+      <Page>
+        <Styled.CommonPageInnerWrapper>
+          <Styled.IntroParagraph1>
+            {Config.main_fifth.paragraph1}
+          </Styled.IntroParagraph1>
+          <Styled.IntroParagraph2>
+            {Config.main_fifth.paragraph2}
+          </Styled.IntroParagraph2>
+          <Styled.ChattingImageWrapper>
+            <Image name="chatting.png" />
+          </Styled.ChattingImageWrapper>
+          <Styled.PeopleImageWrapper>
+            <Image name="people.png" />
+          </Styled.PeopleImageWrapper>
+        </Styled.CommonPageInnerWrapper>
+      </Page>
     </Pagination>
   )
 }
