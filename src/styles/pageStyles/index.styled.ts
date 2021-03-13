@@ -19,46 +19,60 @@ export const FirstPageInnerWrapper = styled.div`
   margin: 0 auto;
   padding-top: 139px;
   box-sizing: border-box;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
 
 export const Skill = styled.p`
-  font-size: 18px;
+  font-size: 0.875rem;
   color: #747474;
 `
 
 export const ContentWrapper = styled.div`
+  width: 25rem;
+
   ${Skill} + ${Skill} {
-    margin-top: 4px;
+    margin-top: 0.4rem;
   }
 `
 
 export const MainTitle = styled.h1`
-  margin-bottom: 20px;
-  font-size: 96px;
+  margin-bottom: 1rem;
+  font-size: 4.75rem;
   font-weight: bolder;
 `
 
 export const SubTitle = styled.h2`
-  margin-bottom: 70px;
-  font-size: 36px;
+  margin-bottom: 3.875rem;
+  font-size: 1.625rem;
   color: #2C3E50;
 `
 
 export const Paragraph = styled.p`
-  margin-bottom: 90px;
-  font-size: 24px;
+  margin-bottom: 4rem;
+  font-size: 1.125rem;
   font-weight: bold;
   color: #3370E8;
 `
 
 export const ShipImageWrapper = styled.div`
-  width: 823px;
-  height: auto;
+  width: 44.5rem;
+  position: relative;
+  right: -2.375rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    align-self: flex-end;
+    width: 31.2rem;
+    top: -5.75rem;
+  }
 `
 
 export const SafariImage = styled.img`
-  width: 823px;
-  height: auto;
+  width: 100%;
 `
 
 export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`

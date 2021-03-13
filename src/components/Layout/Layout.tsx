@@ -21,8 +21,12 @@ function Layout({ children }: LayoutProps) {
     dispatch,
   }), [state, dispatch])
 
+  const theme = useMemo(() => ({
+    media,
+  }), [])
+
   return (
-    <ThemeProvider theme={media}>
+    <ThemeProvider theme={theme}>
       <GlobalContext.Provider value={contextValue}>
         <Navigation />
         { children }

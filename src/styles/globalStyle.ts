@@ -27,6 +27,9 @@ export const GlobalStyle = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  html {
+    font-size: 16px;
+  }
   body {
     line-height: 1;
   }

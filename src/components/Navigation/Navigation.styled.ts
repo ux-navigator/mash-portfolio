@@ -18,7 +18,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   z-index: 9999;
 
   ${({ isScrolled }) => isScrolled && css`
-  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .2);
   `}
 `
 
@@ -27,6 +27,10 @@ export const NavigationContent = styled.div`
   justify-content: space-between;
   width: 1024px;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
 `
 
 export const LogoWrapper = styled.div`

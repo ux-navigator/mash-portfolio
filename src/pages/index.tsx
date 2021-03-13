@@ -54,7 +54,7 @@ function IndexPage() {
           <Styled.ShipImageWrapper>
             {
               isSafari
-                ? <Styled.SafariImage src={ship} width={823} height={636} />
+                ? <Styled.SafariImage src={ship} />
                 : <Image name="ship.png" />
             }
           </Styled.ShipImageWrapper>
