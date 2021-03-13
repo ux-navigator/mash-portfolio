@@ -14,7 +14,7 @@ export const FirstPageInnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1320px;
+  width: 1024px;
   height: 100%;
   margin: 0 auto;
   padding-top: 139px;

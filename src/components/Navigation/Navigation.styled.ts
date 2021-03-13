@@ -25,7 +25,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
 export const NavigationContent = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1320px;
+  width: 1024px;
   margin: 0 auto;
 `
 
