@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useReducer } from 'react'
+import React, { useReducer, useMemo } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 /* Internal dependencies */
@@ -16,9 +16,14 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   const [state, dispatch] = useReducer(globalReducer, initialState)
 
+  const contextValue = useMemo(() => ({
+    state,
+    dispatch,
+  }), [state, dispatch])
+
   return (
     <ThemeProvider theme={media}>
-      <GlobalContext.Provider value={{ state, dispatch }}>
+      <GlobalContext.Provider value={contextValue}>
         <Navigation />
         { children }
         <GlobalStyle />
