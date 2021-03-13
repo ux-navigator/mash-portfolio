@@ -3,9 +3,9 @@ import React, { useContext, useEffect, useState, useCallback } from 'react'
 
 /* Internal dependencies */
 import { GlobalContext } from 'contexts/globalContext'
+import useLayout from 'hooks/useLayout'
 import { isSafari } from 'utils/browserUtils'
 import { SCROLLING_DURATION } from 'components/Pagination'
-import Layout from 'components/Layout'
 import Pagination, { Page } from 'components/Pagination'
 import Image from 'components/Image'
 import SVGIcon, { Size } from 'components/SVGIcon'
@@ -13,7 +13,7 @@ import * as Styled from 'styles/pageStyles/index.styled'
 import ship from 'images/ship.png'
 import Config from '../../config'
 
-function PaginationComponent() {
+function IndexPage() {
   const { state: { currentPage } } = useContext(GlobalContext)
 
   const [isIntroFixed, setIntroFixed] = useState(false)
@@ -163,12 +163,4 @@ function PaginationComponent() {
   )
 }
 
-function IndexPage() {
-  return (
-    <Layout>
-      <PaginationComponent />
-    </Layout>
-  )
-}
-
-export default IndexPage
+export default useLayout(IndexPage)
