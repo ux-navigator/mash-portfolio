@@ -110,7 +110,7 @@ export const IntroTitle = styled.p`
   color: #3370E8;
 `
 
-export const IntroListItem = styled.p`
+export const IntroListItem = styled.div`
   display: flex;
   align-items: center;
   font-size: 24px;
