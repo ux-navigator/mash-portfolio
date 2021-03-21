@@ -20,6 +20,10 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   ${({ isScrolled }) => isScrolled && css`
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .2);
   `}
+
+  @media ${({ theme }) => theme.media.mobile} {
+    padding: 15px 0;
+  }
 `
 
 export const NavigationContent = styled.div`
@@ -33,7 +37,7 @@ export const NavigationContent = styled.div`
   }
 
   @media ${({ theme }) => theme.media.mobile} {
-    width: 100%;
+    width: 320px;
   }
 `
 
@@ -42,11 +46,29 @@ export const LogoWrapper = styled.div`
   align-items: center;
 `
 
+export const Logo = styled.div`
+  width: 40px;
+  height: 40px;
+
+  img {
+    width: 100%;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 30px;
+    height: 30px;
+  }
+`
+
 export const Title = styled.p`
   margin-left: 14px;
   font-size: 18px;
   font-family: 'Mark Pro Book';
   color: #2C3E50;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `
 
 export const LinkItem = styled(Link)`
@@ -70,5 +92,9 @@ export const LinkWrapper = styled.div`
 
   ${LinkItem} + ${LinkItem} {
     margin-left: 60px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
   }
 `

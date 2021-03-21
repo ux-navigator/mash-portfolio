@@ -28,6 +28,7 @@ export const FirstPageInnerWrapper = styled.div`
 
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
+    flex-direction: column;
   }
 `
 
@@ -35,6 +36,10 @@ export const Skill = styled.p`
   font-size: 0.875rem;
   font-family: 'Mark Pro Book';
   color: #4F5A65;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `
 
 export const ContentWrapper = styled.div`
@@ -43,6 +48,10 @@ export const ContentWrapper = styled.div`
   ${Skill} + ${Skill} {
     margin-top: 0.4rem;
   }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    text-align: center;
+  }
 `
 
 export const MainTitle = styled.h1`
@@ -50,6 +59,10 @@ export const MainTitle = styled.h1`
   font-size: 5.25rem;
   font-family: 'Mark Pro Heavy';
   color: #2C3E50;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 3rem;
+  }
 `
 
 export const SubTitle = styled.h2`
@@ -57,6 +70,11 @@ export const SubTitle = styled.h2`
   font-size: 1.625rem;
   font-family: 'Mark Pro Book';
   color: #2C3E50;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    margin-bottom: 2.125rem;
+    font-size: 1.125rem;
+  }
 `
 
 export const Paragraph = styled.p`
@@ -64,6 +82,10 @@ export const Paragraph = styled.p`
   font-size: 1.25rem;
   font-family: 'Mark Pro Bold';
   color: #3370E8;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 0.875rem;
+  }
 `
 
 export const ShipImageWrapper = styled.div`
@@ -75,6 +97,11 @@ export const ShipImageWrapper = styled.div`
     align-self: flex-end;
     width: 31.2rem;
     top: -5.75rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 327px;
+    right: 0;
   }
 `
 

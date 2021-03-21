@@ -13,7 +13,9 @@ function Navigation() {
     <Styled.NavigationWrapper isScrolled={isScrolled}>
       <Styled.NavigationContent>
         <Styled.LogoWrapper>
-          <img width={40} src={logo} />
+          <Styled.Logo>
+            <img src={logo} alt="" />
+          </Styled.Logo>
           <Styled.Title>Lee Jinyoung</Styled.Title>
         </Styled.LogoWrapper>
         <Styled.LinkWrapper>
