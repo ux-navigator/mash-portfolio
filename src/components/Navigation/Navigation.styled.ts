@@ -31,6 +31,10 @@ export const NavigationContent = styled.div`
   @media ${({ theme }) => theme.media.tablet} {
     width: 680px;
   }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+  }
 `
 
 export const LogoWrapper = styled.div`

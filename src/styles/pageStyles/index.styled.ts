@@ -25,6 +25,10 @@ export const FirstPageInnerWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+  }
 `
 
 export const Skill = styled.p`
