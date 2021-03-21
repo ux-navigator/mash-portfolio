@@ -29,7 +29,8 @@ export const FirstPageInnerWrapper = styled.div`
 
 export const Skill = styled.p`
   font-size: 0.875rem;
-  color: #747474;
+  font-family: 'Mark Pro Book';
+  color: #4F5A65;
 `
 
 export const ContentWrapper = styled.div`
@@ -41,21 +42,23 @@ export const ContentWrapper = styled.div`
 `
 
 export const MainTitle = styled.h1`
-  margin-bottom: 1rem;
-  font-size: 4.75rem;
-  font-weight: bolder;
+  margin-bottom: 1.5rem;
+  font-size: 5.25rem;
+  font-family: 'Mark Pro Heavy';
+  color: #2C3E50;
 `
 
 export const SubTitle = styled.h2`
   margin-bottom: 3.875rem;
   font-size: 1.625rem;
+  font-family: 'Mark Pro Book';
   color: #2C3E50;
 `
 
 export const Paragraph = styled.p`
   margin-bottom: 4rem;
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: 'Mark Pro Bold';
   color: #3370E8;
 `
 

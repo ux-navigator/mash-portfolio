@@ -1,6 +1,9 @@
 /* External dependencies */
 import { createGlobalStyle } from 'styled-components'
 
+/* Internal dependencies */
+import fonts from 'styles/fonts/fonts'
+
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,5 +60,68 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     overflow: hidden;
     touch-action: none;
+  }
+
+  @font-face {
+    font-family: 'Mark Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Regular'), url(${fonts.MarkProRegular}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Extra Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Extra Light'), url(${fonts.MarkProExtraLight}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Light'), url(${fonts.MarkProLight}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Book'), url(${fonts.MarkProBook}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Medium'), url(${fonts.MarkProMedium}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Bold'), url(${fonts.MarkProBold}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Heavy'), url(${fonts.MarkProHeavy}) format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Mark Pro Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mark Pro Black'), url(${fonts.MarkProBlack}) format('woff');
   }
 `

@@ -40,13 +40,17 @@ export const LogoWrapper = styled.div`
 
 export const Title = styled.p`
   margin-left: 14px;
+  font-size: 18px;
+  font-family: 'Mark Pro Book';
   color: #2C3E50;
-  font-size: 24px;
 `
 
 export const LinkItem = styled(Link)`
-  font-size: 24px;
+  padding: 2px 0;
+  font-size: 18px;
   font-weight: bold;
+  font-family: 'Mark Pro Book';
+  color: #2C3E50;
   border-bottom: 3px solid #FFF;
 
   &.active, &:hover {
