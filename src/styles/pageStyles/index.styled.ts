@@ -27,8 +27,10 @@ export const FirstPageInnerWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.media.mobile} {
-    width: 100%;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0;
   }
 `
 
@@ -61,6 +63,7 @@ export const MainTitle = styled.h1`
   color: #2C3E50;
 
   @media ${({ theme }) => theme.media.mobile} {
+    margin-bottom: 1.25rem;
     font-size: 3rem;
   }
 `
@@ -72,7 +75,7 @@ export const SubTitle = styled.h2`
   color: #2C3E50;
 
   @media ${({ theme }) => theme.media.mobile} {
-    margin-bottom: 2.125rem;
+    margin-bottom: 1.875rem;
     font-size: 1.125rem;
   }
 `
@@ -84,6 +87,7 @@ export const Paragraph = styled.p`
   color: #3370E8;
 
   @media ${({ theme }) => theme.media.mobile} {
+    margin-bottom: 3.25rem;
     font-size: 0.875rem;
   }
 `

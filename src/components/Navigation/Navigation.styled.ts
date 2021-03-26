@@ -6,6 +6,10 @@ interface NavigationWrapperProps {
   isScrolled: boolean
 }
 
+interface NavItemWrapperProps {
+  show: boolean
+}
+
 export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   width: 100%;
   position: fixed;
@@ -22,7 +26,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   `}
 
   @media ${({ theme }) => theme.media.mobile} {
-    padding: 15px 0;
+    padding: ${({ isScrolled }) => isScrolled ? 10 : 15}px 0;
   }
 `
 
@@ -60,9 +64,24 @@ export const Logo = styled.div`
   }
 `
 
+export const Menu = styled.div`
+  width: 40px;
+  height: 40px;
+  display: none;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
+  }
+`
+
 export const Title = styled.p`
-  margin-left: 14px;
-  font-size: 18px;
+  margin-left: 0.875rem;
+  font-size: 1.125rem;
   font-family: 'Mark Pro Book';
   color: #2C3E50;
 
@@ -73,7 +92,7 @@ export const Title = styled.p`
 
 export const LinkItem = styled(Link)`
   padding: 2px 0;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   font-family: 'Mark Pro Book';
   color: #2C3E50;
@@ -83,6 +102,39 @@ export const LinkItem = styled(Link)`
     color: #3370E8;
     border-color: #3370E8;
   }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: inline;
+    font-size: 1.625rem;
+    font-family: 'Mark Pro Bold';
+    color: #F7F8FA;
+    border-color: transparent;
+
+    &.active, &:hover {
+      color: #F7F8FA;
+      border-color: #F7F8FA;
+    }
+  }
+`
+
+export const NavItemWrapper = styled.div<NavItemWrapperProps>`
+  @media ${({ theme }) => theme.media.mobile} {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    background-color: #141B23;
+    opacity: 0.96;
+    transition: 0.3s transform;
+
+    ${({ show }) => show && css`
+      transform: translateX(0);
+    `}
+  }
 `
 
 export const LinkWrapper = styled.div`
@@ -91,10 +143,61 @@ export const LinkWrapper = styled.div`
 
 
   ${LinkItem} + ${LinkItem} {
-    margin-left: 60px;
+    margin-left: 3.75rem;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
-    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5.25rem 0 0 1.875rem;
+
+    ${LinkItem} + ${LinkItem} {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+`
+
+export const Skill = styled.div`
+  font-size: 0.875rem;
+  font-family: 'Mark Pro Regular';
+  color: #F7F8FA;
+`
+
+export const SkillWrapper = styled.div`
+  display: none;
+  margin: auto 0 3.375rem 1.875rem;
+
+  ${Skill} + ${Skill} {
+    margin-top: 0.5rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
+  }
+`
+
+export const Divider = styled.div`
+  width: 26px;
+  height: 2px;
+  margin-bottom: 1.5rem;
+  background-color: #F7F8FA;
+`
+
+export const Close = styled.div`
+  position: absolute;
+  top: 0.625rem;
+  right: 0.875rem;
+  width: 40px;
+  height: 40px;
+  display: none;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
   }
 `
