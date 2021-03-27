@@ -41,7 +41,10 @@ export const NavigationContent = styled.div`
   }
 
   @media ${({ theme }) => theme.media.mobile} {
-    width: 320px;
+    width: 100%;
+    max-width: 375px;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 `
 
@@ -186,8 +189,8 @@ export const Divider = styled.div`
 
 export const Close = styled.div`
   position: absolute;
-  top: 0.625rem;
-  right: 0.875rem;
+  top: 0.875rem;
+  right: 1.125rem;
   width: 40px;
   height: 40px;
   display: none;
