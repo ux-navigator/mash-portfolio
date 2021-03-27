@@ -62,37 +62,57 @@ function IndexPage() {
       </Page>
       <Page>
         <Styled.IntroPageInnerWrapper fixed={isIntroFixed} hidden={!leavingIntroPage(1) && currentPage !== 1}>
-          <Styled.EllipseImageWrapper>
-            <Image name="ellipse.png" />
-          </Styled.EllipseImageWrapper>
+          <Styled.EllipseImage1Wrapper>
+            <Image name="ellipse1.png" />
+          </Styled.EllipseImage1Wrapper>
+          <Styled.EllipseImage2Wrapper>
+            <Image name="ellipse2.png" />
+          </Styled.EllipseImage2Wrapper>
           <Styled.IntroWrapper>
             <Styled.IntroTitle>{ Config.main_second.title }</Styled.IntroTitle>
             <Styled.IntroContent>
-              <Styled.ContentTitle>{ Config.main_second.paragraphTitle }</Styled.ContentTitle>
-              <Styled.ContentList>
-                { Config.main_second.paragraphs.map((paragraph, index) => (
+              <Styled.NotMobileContentTitle>{ Config.main_second.notMobileParagraphTitle }</Styled.NotMobileContentTitle>
+              <Styled.NotMobileContentList>
+                { Config.main_second.notMobileParagraphs.map((paragraph, index) => (
                   <Styled.ContentItem key={index}>{paragraph}</Styled.ContentItem>
                 ))}
-              </Styled.ContentList>
+              </Styled.NotMobileContentList>
+              <Styled.MobileContentTitle dangerouslySetInnerHTML={{ __html: Config.main_second.mobileParagraphTitle }} />
+              <Styled.MobileContentList>
+                { Config.main_second.mobileParagraphs.map((paragraph, index) => (
+                  <Styled.ContentItem key={index}>{paragraph}</Styled.ContentItem>
+                ))}
+              </Styled.MobileContentList>
             </Styled.IntroContent>
           </Styled.IntroWrapper>
         </Styled.IntroPageInnerWrapper>
       </Page>
       <Page>
         <Styled.IntroPageInnerWrapper fixed={isIntroFixed} hidden={!leavingIntroPage(2) && currentPage !== 2}>
-          <Styled.EllipseImageWrapper>
-            <Image name="ellipse.png" />
-          </Styled.EllipseImageWrapper>
+          <Styled.EllipseImage1Wrapper>
+            <Image name="ellipse1.png" />
+          </Styled.EllipseImage1Wrapper>
+          <Styled.EllipseImage2Wrapper>
+            <Image name="ellipse2.png" />
+          </Styled.EllipseImage2Wrapper>
           <Styled.IntroWrapper>
             <Styled.IntroTitle dangerouslySetInnerHTML={{ __html: Config.main_third.title }} />
             <Styled.IntroContent>
-              {Config.main_third.paragraphs.map((paragraph, index) => (
-                <Styled.IntroListItem key={index}>
+              {Config.main_third.notMobileParagraphs.map((paragraph, index) => (
+                <Styled.NotMobileIntroListItem key={index}>
                   <Styled.Icon>
                     <SVGIcon name="check" size={Size.Large} />
                   </Styled.Icon>
                   {paragraph}
-                </Styled.IntroListItem>
+                </Styled.NotMobileIntroListItem>
+              ))}
+              {Config.main_third.mobileParagraphs.map((paragraph, index) => (
+                <Styled.MobileIntroListItem key={index}>
+                  <Styled.Icon>
+                    <SVGIcon name="check" size={Size.Large} />
+                  </Styled.Icon>
+                  {paragraph}
+                </Styled.MobileIntroListItem>
               ))}
             </Styled.IntroContent>
           </Styled.IntroWrapper>

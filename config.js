@@ -10,19 +10,29 @@ module.exports = {
   },
   main_second: {
     title: 'What does "UX" mean to you?',
-    paragraphTitle: '나침반 없이 바다 한가운데에서 떠나는 항해',
-    paragraphs: [
+    notMobileParagraphTitle: '나침반 없이 바다 한가운데에서 떠나는 항해',
+    notMobileParagraphs: [
       'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해  프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
       '나침반이 없던 고대의 항해사들이 파도, 바람, 별 등을 분석하여 배의 위치, 속도, 방향을 정확하게 파악했던 것 처럼, ',
       '정량적 / 정성적 데이터들이 넘쳐나는 광활한 바다에서 프로덕트의 길을 잃지 않고 전체를 조망하며 나아가겠습니다.',
     ],
+    mobileParagraphTitle: '나침반 없이<br />바다 한가운데에서 떠나는 항해',
+    mobileParagraphs: [
+      'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해  프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
+      '나침반이 없던 고대의 항해사들처럼 데이터들이 넘쳐나는 광활한 바다에서 프로덕트의 길을 잃지 않고 전체를 조망하며 나아가겠습니다.',
+    ],
   },
   main_third: {
     title: 'What kind of products<br /> are good?',
-    paragraphs: [
+    notMobileParagraphs: [
       '지속적으로 가설을 세우고 검증하는 프로덕트',
       '북극성 지표를 찾아 일관성을 유지하는 프로덕트',
       '고객이 만족할 때 까지 개선을 반복하는 프로덕트',
+    ],
+    mobileParagraphs: [
+      '지속적으로 가설을 세우고 검증하는',
+      '북극성 지표를 찾아 일관성을 유지하는',
+      '고객이 만족할 때 까지 개선을 반복하는',
     ],
   },
   main_fourth: {

@@ -14,6 +14,7 @@ export const FirstPageInnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   width: 1024px;
   height: 100%;
   margin: 0 auto;
@@ -99,8 +100,9 @@ export const ShipImageWrapper = styled.div`
 
   @media ${({ theme }) => theme.media.tablet} {
     align-self: flex-end;
+    position: absolute;
+    bottom: 0;
     width: 31.2rem;
-    top: -5.75rem;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -135,12 +137,36 @@ export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
   `}
 `
 
-export const EllipseImageWrapper = styled.div`
-  width: 500px;
+export const EllipseImage1Wrapper = styled.div`
+  width: 488px;
   height: auto;
   position: absolute;
   bottom: 0;
   left: 0;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
+`
+
+export const EllipseImage2Wrapper = styled.div`
+  display: none;
+  width: 370px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    display: block;
+  }
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 210px;
+    display: block;
+  }
 `
 
 export const IntroWrapper = styled.div`
@@ -153,6 +179,18 @@ export const IntroWrapper = styled.div`
   padding: 6rem 0;
   box-sizing: border-box;
   z-index: 1;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    justify-content: center;
+    width: 680px;
+    padding: 0;
+  }
+  @media ${({ theme }) => theme.media.mobile} {
+    justify-content: center;
+    width: 100%;
+    max-width: 375px;
+    padding: 0 1.25rem;
+  }
 `
 
 export const IntroTitle = styled.p`
@@ -161,40 +199,112 @@ export const IntroTitle = styled.p`
   font-size: 4rem;
   line-height: 5rem;
   color: #3370E8;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-bottom: 10.5rem;
+  }
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 240px;
+    margin-bottom: 6rem;
+    font-size: 2.625rem;
+    line-height: 3.75rem;
+  }
 `
 
-export const IntroListItem = styled.div`
+export const NotMobileIntroListItem = styled.div`
   display: flex;
   align-items: center;
   font-family: 'Gothic Bold';
   font-size: 1.375rem;
-`
 
-export const IntroContent = styled.div`
-  align-self: flex-end;
-  width: 530px;
-  color: #2C3E50;
-
-  ${IntroListItem} + ${IntroListItem} {
-    margin-top: 3.75rem;
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
   }
 `
 
-export const ContentTitle = styled.p`
+export const MobileIntroListItem = styled.div`
+  display: none;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: flex;
+    align-items: center;
+    font-family: 'Gothic Bold';
+    font-size: 1rem;
+  }
+`
+
+export const IntroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-end;
+  width: 530px;
+  height: 242px;
+  color: #2C3E50;
+
+  ${NotMobileIntroListItem} + ${NotMobileIntroListItem} {
+    margin-top: 3.75rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+
+    ${MobileIntroListItem} + ${MobileIntroListItem} {
+      margin-top: 1.875rem;
+    }
+  }
+`
+
+export const NotMobileContentTitle = styled.p`
   margin-bottom: 1.75rem;
   font-family: 'Gothic Bold';
   font-size: 1.375rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
+`
+
+export const MobileContentTitle = styled.p`
+  display: none;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
+    margin-bottom: 1.25rem;
+    font-family: 'Gothic Bold';
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 `
 
 export const ContentItem = styled.p`
   font-family: 'Gothic Regular';
   font-size: 1.125rem;
   line-height: 1.5rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 1rem;
+  }
 `
 
-export const ContentList = styled.div`
+export const NotMobileContentList = styled.div`
   ${ContentItem} + ${ContentItem} {
     margin-top: 1.125rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
+`
+
+export const MobileContentList = styled.div`
+  display: none;
+  ${ContentItem} + ${ContentItem} {
+    margin-top: 1.125rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
   }
 `
 
