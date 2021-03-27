@@ -117,11 +117,48 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Mark Pro Heavy'), url(${fonts.MarkProHeavy}) format('woff');
   }
 
+  @font-face {
+    font-family: 'Gothic Black';
+    src: url(${fonts.GothicA1Black});
+  }
 
   @font-face {
-    font-family: 'Mark Pro Black';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Mark Pro Black'), url(${fonts.MarkProBlack}) format('woff');
+    font-family: 'Gothic Bold';
+    src: url(${fonts.GothicA1Bold});
+  }
+
+  @font-face {
+    font-family: 'Gothic ExtrBold';
+    src: url(${fonts.GothicA1ExtraBold});
+  }
+
+  @font-face {
+    font-family: 'Gothic ExtraLight';
+    src: url(${fonts.GothicA1ExtraLight});
+  }
+
+  @font-face {
+    font-family: 'Gothic Light';
+    src: url(${fonts.GothicA1Light});
+  }
+
+  @font-face {
+    font-family: 'Gothic Medium';
+    src: url(${fonts.GothicA1Medium});
+  }
+
+  @font-face {
+    font-family: 'Gothic Regular';
+    src: url(${fonts.GothicA1Regular});
+  }
+
+  @font-face {
+    font-family: 'Gothic SemiBold';
+    src: url(${fonts.GothicA1SemiBold});
+  }
+
+  @font-face {
+    font-family: 'Gothic Thin';
+    src: url(${fonts.GothicA1Thin});
   }
 `

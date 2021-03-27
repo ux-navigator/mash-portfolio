@@ -115,11 +115,10 @@ export const SafariImage = styled.img`
 
 export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
   display: flex;
-  width: 1320px;
+  width: 100%;
   height: 100%;
   position: relative;
-  margin: 0 auto;
-  padding-top: 79px;
+  padding-top: 5rem;
   box-sizing: border-box;
   transition: opacity 1s;
 
@@ -137,66 +136,65 @@ export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
 `
 
 export const EllipseImageWrapper = styled.div`
-  width: 700px;
+  width: 500px;
   height: auto;
   position: absolute;
-  top: calc(50% + 39.5px);
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 0;
 `
 
 export const IntroWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1024px;
   height: 100%;
-  padding-left: 160px;
+  margin: 0 auto;
+  padding: 6rem 0;
+  box-sizing: border-box;
   z-index: 1;
 `
 
 export const IntroTitle = styled.p`
   width: 430px;
-  margin: 120px 140px 0 0;
-  font-size: 76px;
-  font-weight: bold;
+  font-family: 'Mark Pro Bold';
+  font-size: 4rem;
+  line-height: 5rem;
   color: #3370E8;
 `
 
 export const IntroListItem = styled.div`
   display: flex;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
+  font-family: 'Gothic Bold';
+  font-size: 1.375rem;
 `
 
 export const IntroContent = styled.div`
-  width: 650px;
-  margin-top: 400px;
+  align-self: flex-end;
+  width: 530px;
   color: #2C3E50;
 
   ${IntroListItem} + ${IntroListItem} {
-    margin-top: 70px;
+    margin-top: 3.75rem;
   }
 `
 
 export const ContentTitle = styled.p`
-  margin-bottom: 30px;
-  font-size: 26px;
-  font-weight: bold;
+  margin-bottom: 1.75rem;
+  font-family: 'Gothic Bold';
+  font-size: 1.375rem;
 `
 
 export const ContentItem = styled.p`
-  span {
-    font-weight: bold;
-    color: #3370E8;
-  }
+  font-family: 'Gothic Regular';
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 `
 
 export const ContentList = styled.div`
-  font-size: 24px;
-
   ${ContentItem} + ${ContentItem} {
-    margin-top: 18px;
+    margin-top: 1.125rem;
   }
 `
 

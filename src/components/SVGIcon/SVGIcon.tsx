@@ -10,7 +10,7 @@ export enum Size {
   XSmall = 16,
   Small = 20,
   Normal = 24,
-  Large = 34,
+  Large = 38,
   XLarge = 44,
 }
 

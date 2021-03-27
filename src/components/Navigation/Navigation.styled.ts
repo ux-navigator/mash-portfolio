@@ -121,9 +121,12 @@ export const LinkItem = styled(Link)`
 `
 
 export const NavItemWrapper = styled.div<NavItemWrapperProps>`
+  display: flex;
+  align-items: center;
+
   @media ${({ theme }) => theme.media.mobile} {
-    display: flex;
     flex-direction: column;
+    align-items: flex-start;
     position: fixed;
     top: 0;
     left: 0;

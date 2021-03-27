@@ -71,7 +71,7 @@ function IndexPage() {
               <Styled.ContentTitle>{ Config.main_second.paragraphTitle }</Styled.ContentTitle>
               <Styled.ContentList>
                 { Config.main_second.paragraphs.map((paragraph, index) => (
-                  <Styled.ContentItem key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  <Styled.ContentItem key={index}>{paragraph}</Styled.ContentItem>
                 ))}
               </Styled.ContentList>
             </Styled.IntroContent>
@@ -84,12 +84,12 @@ function IndexPage() {
             <Image name="ellipse.png" />
           </Styled.EllipseImageWrapper>
           <Styled.IntroWrapper>
-            <Styled.IntroTitle>{ Config.main_third.title }</Styled.IntroTitle>
+            <Styled.IntroTitle dangerouslySetInnerHTML={{ __html: Config.main_third.title }} />
             <Styled.IntroContent>
               {Config.main_third.paragraphs.map((paragraph, index) => (
                 <Styled.IntroListItem key={index}>
                   <Styled.Icon>
-                    <SVGIcon name="check" size={Size.XLarge} />
+                    <SVGIcon name="check" size={Size.Large} />
                   </Styled.Icon>
                   {paragraph}
                 </Styled.IntroListItem>
