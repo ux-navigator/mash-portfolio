@@ -129,16 +129,15 @@ export const NavItemWrapper = styled.div<NavItemWrapperProps>`
     align-items: flex-start;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 100%;
     width: 100%;
     height: 100%;
-    transform: translateX(100%);
     background-color: #141B23;
     opacity: 0.96;
     transition: 0.3s transform;
 
     ${({ show }) => show && css`
-      transform: translateX(0);
+      transform: translateX(-100%);
     `}
   }
 `
