@@ -11,6 +11,10 @@ interface IntroItemTitleProps {
   show: boolean
 }
 
+interface ContentToggleButtonProps {
+  lotate: boolean
+}
+
 interface IntroItemContentProps {
   show: boolean
 }
@@ -477,7 +481,7 @@ export const IntroItemMobileIcon = styled(Image)`
   }
 `
 
-export const ContentToggleButton = styled.img`
+export const ContentToggleButton = styled.img<ContentToggleButtonProps>`
   display: none;
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -485,6 +489,10 @@ export const ContentToggleButton = styled.img`
     width: 24px;
     margin-left: auto;
     cursor: pointer;
+
+    ${({ lotate }) => lotate && css`
+      transform: rotate(180deg);
+    `}
   }
 `
 

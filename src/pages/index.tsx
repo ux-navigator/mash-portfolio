@@ -151,7 +151,12 @@ function IndexPage() {
                     <Styled.IntroItemTitle show={currentInfoItemIndex === index}>
                       <Styled.IntroItemMobileIcon name={IntroIconImages[index]} />
                       {item.title}
-                      <Styled.ContentToggleButton onClick={() => handleInfoItem(index)} src={Arrow} alt="" />
+                      <Styled.ContentToggleButton
+                        lotate={currentInfoItemIndex === index}
+                        src={Arrow}
+                        alt=""
+                        onClick={() => handleInfoItem(index)}
+                      />
                     </Styled.IntroItemTitle>
                     <Styled.IntroItemContent show={currentInfoItemIndex === index}>
                       {item.content}
