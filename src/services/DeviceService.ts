@@ -13,11 +13,19 @@ class DeviceService {
   private device: Device
 
   constructor() {
+    if (typeof window === 'undefined') {
+      this.device = Device.PC
+      return
+    }
     window.addEventListener('resize', this.handleResize)
     this.device = this.calculateDevice(window.innerWidth)
   }
 
   handleResize = throttle(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
     this.device = this.calculateDevice(window.innerWidth)
   }, 300)
 

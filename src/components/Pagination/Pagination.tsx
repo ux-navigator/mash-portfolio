@@ -7,7 +7,9 @@ import { setScrolled, setCurrentPage } from 'reducers/globalReducer'
 import { GlobalContext } from 'contexts/globalContext'
 import useThrottle from 'hooks/useThrottle'
 
-smoothscroll.polyfill()
+if (typeof window !== 'undefined') {
+  smoothscroll.polyfill()
+}
 
 interface PaginationProps {
   children: React.ReactElement | React.ReactElement[]
@@ -19,10 +21,14 @@ function Pagination({ children }: PaginationProps) {
   const { dispatch } = useContext(GlobalContext)
 
   const pageRefs = useRef<HTMLDivElement[]>([])
-  const currentScrollTop = useRef(window.pageYOffset)
+  const currentScrollTop = useRef(typeof window !== 'undefined' ? window.pageYOffset : 0)
   const currentPageIndex = useRef(0)
 
   const handleScroll = useThrottle(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
     document.body.classList.add('nonScrollable')
     
     if (currentScrollTop.current < window.pageYOffset) {
