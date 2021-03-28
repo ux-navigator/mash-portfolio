@@ -11,12 +11,17 @@ import Image from 'components/Image'
 import SVGIcon, { Size } from 'components/SVGIcon'
 import * as Styled from 'styles/pageStyles/index.styled'
 import ship from 'images/ship.png'
+import Arrow from 'images/arrow.png'
 import Config from '../../config'
+
+const IntroMainImages = ['meeting.png', 'thinking.png', 'study.png']
+const IntroIconImages = ['glass.png', 'statistic.png', 'pencil.png']
 
 function IndexPage() {
   const { state: { currentPage } } = useContext(GlobalContext)
 
   const [isIntroFixed, setIntroFixed] = useState(false)
+  const [currentInfoItemIndex, setCurrentInfoItemIndex] = useState<number | null>(null)
 
   const leavingIntroPage = useCallback((pageIndex: number) => {
     if (
@@ -28,6 +33,14 @@ function IndexPage() {
 
     return false
   }, [currentPage])
+
+  const handleInfoItem = useCallback((index: number) => {
+    if (index === currentInfoItemIndex) {
+      setCurrentInfoItemIndex(null)
+      return
+    }
+    setCurrentInfoItemIndex(index)
+  }, [currentInfoItemIndex])
 
   useEffect(() => {
     if (currentPage === 1 || currentPage === 2) {
@@ -119,49 +132,36 @@ function IndexPage() {
         </Styled.IntroPageInnerWrapper>
       </Page>
       <Page>
-        <Styled.CommonPageInnerWrapper>
-          <Styled.IntroParagraph1>
-            {Config.main_fourth.paragraph1}
-          </Styled.IntroParagraph1>
-          <Styled.IntroParagraph2>
-            {Config.main_fourth.paragraph2}
-          </Styled.IntroParagraph2>
-          <Styled.IntroItemsWrapper>
-            <Styled.IntroItemWrapper>
-              <Styled.IntroImageItemWrapper width={312} style={{ transform: 'translateY(10px)'}}>
-                <Image name="meeting.png" />
-              </Styled.IntroImageItemWrapper>
-              <Styled.IntroItemTitle>
-                {Config.main_fourth.items[0].title}
-              </Styled.IntroItemTitle>
-              <Styled.IntroItemContent>
-                {Config.main_fourth.items[0].content}
-              </Styled.IntroItemContent>
-            </Styled.IntroItemWrapper>
-            <Styled.IntroItemWrapper>
-              <Styled.IntroImageItemWrapper width={238}>
-                <Image name="thinking.png" />
-              </Styled.IntroImageItemWrapper>
-              <Styled.IntroItemTitle>
-                {Config.main_fourth.items[1].title}
-              </Styled.IntroItemTitle>
-              <Styled.IntroItemContent>
-                {Config.main_fourth.items[1].content}
-              </Styled.IntroItemContent>
-            </Styled.IntroItemWrapper>
-            <Styled.IntroItemWrapper>
-              <Styled.IntroImageItemWrapper width={247} style={{ transform: 'translateY(10px)'}}>
-                <Image name="study.png" />
-              </Styled.IntroImageItemWrapper>
-              <Styled.IntroItemTitle>
-                {Config.main_fourth.items[2].title}
-              </Styled.IntroItemTitle>
-              <Styled.IntroItemContent>
-                {Config.main_fourth.items[2].content}
-              </Styled.IntroItemContent>
-            </Styled.IntroItemWrapper>
-          </Styled.IntroItemsWrapper>
-        </Styled.CommonPageInnerWrapper>
+        <Styled.CommonPageBackground>
+          <Styled.CommonPageInnerWrapper>
+            <Styled.IntroParagraph1>
+              {Config.main_fourth.paragraph1}
+            </Styled.IntroParagraph1>
+            <Styled.IntroParagraph2>
+              {Config.main_fourth.paragraph2}
+            </Styled.IntroParagraph2>
+            <Styled.IntroItemsWrapper>
+              {Config.main_fourth.items.map((item, index) => (
+                <Styled.IntroItemWrapper>
+                  <Styled.IntroImageItemWrapper>
+                    <Image name={IntroMainImages[index]} />
+                  </Styled.IntroImageItemWrapper>
+                  <Styled.IntroItemTabletIcon name={IntroIconImages[index]} />
+                  <Styled.IntroItemContentWrapper>
+                    <Styled.IntroItemTitle show={currentInfoItemIndex === index}>
+                      <Styled.IntroItemMobileIcon name={IntroIconImages[index]} />
+                      {item.title}
+                      <Styled.ContentToggleButton onClick={() => handleInfoItem(index)} src={Arrow} alt="" />
+                    </Styled.IntroItemTitle>
+                    <Styled.IntroItemContent show={currentInfoItemIndex === index}>
+                      {item.content}
+                    </Styled.IntroItemContent>
+                  </Styled.IntroItemContentWrapper>
+                </Styled.IntroItemWrapper>
+              ))}
+            </Styled.IntroItemsWrapper>
+          </Styled.CommonPageInnerWrapper>
+        </Styled.CommonPageBackground>
       </Page>
       <Page>
         <Styled.CommonPageInnerWrapper>

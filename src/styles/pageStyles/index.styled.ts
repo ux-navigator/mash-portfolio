@@ -1,13 +1,18 @@
 /* External dependencies */
 import styled, { css } from 'styled-components'
+import Image from 'components/Image'
 
 interface IntroPageInnerWrapperProps {
   fixed: boolean
   hidden: boolean
 }
 
-interface IntroImageItemWrapperProps {
-  width: number
+interface IntroItemTitleProps {
+  show: boolean
+}
+
+interface IntroItemContentProps {
+  show: boolean
 }
 
 export const FirstPageInnerWrapper = styled.div`
@@ -18,7 +23,7 @@ export const FirstPageInnerWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 139px;
+  padding-top: 8.75rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -31,7 +36,7 @@ export const FirstPageInnerWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding-top: 0;
+    padding-top: 4.375rem;
   }
 `
 
@@ -135,6 +140,10 @@ export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
   ${({ hidden }) => hidden && css`
     opacity: 0;
   `}
+
+  @media ${({ theme }) => theme.media.mobile} {
+    padding-top: 3.75rem;
+  }
 `
 
 export const EllipseImage1Wrapper = styled.div`
@@ -312,61 +321,214 @@ export const Icon = styled.div`
   margin-right: 6px;
 `
 
+export const CommonPageBackground = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #F7F8FA;
+`
+
 export const CommonPageInnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1320px;
+  justify-content: center;
+  width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 79px;
+  padding-top: 80px;
   box-sizing: border-box;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 375px;
+    padding-top: 9.75rem;
+  }
 `
 
 export const IntroParagraph1 = styled.p`
-  margin-top: 110px;
-  font-size: 28px;
-  color: #919FAD;
+  font-family: 'Gothic Regular';
+  font-size: 1.375rem;
+  color: #747474;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 1rem;
+  }
 `
 
 export const IntroParagraph2 = styled.p`
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: bold;
+  margin-top: 0.5rem;
+  font-family: 'Gothic Bold';
+  font-size: 2rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 1.25rem;
+  }
 `
 
 export const IntroItemWrapper = styled.div`
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: row;
+    width: 446px;
+    padding: 1.25rem 2.5rem;
+    box-sizing: border-box;
+    background-color: #FFF;
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, .16);
+    border-radius: 10px;
+  }
+  
+  @media ${({ theme }) => theme.media.mobile} {
+    flex-direction: row;
+    width: 335px;
+    padding: 1.375rem 1.25rem;
+    box-sizing: border-box;
+    background-color: #FFF;
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, .16);
+    border-radius: 10px;
+  }
 `
 
 export const IntroItemsWrapper = styled.div`
   display: flex;
-  margin-top: 90px;
+  width: 100%;
+  margin-top: 6rem;
 
   ${IntroItemWrapper} + ${IntroItemWrapper} {
-    margin-left: 80px;
+    margin-left: 3.875rem;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4.625rem;
+
+    ${IntroItemWrapper} + ${IntroItemWrapper} {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3.25rem;
+
+    ${IntroItemWrapper} + ${IntroItemWrapper} {
+      margin-left: 0;
+      margin-top: 0.875rem;
+    }
   }
 `
 
-export const IntroImageItemWrapper = styled.div<IntroImageItemWrapperProps>`
-  width: ${({ width }) => width}px;
-  height: 240px;
-  margin-bottom: 40px;
+export const IntroImageItemWrapper = styled.div`
+  width: 300px;
+  height: 200px;
+  margin-bottom: 0.875rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `
 
-export const IntroItemTitle = styled.p`
-  margin-bottom: 20px;
-  font-size: 26px;
-  font-weight: bolder;
+export const IntroItemContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    align-items: flex-start;
+  }
+`
+
+export const IntroItemTabletIcon = styled(Image)`
+  display: none;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding-left: 1rem;
+    margin-right: 2rem;
+  }
+`
+
+export const IntroItemMobileIcon = styled(Image)`
+  display: none;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 0.625rem;
+  }
+`
+
+export const ContentToggleButton = styled.img`
+  display: none;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
+    width: 24px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+`
+
+export const IntroItemTitle = styled.div<IntroItemTitleProps>`
+  margin-bottom: 0.875rem;
+  font-family: 'Mark Pro Bold';
+  font-size: 1.5rem;
   color: #3370E8;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 1.25rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 1.125rem;
+
+    ${({ show }) => show && css`
+      padding-bottom: 0.625rem;
+      border-bottom: 1px solid #E9E9E9;
+    `}
+  }
 `
 
-export const IntroItemContent = styled.p`
-  width: 375px;
-  font-size: 24px;
-  color: #4F5A65;
+export const IntroItemContent = styled.p<IntroItemContentProps>`
+  width: 272px;
+  font-family: 'Gothic Regular';
+  font-size: 1rem;
+  color: #747474;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+    width: 100%;
+    margin-top: 1.25rem;
+
+    ${({ show }) => show && css`display: block`}
+  }
 `
 
 export const ChattingImageWrapper = styled.div`

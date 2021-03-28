@@ -40,16 +40,16 @@ module.exports = {
     paragraph2: '이런 것들을 중요하게 생각해요',
     items: [
       {
-        title: '고객 행동 관찰/분석하기',
-        content: '좋은 프로덕트로 만들기 위해서는 지속적으로 고객의 행동을 관찰하고 그 행동 속 숨어있는 의미를 찾아 프로덕트에 반영해고 검증해야합니다',
+        title: 'Observing user behavior',
+        content: '사용자의 행동을 관찰하고 그속에 숨어있는 의미를 찾아 프로덕트에 반영',
       },
       {
         title: 'Date-Informed design',
-        content: '정성조사를 통한 인사이트와 이를 뒷받침할 정량 데이터를 기반으로 최적화된 디자인 전략을 수립하는 것을 지향합니다',
+        content: '정성조사를 통한 인사이트와 정량데이터를 결합하여 최적화된 전략을 수립',
       },
       {
-        title: 'Microcopy',
-        content: '잘 작성된 UX writing은 고객의 행동에 대한 동기를 부여하며 결국 행동을 끌어낼 수 있고, 이로 인해 퍼널별 전환율을 높일 수 있습니다',
+        title: 'UX writing',
+        content: '동기를 부여하며 결국 행동을 끌어내어 퍼널별 전환율을 높이는 Writing',
       },
     ],
   },
