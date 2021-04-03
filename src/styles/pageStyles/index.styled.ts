@@ -535,18 +535,121 @@ export const IntroItemContent = styled.p<IntroItemContentProps>`
     width: 100%;
     margin-top: 1.25rem;
 
-    ${({ show }) => show && css`display: block`}
+    ${({ show }) => show && css`
+      display: block;
+    `}
+  }
+`
+
+export const BubblePageInnerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  box-sizing: border-box;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+    max-width: 375px;
   }
 `
 
 export const ChattingImageWrapper = styled.div`
-  width: 600px;
-  height: auto;
-  margin-top: 60px;
+  position: relative;
+  width: 548px;
+  height: 187px;
+  margin-top: 4.875rem;
+  margin-bottom: 16rem; 
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 468px;
+    height: 245px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 310px;
+    height: 202px;
+    margin-bottom: 10rem; 
+  }
+`
+
+export const ChattingImage1 = styled.div`
+  width: 216px;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 178px;
+  }
+`
+
+export const ChattingImage2 = styled.div`
+  position: absolute;
+  top: 66px;
+  right: 0;
+  width: 257px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    top: 91px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    top: 80px;
+    width: 212px;
+  }
+`
+
+export const ChattingImage3 = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 247px;
+  }
 `
 
 export const PeopleImageWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
   width: 580px;
   height: auto;
-  margin-top: auto;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 325px;
+  }
+`
+
+export const ProjectPageBackground = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/background.jpeg');
+`
+
+export const ProjectPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  box-sizing: border-box;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+    max-width: 375px;
+  }
 `

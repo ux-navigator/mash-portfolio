@@ -169,7 +169,7 @@ function IndexPage() {
         </Styled.CommonPageBackground>
       </Page>
       <Page>
-        <Styled.CommonPageInnerWrapper>
+        <Styled.BubblePageInnerWrapper>
           <Styled.IntroParagraph1>
             {Config.main_fifth.paragraph1}
           </Styled.IntroParagraph1>
@@ -177,12 +177,27 @@ function IndexPage() {
             {Config.main_fifth.paragraph2}
           </Styled.IntroParagraph2>
           <Styled.ChattingImageWrapper>
-            <Image name="chatting.png" />
+            <Styled.ChattingImage1>
+              <Image name="chat1" />
+            </Styled.ChattingImage1>
+            <Styled.ChattingImage2>
+              <Image name="chat2" />
+            </Styled.ChattingImage2>
+            <Styled.ChattingImage3>
+              <Image name="chat3" />
+            </Styled.ChattingImage3>
           </Styled.ChattingImageWrapper>
           <Styled.PeopleImageWrapper>
             <Image name="people.png" />
           </Styled.PeopleImageWrapper>
-        </Styled.CommonPageInnerWrapper>
+        </Styled.BubblePageInnerWrapper>
+      </Page>
+      <Page>
+        <Styled.ProjectPageBackground>
+          <Styled.ProjectPageWrapper>
+
+          </Styled.ProjectPageWrapper>
+        </Styled.ProjectPageBackground>
       </Page>
     </Pagination>
   )

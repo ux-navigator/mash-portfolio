@@ -54,7 +54,7 @@ module.exports = {
     ],
   },
   main_fifth: {
-    paragraph1: '저는 프로젝트를 할 때',
+    paragraph1: '저는 팀 프로젝트를 할 때',
     paragraph2: '이런 팀원이라는 말을 자주 들어요',
   }
 }
