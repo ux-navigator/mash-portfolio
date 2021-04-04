@@ -177,13 +177,13 @@ function IndexPage() {
             {Config.main_fifth.paragraph2}
           </Styled.IntroParagraph2>
           <Styled.ChattingImageWrapper>
-            <Styled.ChattingImage1>
+            <Styled.ChattingImage1 show>
               <Image name="chat1" />
             </Styled.ChattingImage1>
-            <Styled.ChattingImage2>
+            <Styled.ChattingImage2 show>
               <Image name="chat2" />
             </Styled.ChattingImage2>
-            <Styled.ChattingImage3>
+            <Styled.ChattingImage3 show>
               <Image name="chat3" />
             </Styled.ChattingImage3>
           </Styled.ChattingImageWrapper>

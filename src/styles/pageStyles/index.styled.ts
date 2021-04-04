@@ -19,6 +19,10 @@ interface IntroItemContentProps {
   show: boolean
 }
 
+interface ChattingImageProps {
+  show: boolean
+}
+
 export const FirstPageInnerWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -582,7 +586,16 @@ export const ChattingImageWrapper = styled.div`
   }
 `
 
-export const ChattingImage1 = styled.div`
+const ChattingImage = styled.div<ChattingImageProps>`
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  ${({ show }) => show && css`
+    opacity: 1;
+  `}
+`
+
+export const ChattingImage1 = styled(ChattingImage)`
   width: 216px;
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -590,7 +603,7 @@ export const ChattingImage1 = styled.div`
   }
 `
 
-export const ChattingImage2 = styled.div`
+export const ChattingImage2 = styled(ChattingImage)`
   position: absolute;
   top: 66px;
   right: 0;
@@ -606,7 +619,7 @@ export const ChattingImage2 = styled.div`
   }
 `
 
-export const ChattingImage3 = styled.div`
+export const ChattingImage3 = styled(ChattingImage)`
   position: absolute;
   bottom: 0;
   width: 300px;
