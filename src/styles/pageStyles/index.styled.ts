@@ -1,6 +1,11 @@
 /* External dependencies */
 import styled, { css } from 'styled-components'
+
+/* Internal dependencies */
+import Underline from 'components/Underline'
+import { UnderlineWrapper } from 'components/Underline/Underline.styled'
 import Image from 'components/Image'
+import BackgroundSection from 'components/BackgroundSection'
 
 interface IntroPageInnerWrapperProps {
   fixed: boolean
@@ -211,6 +216,8 @@ export const IntroWrapper = styled.div`
 `
 
 export const IntroTitle = styled.p`
+  display: flex;
+  flex-direction: column;
   width: 430px;
   font-family: 'Mark Pro Bold';
   font-size: 4rem;
@@ -226,6 +233,13 @@ export const IntroTitle = styled.p`
     font-size: 2.625rem;
     line-height: 3.75rem;
   }
+`
+
+export const IntroUnderline = styled(Underline)`
+  bottom: 4px;
+  height: 6.2px;
+  opacity: 0.6;
+  background-color: #C2C2C2;
 `
 
 export const NotMobileIntroListItem = styled.div`
@@ -564,6 +578,7 @@ export const BubblePageInnerWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
+    padding-top: 60px;
   }
 `
 
@@ -640,21 +655,34 @@ export const PeopleImageWrapper = styled.div`
   }
 `
 
-export const ProjectPageBackground = styled.div`
+export const ProjectPageBackground = styled(BackgroundSection)`
   width: 100%;
   height: 100%;
-  background-image: url('../../images/background.jpeg');
+  background-repeat: no-repeat;
+  background-position: top 0 left 0;
+  background-size: cover;
 `
 
 export const ProjectPageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  background-color: #3370E8;
+  opacity: 0.9;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    padding-top: 60px;
+  }
+`
+
+export const ProjectPageInnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 80px;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -664,5 +692,25 @@ export const ProjectPageWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
+  }
+`
+
+export const ProjectUnderline = styled(Underline)`
+  bottom: -2px;
+  height: 6.2px;
+  opacity: 0.6;
+  background-color: #FFF;
+`
+
+export const ProjectTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 6.375rem;
+  font-size: 4rem;
+  font-family: 'Mark Pro Bold';
+  color: white;
+
+  ${UnderlineWrapper} + ${UnderlineWrapper} {
+    margin-top: 0.5rem;
   }
 `

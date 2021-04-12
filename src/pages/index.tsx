@@ -5,8 +5,7 @@ import React, { useContext, useEffect, useState, useCallback } from 'react'
 import { GlobalContext } from 'contexts/globalContext'
 import useLayout from 'hooks/useLayout'
 import { isSafari } from 'utils/browserUtils'
-import { SCROLLING_DURATION } from 'components/Pagination'
-import Pagination, { Page } from 'components/Pagination'
+import Pagination, { Page, SCROLLING_DURATION } from 'components/Pagination'
 import Image from 'components/Image'
 import SVGIcon, { Size } from 'components/SVGIcon'
 import * as Styled from 'styles/pageStyles/index.styled'
@@ -82,7 +81,18 @@ function IndexPage() {
             <Image name="ellipse2.png" />
           </Styled.EllipseImage2Wrapper>
           <Styled.IntroWrapper>
-            <Styled.IntroTitle>{ Config.main_second.title }</Styled.IntroTitle>
+            <Styled.IntroTitle>
+              {Config.main_second.title.map((text, index) => (
+                <Styled.IntroUnderline
+                  key={text}
+                  trigger={currentPage === 1}
+                  delay={600 + index * 200}
+                  repeat
+                >
+                  {text}
+                </Styled.IntroUnderline>
+              ))}
+            </Styled.IntroTitle>
             <Styled.IntroContent>
               <Styled.NotMobileContentTitle>{ Config.main_second.notMobileParagraphTitle }</Styled.NotMobileContentTitle>
               <Styled.NotMobileContentList>
@@ -109,7 +119,18 @@ function IndexPage() {
             <Image name="ellipse2.png" />
           </Styled.EllipseImage2Wrapper>
           <Styled.IntroWrapper>
-            <Styled.IntroTitle dangerouslySetInnerHTML={{ __html: Config.main_third.title }} />
+            <Styled.IntroTitle>
+              {Config.main_third.title.map((text, index) => (
+                <Styled.IntroUnderline
+                  key={text}
+                  trigger={currentPage === 2}
+                  delay={600 + index * 200}
+                  repeat
+                >
+                  {text}
+                </Styled.IntroUnderline>
+              ))}
+            </Styled.IntroTitle>
             <Styled.IntroContent>
               {Config.main_third.notMobileParagraphs.map((paragraph, index) => (
                 <Styled.NotMobileIntroListItem key={index}>
@@ -142,7 +163,7 @@ function IndexPage() {
             </Styled.IntroParagraph2>
             <Styled.IntroItemsWrapper>
               {Config.main_fourth.items.map((item, index) => (
-                <Styled.IntroItemWrapper>
+                <Styled.IntroItemWrapper key={index}>
                   <Styled.IntroImageItemWrapper>
                     <Image name={IntroMainImages[index]} />
                   </Styled.IntroImageItemWrapper>
@@ -195,7 +216,20 @@ function IndexPage() {
       <Page>
         <Styled.ProjectPageBackground>
           <Styled.ProjectPageWrapper>
-
+            <Styled.ProjectPageInnerWrapper>
+              <Styled.ProjectTitle>
+                { Config.main_sixth.title.map((text, index) => (
+                  <Styled.ProjectUnderline
+                    key={text}
+                    trigger={currentPage === 5}
+                    delay={600 + index * 500}
+                    repeat
+                  >
+                    {text}
+                  </Styled.ProjectUnderline>
+                ))}
+              </Styled.ProjectTitle>
+            </Styled.ProjectPageInnerWrapper>
           </Styled.ProjectPageWrapper>
         </Styled.ProjectPageBackground>
       </Page>

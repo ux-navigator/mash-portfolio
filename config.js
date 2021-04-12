@@ -9,7 +9,7 @@ module.exports = {
     skills: ['UX Research', 'UX/UI Design', 'Publishing'],
   },
   main_second: {
-    title: 'What does "UX" mean to you?',
+    title: ['What does', '"UX" mean', 'to you?'],
     notMobileParagraphTitle: '나침반 없이 바다 한가운데에서 떠나는 항해',
     notMobileParagraphs: [
       'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해  프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
@@ -23,7 +23,7 @@ module.exports = {
     ],
   },
   main_third: {
-    title: 'What kind of products<br /> are good?',
+    title: ['What kind of', 'products', 'are good?'],
     notMobileParagraphs: [
       '지속적으로 가설을 세우고 검증하는 프로덕트',
       '북극성 지표를 찾아 일관성을 유지하는 프로덕트',
@@ -56,5 +56,9 @@ module.exports = {
   main_fifth: {
     paragraph1: '저는 팀 프로젝트를 할 때',
     paragraph2: '이런 팀원이라는 말을 자주 들어요',
+  },
+  main_sixth: {
+    title: ['My Projects', 'are here!'],
+    button: '프로젝트 구경하기',
   }
 }
