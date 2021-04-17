@@ -209,13 +209,25 @@ function IndexPage() {
             {Config.main_fifth.paragraph2}
           </Styled.IntroParagraph2>
           <Styled.ChattingImageWrapper>
-            <Styled.ChattingImage1 show>
+            <Styled.ChattingImage1
+              trigger={currentPage === 4}
+              delay={500}
+              repeat
+            >
               <Image name="chat1" />
             </Styled.ChattingImage1>
-            <Styled.ChattingImage2 show>
+            <Styled.ChattingImage2
+              trigger={currentPage === 4}
+              delay={1000}
+              repeat
+            >
               <Image name="chat2" />
             </Styled.ChattingImage2>
-            <Styled.ChattingImage3 show>
+            <Styled.ChattingImage3
+              trigger={currentPage === 4}
+              delay={1500}
+              repeat
+            >
               <Image name="chat3" />
             </Styled.ChattingImage3>
           </Styled.ChattingImageWrapper>

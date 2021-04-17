@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 
 /* Internal dependencies */
 import Underline from 'components/Underline'
+import DelayShow from 'components/DelayShow'
 import { UnderlineWrapper } from 'components/Underline/Underline.styled'
 import Image from 'components/Image'
 import BackgroundSection from 'components/BackgroundSection'
@@ -606,16 +607,7 @@ export const ChattingImageWrapper = styled.div`
   }
 `
 
-const ChattingImage = styled.div<ChattingImageProps>`
-  opacity: 0;
-  transition: opacity 0.3s;
-
-  ${({ show }) => show && css`
-    opacity: 1;
-  `}
-`
-
-export const ChattingImage1 = styled(ChattingImage)`
+export const ChattingImage1 = styled(DelayShow)`
   width: 216px;
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -623,7 +615,7 @@ export const ChattingImage1 = styled(ChattingImage)`
   }
 `
 
-export const ChattingImage2 = styled(ChattingImage)`
+export const ChattingImage2 = styled(DelayShow)`
   position: absolute;
   top: 66px;
   right: 0;
@@ -639,7 +631,7 @@ export const ChattingImage2 = styled(ChattingImage)`
   }
 `
 
-export const ChattingImage3 = styled(ChattingImage)`
+export const ChattingImage3 = styled(DelayShow)`
   position: absolute;
   bottom: 0;
   width: 300px;
