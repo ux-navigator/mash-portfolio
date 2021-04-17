@@ -215,7 +215,7 @@ export const IntroWrapper = styled.div`
   }
 `
 
-export const IntroTitle = styled.p`
+export const IntroTitle = styled.div`
   display: flex;
   flex-direction: column;
   width: 430px;
