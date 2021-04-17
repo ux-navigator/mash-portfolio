@@ -23,9 +23,14 @@ function Pagination({ children }: PaginationProps) {
   const pageRefs = useRef<HTMLDivElement[]>([])
   const currentScrollTop = useRef(typeof window !== 'undefined' ? window.pageYOffset : 0)
   const currentPageIndex = useRef(0)
+  const isMounted = useRef(false)
 
   const handleScroll = useThrottle(() => {
     if (typeof window === 'undefined') {
+      return
+    }
+
+    if (!isMounted.current) {
       return
     }
 
@@ -71,6 +76,16 @@ function Pagination({ children }: PaginationProps) {
       document.removeEventListener('scroll', handleScroll)
     }
   }, [handleScroll])
+
+  useEffect(() => {
+    window.scroll({
+      behavior: 'smooth',
+      top: 0,
+    })
+    setTimeout(() => {
+      isMounted.current = true
+    }, SCROLLING_DURATION)
+  }, [])
 
   return (
     <>
