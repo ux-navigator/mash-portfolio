@@ -194,6 +194,7 @@ export const EllipseImage2Wrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 210px;
     display: block;
+    top: 3rem;
   }
 `
 
@@ -234,7 +235,7 @@ export const IntroTitle = styled.div`
     margin-bottom: 10.5rem;
   }
   @media ${({ theme }) => theme.media.mobile} {
-    width: 240px;
+    width: 272px;
     margin-bottom: 6rem;
     font-size: 2.625rem;
     line-height: 3.75rem;
@@ -574,7 +575,7 @@ export const BubblePageInnerWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 5rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -584,7 +585,7 @@ export const BubblePageInnerWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
-    padding-top: 60px;
+    padding-top: 3.75;
   }
 `
 
@@ -663,11 +664,11 @@ export const ProjectPageBackground = styled(BackgroundSection)`
 export const ProjectPageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding-top: 80px;
+  padding-top: 5rem;
   background-color: rgba(51, 108, 232, 0.9);
 
   @media ${({ theme }) => theme.media.mobile} {
-    padding-top: 60px;
+    padding-top: 3.75rem;
   }
 `
 
@@ -763,7 +764,7 @@ export const ContactPageWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 5rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -773,7 +774,8 @@ export const ContactPageWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
-    padding: 60px 0 0 20px;
+    padding-top: 3.75rem;
+    padding-left: 20px;
   }
 `
 
