@@ -229,6 +229,14 @@ function IndexPage() {
                   </Styled.ProjectUnderline>
                 ))}
               </Styled.ProjectTitle>
+              <Styled.ProjectButton to="/project">
+                <Styled.ProjectButtonText>
+                  { Config.main_sixth.button }
+                </Styled.ProjectButtonText>
+                <Styled.ProjectButtonIcon>
+                  <SVGIcon name="right-arrow" size={Size.XSmall} />
+                </Styled.ProjectButtonIcon>
+              </Styled.ProjectButton>
             </Styled.ProjectPageInnerWrapper>
           </Styled.ProjectPageWrapper>
         </Styled.ProjectPageBackground>

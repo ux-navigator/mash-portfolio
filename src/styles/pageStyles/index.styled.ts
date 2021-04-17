@@ -1,5 +1,6 @@
 /* External dependencies */
 import styled, { css } from 'styled-components'
+import { Link } from 'gatsby'
 
 /* Internal dependencies */
 import Underline from 'components/Underline'
@@ -667,8 +668,7 @@ export const ProjectPageWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 80px;
-  background-color: #3370E8;
-  opacity: 0.9;
+  background-color: rgba(51, 108, 232, 0.9);
 
   @media ${({ theme }) => theme.media.mobile} {
     padding-top: 60px;
@@ -692,6 +692,7 @@ export const ProjectPageInnerWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
+    padding-left: 1.25rem;
   }
 `
 
@@ -712,5 +713,48 @@ export const ProjectTitle = styled.div`
 
   ${UnderlineWrapper} + ${UnderlineWrapper} {
     margin-top: 0.5rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 2.625rem;
+  }
+`
+
+export const ProjectButton = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.875rem;
+  height: 3.25rem;
+  margin-top: 2.75rem;
+  background-color: #FFF;
+  border-radius: 3.25rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 16rem;
+    height: 3.75rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 13.25rem;
+    height: 3.375rem;
+    margin-top: 4rem;
+  }
+`
+
+export const ProjectButtonText = styled.p`
+  font-size: 1.125rem;
+  font-family: 'Gothic Bold';
+  color: #3370E8;
+  transform: translateY(7%);
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 1rem;
+  }
+`
+
+export const ProjectButtonIcon = styled.div`
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-left: 1.125rem;
   }
 `
