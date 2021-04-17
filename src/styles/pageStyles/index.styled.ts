@@ -799,10 +799,15 @@ export const ContactUnderline = styled(Underline)`
   height: 6.2px;
   opacity: 0.6;
   background-color: #C2C2C2;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    bottom: 2px;
+    height: 4px;
+  }
 `
 
 export const ContactSubTitle = styled.p`
-  margin-top: 1rem;
+  margin-top: 1.125rem;
   font-family: 'Mark Pro Light';
   font-size: 1.375rem;
   color: #2C3E50;
@@ -813,7 +818,7 @@ export const ContactSubTitle = styled.p`
 
   @media ${({ theme }) => theme.media.mobile} {
     width: 18.5rem;
-    margin-top: 0.625rem;
+    margin-top: 0.875rem;
     font-size: 1rem;
   }
 `
