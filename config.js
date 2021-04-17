@@ -60,5 +60,26 @@ module.exports = {
   main_sixth: {
     title: ['My Projects', 'are here!'],
     button: '프로젝트 구경하기',
-  }
+  },
+  main_seven: {
+    title: 'Contact Me!',
+    subTitle: 'Do you want to know more about me? Always Welcome!',
+    items: [
+      {
+        icon: 'letter',
+        content: 'Jiny1756@gmail.com',
+        language: 'en',
+      },
+      {
+        icon: 'speech-bubble',
+        content: 'KAKAO ID : JinYoung419',
+        language: 'en',
+      },
+      {
+        icon: 'bottom-arrow',
+        content: '이력서 내려받기',
+        language: 'ko',
+      },
+    ],
+  },
 }

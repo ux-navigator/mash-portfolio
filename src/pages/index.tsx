@@ -3,7 +3,9 @@ import React, { useContext, useEffect, useState, useCallback } from 'react'
 
 /* Internal dependencies */
 import { GlobalContext } from 'contexts/globalContext'
+import DeviceService from 'services/DeviceService'
 import useLayout from 'hooks/useLayout'
+import Device from 'constants/Device'
 import { isSafari } from 'utils/browserUtils'
 import Pagination, { Page, SCROLLING_DURATION } from 'components/Pagination'
 import Image from 'components/Image'
@@ -21,6 +23,7 @@ function IndexPage() {
 
   const [isIntroFixed, setIntroFixed] = useState(false)
   const [currentInfoItemIndex, setCurrentInfoItemIndex] = useState<number | null>(null)
+  const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
 
   const leavingIntroPage = useCallback((pageIndex: number) => {
     if (
@@ -40,6 +43,14 @@ function IndexPage() {
     }
     setCurrentInfoItemIndex(index)
   }, [currentInfoItemIndex])
+
+  const handleEnterContactItem = useCallback((index: number) => {
+    setContactItemIndex(index)
+  }, [])
+
+  const handleLeaveContactItem = useCallback(() => {
+    setContactItemIndex(null)
+  }, [])
 
   useEffect(() => {
     if (currentPage === 1 || currentPage === 2) {
@@ -240,6 +251,47 @@ function IndexPage() {
             </Styled.ProjectPageInnerWrapper>
           </Styled.ProjectPageWrapper>
         </Styled.ProjectPageBackground>
+      </Page>
+      <Page>
+        <Styled.ContactPageWrapper>
+          <Styled.ContactPageInnerWrapper>
+            <Styled.ContactTitle>
+              <Styled.ContactUnderline
+                key={Config.main_seven.title}
+                trigger={currentPage === 6}
+                delay={600}
+                repeat
+              >
+                {Config.main_seven.title}
+              </Styled.ContactUnderline>
+            </Styled.ContactTitle>
+            <Styled.ContactSubTitle>
+              {Config.main_seven.subTitle}
+            </Styled.ContactSubTitle>
+            <Styled.ContactInfoWrapper>
+              {Config.main_seven.items.map((item, index) => (
+                <Styled.ContactInfoItem
+                  key={index}
+                  onMouseEnter={() => handleEnterContactItem(index)}
+                  onMouseLeave={handleLeaveContactItem}
+                >
+                  <Styled.ContactIcon>
+                    <SVGIcon
+                      name={`${item.icon}${contactItemIndex === index ? '-blue' : ''}`}
+                      size={DeviceService.getDevice() === Device.Mobile ? Size.Small : Size.Normal}
+                    />
+                  </Styled.ContactIcon>
+                  <Styled.ContactContent isKorean={item.language === 'ko'}>
+                    {item.content}
+                  </Styled.ContactContent>
+                </Styled.ContactInfoItem>
+              ))}
+            </Styled.ContactInfoWrapper>
+            <Styled.ContactBackgroundImage>
+              <Image name="background-contact.png" />
+            </Styled.ContactBackgroundImage>
+          </Styled.ContactPageInnerWrapper>
+        </Styled.ContactPageWrapper>
       </Page>
     </Pagination>
   )
