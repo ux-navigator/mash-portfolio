@@ -275,9 +275,9 @@ function IndexPage() {
           <Styled.ProjectListWrapper>
             { Config.main_seven.projects.map(project => (
               <Styled.ProjectWrapper>
-                <Styled.ProjectImage>
-                  <Image name={project.image} />
-                </Styled.ProjectImage>
+                <Styled.ProjectImageWrapper>
+                  <Styled.ProjectImage name={project.image} />
+                </Styled.ProjectImageWrapper>
                 <Styled.ProjectContent>
                   <Styled.ProjectName>
                     { project.title }

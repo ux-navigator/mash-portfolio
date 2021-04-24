@@ -798,16 +798,28 @@ export const ProjectListWrapper = styled.div`
   flex-wrap: wrap;
   width: 855px;
   height: 405px;
+  margin-top: 4.625rem;
 `
 
 export const ProjectWrapper = styled.div`
   width: 245px;
   height: 185px;
-  border: 1px solid black;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 6px 6px 16px 1px rgba(0, 0, 0, .1);
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
 `
 
-export const ProjectImage = styled.div`
+export const ProjectImageWrapper = styled.div`
   width: 100%;
+  height: 118px;
+  overflow: hidden;
+`
+
+export const ProjectImage = styled(Image)`
+  width: 100%;
+  height: 100%;
 `
 
 export const ProjectContent = styled.div`

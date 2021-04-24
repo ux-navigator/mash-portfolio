@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
 
 interface ImageProps {
   name: string
@@ -37,6 +37,8 @@ const Image = ({ name, alt, className }: ImageProps) => {
         return (
           <Img
             className={className}
+            objectFit="cover"
+            objectPosition="50% 50%"
             fluid={image.node.childImageSharp.fluid}
             alt={alt}
           />
