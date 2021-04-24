@@ -62,6 +62,42 @@ module.exports = {
     button: '프로젝트 구경하기',
   },
   main_seven: {
+    paragraph1: '트랜드를 파악하기 위해',
+    paragraph2: '이런 저런 글을 쓰고 있어요',
+    projects: [
+      {
+        title: '[UX/UI] e-Book 1사 전격 비교!',
+        image: 'background.jpeg',
+        createdAt: 'Jun 03. 2020',
+      },
+      {
+        title: '[UX/UI] e-Book 2사 전격 비교!',
+        image: 'background.jpeg',
+        createdAt: 'Jun 03. 2020',
+      },
+      {
+        title: '[UX/UI] e-Book 3사 전격 비교!',
+        image: 'background.jpeg',
+        createdAt: 'Jun 03. 2020',
+      },
+      {
+        title: '[UX/UI] e-Book 4사 전격 비교!',
+        image: 'background.jpeg',
+        createdAt: 'Jun 03. 2020',
+      },
+      {
+        title: '[UX/UI] e-Book 5사 전격 비교!',
+        image: 'background.jpeg',
+        createdAt: 'Jun 03. 2020',
+      },
+      {
+        title: '[UX/UI] e-Book 6사 전격 비교!',
+        image: 'background.jpeg',
+        createdAt: 'Jun 03. 2020',
+      },
+    ],
+  },
+  main_eight: {
     title: 'Contact Me!',
     subTitle: 'Do you want to know more about me? Always Welcome!',
     items: [

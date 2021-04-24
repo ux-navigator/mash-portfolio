@@ -265,23 +265,50 @@ function IndexPage() {
         </Styled.ProjectPageBackground>
       </Page>
       <Page>
+        <Styled.BlogPageWrapper>
+          <Styled.BlogMainTitle>
+          { Config.main_seven.paragraph1 }
+          </Styled.BlogMainTitle>
+          <Styled.BlogSubTitle>
+          { Config.main_seven.paragraph2 }
+          </Styled.BlogSubTitle>
+          <Styled.ProjectListWrapper>
+            { Config.main_seven.projects.map(project => (
+              <Styled.ProjectWrapper>
+                <Styled.ProjectImage>
+                  <Image name={project.image} />
+                </Styled.ProjectImage>
+                <Styled.ProjectContent>
+                  <Styled.ProjectName>
+                    { project.title }
+                  </Styled.ProjectName>
+                  <Styled.ProjectCreatedAt>
+                    { project.createdAt }
+                  </Styled.ProjectCreatedAt>
+                </Styled.ProjectContent>
+              </Styled.ProjectWrapper>
+            ))}
+          </Styled.ProjectListWrapper>
+        </Styled.BlogPageWrapper>
+      </Page>
+      <Page>
         <Styled.ContactPageWrapper>
           <Styled.ContactPageInnerWrapper>
             <Styled.ContactTitle>
               <Styled.ContactUnderline
-                key={Config.main_seven.title}
+                key={Config.main_eight.title}
                 trigger={currentPage === 6}
                 delay={600}
                 repeat
               >
-                {Config.main_seven.title}
+                {Config.main_eight.title}
               </Styled.ContactUnderline>
             </Styled.ContactTitle>
             <Styled.ContactSubTitle>
-              {Config.main_seven.subTitle}
+              {Config.main_eight.subTitle}
             </Styled.ContactSubTitle>
             <Styled.ContactInfoWrapper>
-              {Config.main_seven.items.map((item, index) => (
+              {Config.main_eight.items.map((item, index) => (
                 <Styled.ContactInfoItem
                   key={index}
                   onMouseEnter={() => handleEnterContactItem(index)}

@@ -756,6 +756,74 @@ export const ProjectButtonIcon = styled.div`
   }
 `
 
+export const BlogPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 5rem;
+  box-sizing: border-box;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+    max-width: 375px;
+    padding-top: 3.75rem;
+    padding-left: 20px;
+  }
+`
+
+export const BlogMainTitle = styled.div`
+  font-size: 1.375rem;
+  font-family: 'Gothic Regular';
+  color: #747474;
+`
+
+export const BlogSubTitle = styled.div`
+  margin-top: 0.75rem;
+  font-size: 2rem;
+  font-family: 'Gothic Bold';
+`
+
+export const ProjectListWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: 855px;
+  height: 405px;
+`
+
+export const ProjectWrapper = styled.div`
+  width: 245px;
+  height: 185px;
+  border: 1px solid black;
+`
+
+export const ProjectImage = styled.div`
+  width: 100%;
+`
+
+export const ProjectContent = styled.div`
+  padding: 1rem;
+`
+
+export const ProjectName = styled.p`
+  font-size: 0.75rem;
+  font-family: 'Gothic Bold';
+`
+
+export const ProjectCreatedAt = styled.p`
+  font-size: 0.625rem;
+  font-family: 'Gothic Regular';
+`
+
 export const ContactPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
