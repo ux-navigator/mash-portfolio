@@ -801,7 +801,8 @@ export const ProjectListWrapper = styled.div`
   margin-top: 4.625rem;
 `
 
-export const ProjectWrapper = styled.div`
+export const ProjectWrapper = styled.a`
+  display: block;
   width: 245px;
   height: 185px;
   overflow: hidden;
@@ -827,11 +828,16 @@ export const ProjectContent = styled.div`
 `
 
 export const ProjectName = styled.p`
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
   font-size: 0.75rem;
-  font-family: 'Gothic Bold';
+  font-family: 'Gothic Regular';
 `
 
 export const ProjectCreatedAt = styled.p`
+  margin-top: 0.375rem;
+  color: #747474;
   font-size: 0.625rem;
   font-family: 'Gothic Regular';
 `

@@ -66,31 +66,37 @@ module.exports = {
     paragraph2: '이런 저런 글을 쓰고 있어요',
     projects: [
       {
+        link: 'https://naver.com',
         title: '[UX/UI] e-Book 1사 전격 비교!',
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',
       },
       {
+        link: 'https://naver.com',
         title: '[UX/UI] e-Book 2사 전격 비교!',
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',
       },
       {
+        link: 'https://naver.com',
         title: '[UX/UI] e-Book 3사 전격 비교!',
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',
       },
       {
+        link: 'https://naver.com',
         title: '[UX/UI] e-Book 4사 전격 비교!',
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',
       },
       {
+        link: 'https://naver.com',
         title: '[UX/UI] e-Book 5사 전격 비교!',
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',
       },
       {
+        link: 'https://naver.com',
         title: '[UX/UI] e-Book 6사 전격 비교!',
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',

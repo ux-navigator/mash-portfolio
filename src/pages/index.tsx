@@ -274,7 +274,11 @@ function IndexPage() {
           </Styled.BlogSubTitle>
           <Styled.ProjectListWrapper>
             { Config.main_seven.projects.map(project => (
-              <Styled.ProjectWrapper>
+              <Styled.ProjectWrapper
+                href={project.link}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <Styled.ProjectImageWrapper>
                   <Styled.ProjectImage name={project.image} />
                 </Styled.ProjectImageWrapper>
