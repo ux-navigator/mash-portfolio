@@ -26,12 +26,16 @@ interface IntroItemContentProps {
   show: boolean
 }
 
-interface ChattingImageProps {
-  show: boolean
-}
-
 interface ContactContentProps {
   isKorean: boolean
+}
+
+interface ProjectWrapperProps {
+  limit: boolean
+}
+
+interface CarouselDotProps {
+  active: boolean
 }
 
 export const FirstPageInnerWrapper = styled.div`
@@ -773,9 +777,7 @@ export const BlogPageWrapper = styled.div`
 
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
-    max-width: 375px;
     padding-top: 3.75rem;
-    padding-left: 20px;
   }
 `
 
@@ -783,12 +785,41 @@ export const BlogMainTitle = styled.div`
   font-size: 1.375rem;
   font-family: 'Gothic Regular';
   color: #747474;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 1rem;
+  }
 `
 
 export const BlogSubTitle = styled.div`
   margin-top: 0.75rem;
   font-size: 2rem;
   font-family: 'Gothic Bold';
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 1.25rem;
+  }
+`
+
+export const ProjectWrapper = styled.a<ProjectWrapperProps>`
+  display: block;
+  width: 245px;
+  height: 185px;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 6px 6px 16px 1px rgba(0, 0, 0, .1);
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    ${({ limit }) => limit && css`
+      display: none;
+    `}
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    box-shadow: unset;
+  }
 `
 
 export const ProjectListWrapper = styled.div`
@@ -799,17 +830,45 @@ export const ProjectListWrapper = styled.div`
   width: 855px;
   height: 405px;
   margin-top: 4.625rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 550px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `
 
-export const ProjectWrapper = styled.a`
-  display: block;
-  width: 245px;
-  height: 185px;
-  overflow: hidden;
-  box-sizing: border-box;
-  box-shadow: 6px 6px 16px 1px rgba(0, 0, 0, .1);
-  border: 1px solid #D9D9D9;
-  border-radius: 8px;
+export const ProjectListMobileWrapper = styled.div`
+  display: none;
+  width: 100%;
+  height: 223px;
+  margin-top: 5.25rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: block;
+  }
+
+  & .slick-slide {
+    width: 245px;
+    padding: 0 15px;
+  }
+
+  & .slick-list {
+    height: 205px;
+  }
+`
+
+export const CarouselDot = styled.div<CarouselDotProps>`
+  width: 8px;
+  height: 8px;
+  background-color: #C2C2C2;
+  border-radius: 50%;
+
+  ${({ active }) => active && css`
+    background-color: #3370E8;
+  `}
 `
 
 export const ProjectImageWrapper = styled.div`

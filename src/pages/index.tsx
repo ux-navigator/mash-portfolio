@@ -1,5 +1,8 @@
 /* External dependencies */
 import React, { useContext, useEffect, useState, useCallback } from 'react'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 /* Internal dependencies */
 import { GlobalContext } from 'contexts/globalContext'
@@ -24,6 +27,7 @@ function IndexPage() {
   const [isIntroFixed, setIntroFixed] = useState(false)
   const [currentInfoItemIndex, setCurrentInfoItemIndex] = useState<number | null>(null)
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
+  const [currentProjectSlide, setCurrentProjectSlide] = useState(0)
 
   const leavingIntroPage = useCallback((pageIndex: number) => {
     if (
@@ -273,11 +277,13 @@ function IndexPage() {
           { Config.main_seven.paragraph2 }
           </Styled.BlogSubTitle>
           <Styled.ProjectListWrapper>
-            { Config.main_seven.projects.map(project => (
+            { Config.main_seven.projects.map((project, index) => (
               <Styled.ProjectWrapper
+                key={index}
                 href={project.link}
                 target="_blank"
                 rel="noreferrer noopener"
+                limit={index >= 4}
               >
                 <Styled.ProjectImageWrapper>
                   <Styled.ProjectImage name={`main_project/${project.image}`} />
@@ -293,6 +299,42 @@ function IndexPage() {
               </Styled.ProjectWrapper>
             ))}
           </Styled.ProjectListWrapper>
+          <Styled.ProjectListMobileWrapper>
+            <Slider
+              className="slider variable-width"
+              dots
+              infinite
+              centerMode
+              variableWidth
+              speed={500}
+              slidesToShow={1}
+              slidesToScroll={1}
+              customPaging={(index) => <Styled.CarouselDot active={index === currentProjectSlide} />}
+              beforeChange={(_, nextSlide) => setCurrentProjectSlide(nextSlide)}
+            >
+              { Config.main_seven.projects.map((project, index) => (
+                <Styled.ProjectWrapper
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  limit={index >= 4}
+                >
+                  <Styled.ProjectImageWrapper>
+                    <Styled.ProjectImage name={`main_project/${project.image}`} />
+                  </Styled.ProjectImageWrapper>
+                  <Styled.ProjectContent>
+                    <Styled.ProjectName>
+                      { project.title }
+                    </Styled.ProjectName>
+                    <Styled.ProjectCreatedAt>
+                      { project.createdAt }
+                    </Styled.ProjectCreatedAt>
+                  </Styled.ProjectContent>
+                </Styled.ProjectWrapper>
+              ))}
+            </Slider>
+          </Styled.ProjectListMobileWrapper>
         </Styled.BlogPageWrapper>
       </Page>
       <Page>
