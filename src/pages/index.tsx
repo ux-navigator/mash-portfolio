@@ -301,7 +301,7 @@ function IndexPage() {
             <Styled.ContactTitle>
               <Styled.ContactUnderline
                 key={Config.main_eight.title}
-                trigger={currentPage === 6}
+                trigger={currentPage === 7}
                 delay={600}
                 repeat
               >
