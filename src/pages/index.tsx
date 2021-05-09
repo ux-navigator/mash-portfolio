@@ -280,7 +280,7 @@ function IndexPage() {
                 rel="noreferrer noopener"
               >
                 <Styled.ProjectImageWrapper>
-                  <Styled.ProjectImage name={project.image} />
+                  <Styled.ProjectImage name={`main_project/${project.image}`} />
                 </Styled.ProjectImageWrapper>
                 <Styled.ProjectContent>
                   <Styled.ProjectName>
