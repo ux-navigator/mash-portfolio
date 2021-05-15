@@ -46,7 +46,7 @@ export const FirstPageInnerWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 8.75rem;
+  padding-top: 9rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -59,7 +59,7 @@ export const FirstPageInnerWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding-top: 4.375rem;
+    padding-top: 3.75rem;
   }
 `
 
@@ -148,7 +148,7 @@ export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
   width: 100%;
   height: 100%;
   position: relative;
-  padding-top: 5rem;
+  padding-top: 4rem;
   box-sizing: border-box;
   transition: opacity 1s;
 
@@ -368,7 +368,7 @@ export const CommonPageInnerWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 4rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -579,7 +579,7 @@ export const BubblePageInnerWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 4rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -589,7 +589,7 @@ export const BubblePageInnerWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
-    padding-top: 3.75;
+    padding-top: 3.75rem;
   }
 `
 
@@ -668,7 +668,7 @@ export const ProjectPageBackground = styled(BackgroundSection)`
 export const ProjectPageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding-top: 5rem;
+  padding-top: 4rem;
   background-color: rgba(51, 108, 232, 0.9);
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -768,7 +768,7 @@ export const BlogPageWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 4rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -909,7 +909,7 @@ export const ContactPageWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 4rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {

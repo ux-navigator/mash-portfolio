@@ -16,7 +16,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   top: 0;
   left: 0;
   right: 0;
-  padding: ${({ isScrolled }) => isScrolled ? 20 : 50}px 0;
+  padding: ${({ isScrolled }) => isScrolled ? 16 : 56}px 0;
   background-color: #FFFFFF;
   transition: padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   z-index: 9999;
@@ -26,7 +26,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   `}
 
   @media ${({ theme }) => theme.media.mobile} {
-    padding: ${({ isScrolled }) => isScrolled ? 10 : 15}px 0;
+    padding: 10px 0;
   }
 `
 
@@ -54,16 +54,11 @@ export const LogoWrapper = styled.div`
 `
 
 export const Logo = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 
   img {
     width: 100%;
-  }
-
-  @media ${({ theme }) => theme.media.mobile} {
-    width: 30px;
-    height: 30px;
   }
 `
 

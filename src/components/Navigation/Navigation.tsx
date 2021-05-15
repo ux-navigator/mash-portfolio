@@ -3,6 +3,7 @@ import React, { useContext, useState, useCallback } from 'react'
 
 /* Internal dependencies */
 import { GlobalContext } from 'contexts/globalContext'
+import SVGIcon from 'components/SVGIcon'
 import * as Styled from './Navigation.styled'
 import logo from 'images/logo.png'
 import menu from 'images/menu.png'
@@ -29,12 +30,12 @@ function Navigation() {
       <Styled.NavigationContent>
         <Styled.LogoWrapper>
           <Styled.Logo>
-            <img src={logo} alt="" />
+            <SVGIcon name="logo" size={32} />
           </Styled.Logo>
           <Styled.Title>Lee Jinyoung</Styled.Title>
         </Styled.LogoWrapper>
         <Styled.Menu onClick={handleShowNavigation}>
-          <img src={menu} alt="" />
+          <SVGIcon name="menu" size={40} />
         </Styled.Menu>
         <Styled.NavItemWrapper show={showNavigation}>
           <Styled.LinkWrapper>
