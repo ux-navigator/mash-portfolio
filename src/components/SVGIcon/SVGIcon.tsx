@@ -5,22 +5,13 @@ import _ from 'lodash'
 /* Internal dependencies */
 import * as Styled from './SVGIcon.styled'
 
-export enum Size {
-  XXSmall = 12,
-  XSmall = 16,
-  Small = 20,
-  Normal = 28,
-  Large = 38,
-  XLarge = 44,
-}
-
 interface SVGIconProps {
   className?: string
   name: string
-  size?: Size
+  size?: number
 }
 
-function SVGIcon({ className, name, size = Size.Normal }: SVGIconProps) {
+function SVGIcon({ className, name, size = 28 }: SVGIconProps) {
   const src = useMemo(() => {
     const fileName = _.endsWith(name, '.svg') ? name : `${name}.svg`
     try {

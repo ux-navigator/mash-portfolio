@@ -150,7 +150,7 @@ function IndexPage() {
               {Config.main_third.notMobileParagraphs.map((paragraph, index) => (
                 <Styled.NotMobileIntroListItem key={index}>
                   <Styled.Icon>
-                    <SVGIcon name="check" size={Size.Large} />
+                    <SVGIcon name="check" size={38} />
                   </Styled.Icon>
                   {paragraph}
                 </Styled.NotMobileIntroListItem>
@@ -158,7 +158,7 @@ function IndexPage() {
               {Config.main_third.mobileParagraphs.map((paragraph, index) => (
                 <Styled.MobileIntroListItem key={index}>
                   <Styled.Icon>
-                    <SVGIcon name="check" size={Size.Large} />
+                    <SVGIcon name="check" size={38} />
                   </Styled.Icon>
                   {paragraph}
                 </Styled.MobileIntroListItem>
@@ -261,7 +261,7 @@ function IndexPage() {
                   { Config.main_sixth.button }
                 </Styled.ProjectButtonText>
                 <Styled.ProjectButtonIcon>
-                  <SVGIcon name="right-arrow" size={Size.XSmall} />
+                  <SVGIcon name="right-arrow" size={16} />
                 </Styled.ProjectButtonIcon>
               </Styled.ProjectButton>
             </Styled.ProjectPageInnerWrapper>
@@ -363,7 +363,7 @@ function IndexPage() {
                   <Styled.ContactIcon>
                     <SVGIcon
                       name={`${item.icon}${contactItemIndex === index ? '-blue' : ''}`}
-                      size={DeviceService.getDevice() === Device.Mobile ? Size.Small : Size.Normal}
+                      size={DeviceService.getDevice() === Device.Mobile ? 20: 28}
                     />
                   </Styled.ContactIcon>
                   <Styled.ContactContent isKorean={item.language === 'ko'}>
