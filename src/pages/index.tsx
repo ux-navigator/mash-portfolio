@@ -12,7 +12,7 @@ import Device from 'constants/Device'
 import { isSafari } from 'utils/browserUtils'
 import Pagination, { Page, SCROLLING_DURATION } from 'components/Pagination'
 import Image from 'components/Image'
-import SVGIcon, { Size } from 'components/SVGIcon'
+import SVGIcon from 'components/SVGIcon'
 import * as Styled from 'styles/pageStyles/index.styled'
 import ship from 'images/ship.png'
 import Arrow from 'images/arrow.png'
@@ -94,7 +94,7 @@ function IndexPage() {
             }
           </Styled.ShipImageWrapper>
           <Styled.Arrow onClick={handleClickMainArrow}>
-            <SVGIcon name="main-arrow" size={48} />
+            <SVGIcon name="main-arrow" size={DeviceService.getDevice() === Device.Mobile ? 30 : 48} />
           </Styled.Arrow>
         </Styled.FirstPageInnerWrapper>
       </Page>

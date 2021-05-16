@@ -129,7 +129,7 @@ export const ShipImageWrapper = styled.div`
   @media ${({ theme }) => theme.media.tablet} {
     align-self: flex-end;
     position: absolute;
-    bottom: 0;
+    bottom: 60px;
     width: 31.2rem;
   }
 
@@ -164,6 +164,11 @@ export const Arrow = styled.div`
   transform: translateX(-50%);
   animation: ${bounce} 2s infinite;
   cursor: pointer;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 30px;
+    height: 30px;
+  }
 `
 
 export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
