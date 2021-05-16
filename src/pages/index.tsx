@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useContext, useEffect, useState, useCallback } from 'react'
+import React, { useContext, useEffect, useState, useCallback, useRef } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -29,6 +29,8 @@ function IndexPage() {
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
   const [currentProjectSlide, setCurrentProjectSlide] = useState(0)
 
+  const paginationRef = useRef<{ handleMovePage: (pageIndex: number) => void }>(null)
+
   const leavingIntroPage = useCallback((pageIndex: number) => {
     if (
       (pageIndex === 1 && currentPage === 0) ||
@@ -56,6 +58,12 @@ function IndexPage() {
     setContactItemIndex(null)
   }, [])
 
+  const handleClickMainArrow = useCallback(() => {
+    if (paginationRef.current) {
+      paginationRef.current.handleMovePage(2)
+    }
+  }, [])
+
   useEffect(() => {
     if (currentPage === 1 || currentPage === 2) {
       setTimeout(() => {
@@ -67,7 +75,7 @@ function IndexPage() {
   }, [currentPage])
 
   return (
-    <Pagination>
+    <Pagination ref={paginationRef}>
       <Page>
         <Styled.FirstPageInnerWrapper>
           <Styled.ContentWrapper>
@@ -85,7 +93,7 @@ function IndexPage() {
                 : <Image name="ship.png" />
             }
           </Styled.ShipImageWrapper>
-          <Styled.Arrow>
+          <Styled.Arrow onClick={handleClickMainArrow}>
             <SVGIcon name="main-arrow" size={48} />
           </Styled.Arrow>
         </Styled.FirstPageInnerWrapper>

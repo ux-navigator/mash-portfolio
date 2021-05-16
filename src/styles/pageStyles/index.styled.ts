@@ -163,6 +163,7 @@ export const Arrow = styled.div`
   height: 48px;
   transform: translateX(-50%);
   animation: ${bounce} 2s infinite;
+  cursor: pointer;
 `
 
 export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
