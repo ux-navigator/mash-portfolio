@@ -85,6 +85,9 @@ function IndexPage() {
                 : <Image name="ship.png" />
             }
           </Styled.ShipImageWrapper>
+          <Styled.Arrow>
+            <SVGIcon name="main-arrow" size={48} />
+          </Styled.Arrow>
         </Styled.FirstPageInnerWrapper>
       </Page>
       <Page>

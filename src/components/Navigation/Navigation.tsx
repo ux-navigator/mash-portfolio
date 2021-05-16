@@ -5,8 +5,6 @@ import React, { useContext, useState, useCallback } from 'react'
 import { GlobalContext } from 'contexts/globalContext'
 import SVGIcon from 'components/SVGIcon'
 import * as Styled from './Navigation.styled'
-import logo from 'images/logo.png'
-import menu from 'images/menu.png'
 import close from 'images/close.png'
 import Config from '../../../config'
 

@@ -1,5 +1,5 @@
 /* External dependencies */
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { Link } from 'gatsby'
 
 /* Internal dependencies */
@@ -141,6 +141,28 @@ export const ShipImageWrapper = styled.div`
 
 export const SafariImage = styled.img`
   width: 100%;
+`
+
+const bounce = keyframes`
+  0% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -20%);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+`
+
+export const Arrow = styled.div`
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  transform: translateX(-50%);
+  animation: ${bounce} 2s infinite;
 `
 
 export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`

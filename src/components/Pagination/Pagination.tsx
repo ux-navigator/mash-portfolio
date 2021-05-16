@@ -1,5 +1,13 @@
 /* External dependencies */
-import React, { useRef, useMemo, useEffect, useContext } from 'react'
+import React, {
+  useRef,
+  useMemo,
+  useEffect,
+  useContext,
+  useCallback,
+  forwardRef,
+  useImperativeHandle,
+} from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
 /* Internal dependencies */
@@ -17,7 +25,10 @@ interface PaginationProps {
 
 export const SCROLLING_DURATION = 1000
 
-function Pagination({ children }: PaginationProps) {
+function Pagination(
+  { children }: PaginationProps,
+  ref: React.Ref<{ handleMovePage: (pageIndex: number) => void }>,
+) {
   const { dispatch } = useContext(GlobalContext)
 
   const pageRefs = useRef<HTMLDivElement[]>([])
@@ -33,8 +44,6 @@ function Pagination({ children }: PaginationProps) {
     if (!isMounted.current) {
       return
     }
-
-    document.body.classList.add('nonScrollable')
     
     if (currentScrollTop.current < window.pageYOffset) {
       currentPageIndex.current = Math.min(currentPageIndex.current + 1, pageRefs.current.length - 1)
@@ -42,11 +51,17 @@ function Pagination({ children }: PaginationProps) {
       currentPageIndex.current = Math.max(currentPageIndex.current - 1, 0)
     }
 
-    dispatch(setCurrentPage({ currentPage: currentPageIndex.current}))
-    dispatch(setScrolled({ isScrolled: currentPageIndex.current !== 0 }))
+    handleMovePage(currentPageIndex.current)
+  }, SCROLLING_DURATION, [])
 
-    const nextPage = pageRefs.current[currentPageIndex.current]
+  const handleMovePage = useCallback((pageIndex: number) => {
+    dispatch(setCurrentPage({ currentPage: pageIndex }))
+    dispatch(setScrolled({ isScrolled: pageIndex !== 0 }))
+
+    const nextPage = pageRefs.current[pageIndex]
     const nextScrollTop = nextPage.getBoundingClientRect().top + window.pageYOffset
+
+    document.body.classList.add('nonScrollable')
 
     window.scroll({
       behavior: 'smooth',
@@ -57,7 +72,7 @@ function Pagination({ children }: PaginationProps) {
       document.body.classList.remove('nonScrollable')
       currentScrollTop.current = window.pageYOffset
     }, SCROLLING_DURATION)
-  }, SCROLLING_DURATION, [dispatch])
+  }, [dispatch])
 
   const PagesComponent = useMemo(() => (
     React.Children.map(children, (child: React.ReactElement, index) => (
@@ -68,6 +83,10 @@ function Pagination({ children }: PaginationProps) {
       })
     ))
   ), [children])
+
+  useImperativeHandle(ref, () => ({
+    handleMovePage,
+  }))
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll)
@@ -94,4 +113,4 @@ function Pagination({ children }: PaginationProps) {
   )
 }
 
-export default Pagination
+export default forwardRef(Pagination)
