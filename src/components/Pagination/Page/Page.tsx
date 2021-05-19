@@ -5,12 +5,13 @@ import React, { forwardRef } from 'react'
 import * as Styled from './Page.styled'
 
 interface PageProps {
+  className?: string
   children: React.ReactNode
 }
 
-function Page({ children }: PageProps, ref: React.Ref<HTMLDivElement>) {
+function Page({ className, children }: PageProps, ref: React.Ref<HTMLDivElement>) {
   return (
-    <Styled.Page ref={ref}>
+    <Styled.Page ref={ref} className={className}>
       {children}
     </Styled.Page>
   )
