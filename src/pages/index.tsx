@@ -354,7 +354,7 @@ function IndexPage() {
             <Styled.ContactTitle>
               <Styled.ContactUnderline
                 key={Config.main_eight.title}
-                trigger={currentPage === 7}
+                trigger={currentPage === 7 || currentPage === 8}
                 delay={600}
                 repeat
               >
@@ -389,6 +389,15 @@ function IndexPage() {
           </Styled.ContactPageInnerWrapper>
         </Styled.ContactPageWrapper>
       </Page>
+      <Styled.FooterPage>
+        <Styled.FooterWrapper>
+          <SVGIcon name="footer-logo" size={26} />
+          <Styled.FooterContent>
+            <Styled.FooterReserve>{ Config.main_footer.reserve }</Styled.FooterReserve>
+            <Styled.FooterDescription>{ Config.main_footer.description }</Styled.FooterDescription>
+          </Styled.FooterContent>
+        </Styled.FooterWrapper>
+      </Styled.FooterPage>
     </Pagination>
   )
 }

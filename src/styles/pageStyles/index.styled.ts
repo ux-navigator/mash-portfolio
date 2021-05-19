@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components'
 import { Link } from 'gatsby'
 
 /* Internal dependencies */
+import { Page } from 'components/Pagination'
 import Underline from 'components/Underline'
 import DelayShow from 'components/DelayShow'
 import { UnderlineWrapper } from 'components/Underline/Underline.styled'
@@ -1081,3 +1082,28 @@ export const ContactBackgroundImage = styled.div`
     display: none;
   }
 `
+
+export const FooterPage = styled(Page)`
+  width: 100%;
+  height: auto;
+`
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 100px 0 50px;
+`
+
+export const FooterContent = styled.div`
+  margin-left: 0.5rem;
+  font-family: 'Gothic Regular';
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: #B9B9B9;
+`
+
+export const FooterReserve = styled.p``
+
+export const FooterDescription = styled.p``
