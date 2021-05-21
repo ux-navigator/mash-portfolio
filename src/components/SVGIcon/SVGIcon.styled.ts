@@ -1,11 +1,8 @@
 /* External dependencies */
 import styled from 'styled-components'
 
-/* Internal dependencies */
-import { Size } from './SVGIcon'
-
 interface SVGIconWrapperProps {
-  size: Size
+  size: number
 }
 
 export const SVGIconWrapper = styled.div<SVGIconWrapperProps>`
