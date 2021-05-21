@@ -9,6 +9,7 @@ import DelayShow from 'components/DelayShow'
 import { UnderlineWrapper } from 'components/Underline/Underline.styled'
 import Image from 'components/Image'
 import BackgroundSection from 'components/BackgroundSection'
+import SVGIcon from 'components/SVGIcon'
 
 interface IntroPageInnerWrapperProps {
   fixed: boolean
@@ -170,6 +171,10 @@ export const Arrow = styled.div`
     width: 30px;
     height: 30px;
   }
+`
+
+export const ArrowIcon = styled(SVGIcon)`
+  width: 100%;
 `
 
 export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`

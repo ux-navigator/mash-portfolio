@@ -1,16 +1,20 @@
 /* External dependencies */
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { isNil } from 'lodash-es'
 
 interface SVGIconWrapperProps {
-  size: number
+  size?: number
 }
 
 export const SVGIconWrapper = styled.div<SVGIconWrapperProps>`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({ size }) => !isNil(size) && css`
+    width: ${size}px;
+    height: ${size}px;
+  `}
 `
 
 export const SVGIcon = styled.img`

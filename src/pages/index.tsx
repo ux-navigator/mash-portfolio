@@ -94,7 +94,7 @@ function IndexPage() {
             }
           </Styled.ShipImageWrapper>
           <Styled.Arrow onClick={handleClickMainArrow}>
-            <SVGIcon name="main-arrow" size={DeviceService.getDevice() === Device.Mobile ? 30 : 48} />
+            <Styled.ArrowIcon name="main-arrow" />
           </Styled.Arrow>
         </Styled.FirstPageInnerWrapper>
       </Page>

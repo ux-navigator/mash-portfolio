@@ -11,7 +11,7 @@ interface SVGIconProps {
   size?: number
 }
 
-function SVGIcon({ className, name, size = 28 }: SVGIconProps) {
+function SVGIcon({ className, name, size }: SVGIconProps) {
   const src = useMemo(() => {
     const fileName = _.endsWith(name, '.svg') ? name : `${name}.svg`
     try {
