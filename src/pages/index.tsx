@@ -391,7 +391,9 @@ function IndexPage() {
       </Page>
       <Styled.FooterPage>
         <Styled.FooterWrapper>
-          <SVGIcon name="footer-logo" size={26} />
+          <Styled.FooterLogoWrapper>
+            <Styled.FooterLogo name="footer-logo" />
+          </Styled.FooterLogoWrapper>
           <Styled.FooterContent>
             <Styled.FooterReserve>{ Config.main_footer.reserve }</Styled.FooterReserve>
             <Styled.FooterDescription>{ Config.main_footer.description }</Styled.FooterDescription>

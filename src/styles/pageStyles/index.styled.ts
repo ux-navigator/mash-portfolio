@@ -1101,14 +1101,43 @@ export const FooterWrapper = styled.div`
   padding: 100px 0 50px;
 `
 
+export const FooterLogoWrapper = styled.div`
+  width: 26px;
+  height: 26px;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 20px;
+    height: 20px;
+  }
+`
+
+export const FooterLogo = styled(SVGIcon)`
+  width: 100%;
+`
+
 export const FooterContent = styled.div`
   margin-left: 0.5rem;
   font-family: 'Gothic Regular';
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
   color: #B9B9B9;
 `
 
-export const FooterReserve = styled.p``
+export const FooterReserve = styled.p`
+  line-height: 1.125rem;
+  font-size: 0.8125rem;
 
-export const FooterDescription = styled.p``
+  @media ${({ theme }) => theme.media.mobile} {
+    line-height: 1rem;
+    font-size: 0.625rem;
+    font-family: 'Gothic Regular';
+  }
+`
+
+export const FooterDescription = styled.p`
+  line-height: 1.125rem;
+  font-size: 0.8125rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    line-height: 0.75rem;
+    font-size: 0.4375rem;
+  }
+`
