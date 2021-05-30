@@ -835,15 +835,29 @@ export const BlogSubTitle = styled.div`
   }
 `
 
+export const ProjectImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s;
+`
+
 export const ProjectWrapper = styled.a<ProjectWrapperProps>`
   display: block;
   width: 245px;
   height: 185px;
   overflow: hidden;
   box-sizing: border-box;
-  box-shadow: 6px 6px 16px 1px rgba(0, 0, 0, .1);
+  transition: box-shadow 0.3s;
   border: 1px solid #D9D9D9;
   border-radius: 8px;
+
+  &:hover {
+    box-shadow: 6px 6px 16px 1px rgba(0, 0, 0, .1);
+
+    ${ProjectImage} {
+      transform: scale(1.1);
+    }
+  }
 
   @media ${({ theme }) => theme.media.tablet} {
     ${({ limit }) => limit && css`
@@ -909,11 +923,6 @@ export const ProjectImageWrapper = styled.div`
   width: 100%;
   height: 118px;
   overflow: hidden;
-`
-
-export const ProjectImage = styled(Image)`
-  width: 100%;
-  height: 100%;
 `
 
 export const ProjectContent = styled.div`
