@@ -1,1 +1,1 @@
-export { default, Size } from './SVGIcon'
+export { default } from './SVGIcon'
