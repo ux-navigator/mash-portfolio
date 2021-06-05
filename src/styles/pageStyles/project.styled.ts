@@ -1,8 +1,15 @@
 /* External dependencies */
 import styled, { css } from 'styled-components'
 
+/* Internal dependencies */
+import SVGIcon from 'components/SVGIcon'
+
 interface FilterProps {
   active: boolean;
+}
+
+interface ContactContentProps {
+  isKorean: boolean
 }
 
 export const ProjectContainer = styled.div`
@@ -32,6 +39,7 @@ export const Filter = styled.div<FilterProps>`
   font-size: 40px;
   white-space: nowrap;
   border-bottom: 4px solid white;
+  cursor: pointer;
 
   ${({ active }) => active && css`
     border-bottom-color: #3370E8;
@@ -63,7 +71,6 @@ export const ProjectWrapper = styled.div`
   width: 504px;
   height: 378px;
   box-shadow: 0px 4px 16px rgba(25, 31, 41, 0.16);
-  cursor: pointer;
 `
 
 export const ProjectMainImage = styled.div`
@@ -91,3 +98,194 @@ export const ProjectContent = styled.div`
     margin-left: 10px;
   }
 `
+
+export const ContactPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 200px;
+  box-sizing: border-box;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+    max-width: 375px;
+    padding-top: 3.75rem;
+    padding-left: 20px;
+  }
+`
+
+export const ContactPageInnerWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`
+
+export const ContactTitle = styled.div`
+  font-family: 'Mark Pro Bold';
+  font-size: 4rem;
+  color: #3370E8;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 2.625rem;
+  }
+`
+
+export const ContactSubTitle = styled.p`
+  margin-top: 1.125rem;
+  font-family: 'Mark Pro Light';
+  font-size: 1.375rem;
+  color: #2C3E50;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 25.5rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 18.5rem;
+    margin-top: 0.875rem;
+    font-size: 1rem;
+  }
+`
+
+export const ContactIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: #FFF;
+  border: 2px solid black;
+  border-radius: 50%;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+`
+
+export const ContactContent = styled.div<ContactContentProps>`
+  margin-left: 1rem;
+  font-family: 'Mark Pro Bold';
+  font-size: 1.125rem;
+
+  ${({ isKorean }) => isKorean && css`
+    font-family: 'Gothic Bold';
+  `}
+
+  @media ${({ theme }) => theme.media.mobile} {
+    margin-left: 0.75rem;
+    font-size: 1rem;
+  }
+`
+
+export const ContactInfoItem = styled.div`
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    ${ContactIcon} {
+      box-shadow: 10px 10px 16px 1px rgba(0, 0, 0, .2);
+      border-color: #3370E8;
+
+      @media ${({ theme }) => theme.media.mobile} {
+        box-shadow: 6px 6px 12px 1px rgba(0, 0, 0, .2);
+      }
+    }
+
+    ${ContactContent} {
+      color: #3370E8;
+    }
+  }
+`
+
+export const ContactInfoWrapper = styled.div`
+  margin-top: 7.625rem;
+
+  ${ContactInfoItem} + ${ContactInfoItem} {
+    margin-top: 1.5rem;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-top: 5.5rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    margin-top: 5.25rem;
+
+    ${ContactInfoItem} + ${ContactInfoItem} {
+      margin-top: 1.125rem;
+    }
+  }
+`
+
+export const ContactBackgroundImage = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 32.5rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
+`
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 100px 0 50px;
+`
+
+export const FooterLogoWrapper = styled.div`
+  width: 26px;
+  height: 26px;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 20px;
+    height: 20px;
+  }
+`
+
+export const FooterLogo = styled(SVGIcon)`
+  width: 100%;
+`
+
+export const FooterContent = styled.div`
+  margin-left: 0.5rem;
+  font-family: 'Gothic Regular';
+  color: #B9B9B9;
+`
+
+export const FooterReserve = styled.p`
+  line-height: 1.125rem;
+  font-size: 0.8125rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    line-height: 1rem;
+    font-size: 0.625rem;
+    font-family: 'Gothic Regular';
+  }
+`
+
+export const FooterDescription = styled.p`
+  line-height: 1.125rem;
+  font-size: 0.8125rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    line-height: 0.75rem;
+    font-size: 0.4375rem;
+  }
+`
+
