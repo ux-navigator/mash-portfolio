@@ -1,5 +1,6 @@
 /* External dependencies */
 import styled, { css } from 'styled-components'
+import { Link } from 'gatsby'
 
 /* Internal dependencies */
 import SVGIcon from 'components/SVGIcon'
@@ -16,6 +17,14 @@ export const ProjectContainer = styled.div`
   width: 1024px;
   margin: 0 auto;
   padding-top: 144px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 680px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+  }
 `
 
 export const ProjectTitle = styled.div`
@@ -57,25 +66,70 @@ export const FilterWrapper = styled.div`
   }
 `
 
+export const ProjectWrapper = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  width: 504px;
+  height: 378px;
+  box-shadow: 0px 4px 16px rgba(25, 31, 41, 0.16);
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 330px;
+    height: 248px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 335px;
+    height: 252px;
+  }
+`
+
 export const ProjectListWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   margin-top: 68px;
-`
 
-export const ProjectWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 504px;
-  height: 378px;
-  box-shadow: 0px 4px 16px rgba(25, 31, 41, 0.16);
+  ${ProjectWrapper} + ${ProjectWrapper} {
+    margin-top: 40px;
+
+    &:nth-of-type(2) {
+      margin-top: 0;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    ${ProjectWrapper} + ${ProjectWrapper} {
+      margin-top: 20px;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    align-items: center;
+    flex-direction: column;
+
+    ${ProjectWrapper} + ${ProjectWrapper} {
+      margin-top: 20px;
+
+      &:nth-of-type(2) {
+      margin-top: 20px;
+    }
+    }
+  }
 `
 
 export const ProjectMainImage = styled.div`
   width: 100%;
   height: 329px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    height: 215px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    height: 218px;
+  }
 `
 
 export const Tag = styled.div`
@@ -85,6 +139,16 @@ export const Tag = styled.div`
   font-size: 12px;
   border: 1px solid #D1D1D1;
   border-radius: 4px;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    padding: 4px 6px;
+    font-size: 8px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    padding: 4px 6px;
+    font-size: 8px;
+  }
 `
 
 export const ProjectContent = styled.div`
@@ -117,7 +181,6 @@ export const ContactPageWrapper = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
     max-width: 375px;
-    padding-top: 3.75rem;
     padding-left: 20px;
   }
 `

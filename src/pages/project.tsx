@@ -1,6 +1,5 @@
 /* External dependencies */
 import React, { useState, useCallback, useMemo } from 'react'
-import { Link } from 'gatsby'
 
 /* Internal dependencies */
 import DeviceService from 'services/DeviceService'
@@ -68,20 +67,18 @@ function ProjectPage() {
       </Styled.FilterWrapper>
       <Styled.ProjectListWrapper>
         { projects.map(project => (
-          <Link key={project.name} to={project.name}>
-            <Styled.ProjectWrapper>
-              <Styled.ProjectMainImage>
-                <Image name={`projects/${project.mainImage}`} />
-              </Styled.ProjectMainImage>
-              <Styled.ProjectContent>
-                { project.tags.map(tag => (
-                  <Styled.Tag key={tag}>
-                    { `#${tag}` }
-                  </Styled.Tag>
-                )) }
-              </Styled.ProjectContent>
-            </Styled.ProjectWrapper>
-          </Link>
+          <Styled.ProjectWrapper key={project.name} to={project.name}>
+            <Styled.ProjectMainImage>
+              <Image name={`projects/${project.mainImage}`} />
+            </Styled.ProjectMainImage>
+            <Styled.ProjectContent>
+              { project.tags.map(tag => (
+                <Styled.Tag key={tag}>
+                  { `#${tag}` }
+                </Styled.Tag>
+              )) }
+            </Styled.ProjectContent>
+          </Styled.ProjectWrapper>
         )) }
       </Styled.ProjectListWrapper>
       <Styled.ContactPageWrapper>
