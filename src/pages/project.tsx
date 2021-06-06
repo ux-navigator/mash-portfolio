@@ -28,7 +28,6 @@ function ProjectPage() {
       return project.tags.includes(filter)
     })
   ), [filter])
-  console.log(projects)
 
   const handleClickFilter = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     // @ts-ignore
