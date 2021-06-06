@@ -28,6 +28,7 @@ function ProjectPage() {
       return project.tags.includes(filter)
     })
   ), [filter])
+  console.log(projects)
 
   const handleClickFilter = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     // @ts-ignore
@@ -66,8 +67,8 @@ function ProjectPage() {
         )) }
       </Styled.FilterWrapper>
       <Styled.ProjectListWrapper>
-        { projects.map(project => (
-          <Styled.ProjectWrapper key={project.name} to={project.name}>
+        { projects.map((project, index) => (
+          <Styled.ProjectWrapper key={`${project.name}-${index}`} to={project.name}>
             <Styled.ProjectMainImage>
               <Image name={`projects/${project.mainImage}`} />
             </Styled.ProjectMainImage>
