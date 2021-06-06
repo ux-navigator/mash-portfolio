@@ -24,6 +24,7 @@ export const ProjectContainer = styled.div`
 
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
+    padding-top: 60px;
   }
 `
 
@@ -32,6 +33,11 @@ export const ProjectTitle = styled.div`
   font-family: 'Gothic Bold';
   font-size: 38px;
   line-height: 54px;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 335px;
+    margin: 30px auto 0;
+  }
 `
 
 export const ProjectSubTitle = styled.p`
@@ -39,9 +45,15 @@ export const ProjectSubTitle = styled.p`
   color: #4F5A65;
   font-family: 'Gothic Regular';
   font-size: 20px;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 335px;
+    margin: 14px auto 0;
+  }
 `
 
 export const Filter = styled.div<FilterProps>`
+  width: fit-content;
   padding: 2px 0;
   color: #3370E8;
   font-family: 'Mark Pro Bold';
@@ -63,6 +75,17 @@ export const FilterWrapper = styled.div`
 
   ${Filter} + ${Filter} {
     margin-left: 60px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    flex-direction: column;
+    width: 335px;
+    margin: 48px auto 0;
+
+    ${Filter} + ${Filter} {
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 `
 
