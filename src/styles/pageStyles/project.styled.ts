@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
 /* Internal dependencies */
+import Image from 'components/Image'
 import SVGIcon from 'components/SVGIcon'
 
 interface FilterProps {
@@ -89,12 +90,63 @@ export const FilterWrapper = styled.div`
   }
 `
 
+export const ProjectItemTitle = styled.p`
+  max-width: 90%;
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  font-family: 'Gothic Bold';
+`
+
+export const ProjectItemPeriod = styled.p`
+  max-width: 90%;
+  margin-top: 6px;
+  color: white;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: 'Gothic Regular';
+`
+
+export const ProjectImageBackground = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.45s;
+  z-index: 100000;
+`
+
+export const ProjectImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s;
+`
+
 export const ProjectWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   width: 504px;
   height: 378px;
   box-shadow: 0px 4px 16px rgba(25, 31, 41, 0.16);
+
+  &:hover {
+    ${ProjectImage} {
+      transform: scale(1.1);
+    }
+
+    ${ProjectImageBackground} {
+      opacity: 1;
+    }
+  }
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 330px;
@@ -143,8 +195,10 @@ export const ProjectListWrapper = styled.div`
 `
 
 export const ProjectMainImage = styled.div`
+  position: relative;
   width: 100%;
   height: 329px;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.media.tablet} {
     height: 215px;

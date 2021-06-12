@@ -1,5 +1,6 @@
 /* External dependencies */
 import React, { useState, useCallback, useMemo } from 'react'
+import { isEmpty } from 'lodash-es'
 
 /* Internal dependencies */
 import DeviceService from 'services/DeviceService'
@@ -69,7 +70,17 @@ function ProjectPage() {
         { projects.map((project, index) => (
           <Styled.ProjectWrapper key={`${project.name}-${index}`} to={project.name}>
             <Styled.ProjectMainImage>
-              <Image name={`projects/${project.mainImage}`} />
+              { !isEmpty(project.title) && (
+                <Styled.ProjectImageBackground>
+                  <Styled.ProjectItemTitle>
+                    { project.title }
+                  </Styled.ProjectItemTitle>
+                  <Styled.ProjectItemPeriod>
+                    { project.period }
+                  </Styled.ProjectItemPeriod>
+                </Styled.ProjectImageBackground>
+              ) }
+              <Styled.ProjectImage name={`projects/${project.mainImage}`} />
             </Styled.ProjectMainImage>
             <Styled.ProjectContent>
               { project.tags.map(tag => (
