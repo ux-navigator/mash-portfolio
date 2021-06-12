@@ -1,10 +1,17 @@
 /* External dependencies */
 import styled, { css } from 'styled-components'
-import { Link } from 'gatsby'
 
 /* Internal dependencies */
 import Image from 'components/Image'
 import SVGIcon from 'components/SVGIcon'
+
+interface ModalContainerProps {
+  show: boolean
+}
+
+interface ModalInputProps {
+  hasError: boolean
+}
 
 interface FilterProps {
   active: boolean;
@@ -27,6 +34,111 @@ export const ProjectContainer = styled.div`
     width: 100%;
     padding-top: 60px;
   }
+`
+
+export const ModalContainer = styled.div<ModalContainerProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100000000;
+
+  ${({ show }) => show && css`
+    visibility: visible;
+    opacity: 1;
+  `}
+`
+
+export const Modal = styled.div`
+  width: 383px;
+  border-radius: 6px;
+  background-color: white;
+`
+
+export const ModalTitle = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 0 20px;
+  color: #222222;
+  font-family: 'Gothic Bold';
+  box-sizing: border-box;
+  border-bottom: 1px solid #F2F2F2;
+`
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+`
+
+export const ModalDescription = styled.div`
+  width: 74%;
+  word-break: keep-all;
+  line-height: 1.5rem;
+  color: #2C3E50;
+  font-size: 1rem;
+  font-family: 'Gothic Regular';
+`
+
+export const ModalInput = styled.input<ModalInputProps>`
+  width: 100%;
+  height: 46px;
+  margin-top: 20px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  color: #747474;
+  font-size: 0.875rem;
+  outline: none;
+  border: 1px solid #3370E8;
+  border-radius: 6px;
+
+  ${({ hasError }) => hasError && css`
+    border-color: #F4800B;
+  `}
+`
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+`
+
+export const ModalCancel = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  height: 36px;
+  background-color: #EBEBEB;
+  color: #747474;
+  font-family: 'Gothic Regular';
+  border-radius: 4px;
+  cursor: pointer;
+`
+
+export const ModalConfirm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  height: 36px;
+  margin-left: 12px;
+  background-color: #DBE7FF;
+  color: #3370E8;
+  font-family: 'Gothic Regular';
+  border-radius: 4px;
+  cursor: pointer;
 `
 
 export const ProjectTitle = styled.div`
@@ -122,7 +234,7 @@ export const ProjectImageBackground = styled.div`
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 0.45s;
-  z-index: 100000;
+  z-index: 9998;
 `
 
 export const ProjectImage = styled(Image)`
@@ -131,12 +243,13 @@ export const ProjectImage = styled(Image)`
   transition: transform 0.45s;
 `
 
-export const ProjectWrapper = styled(Link)`
+export const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 504px;
   height: 378px;
   box-shadow: 0px 4px 16px rgba(25, 31, 41, 0.16);
+  cursor: pointer;
 
   &:hover {
     ${ProjectImage} {
@@ -226,6 +339,10 @@ export const Tag = styled.div`
     padding: 4px 6px;
     font-size: 8px;
   }
+`
+
+export const LockIcon = styled(SVGIcon)`
+  margin-left: auto;
 `
 
 export const ProjectContent = styled.div`

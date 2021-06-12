@@ -13,6 +13,7 @@ module.exports = {
         'image2.png',
         'image3.png',
       ],
+      password: '1234',
     },
     {
       name: 'project2',
@@ -27,4 +28,12 @@ module.exports = {
       ],
     },
   ],
+  modal: {
+    title: '공개가 제한된 프로젝트입니다',
+    description: '이 프로젝트는 보안 이슈로 인해 암호를 전달받은 분만 보실수 있어요',
+    placehoder: '암호를 입력해주세요',
+    cancel: '취소',
+    confirm: '확인',
+  },
+  secretKey: 'shjH7sadf8juYHUIHy878uyd6jiom0iH7e45yVJhnOy78RDp',
 }

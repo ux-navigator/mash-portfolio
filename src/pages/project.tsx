@@ -1,6 +1,7 @@
 /* External dependencies */
-import React, { useState, useCallback, useMemo } from 'react'
-import { isEmpty } from 'lodash-es'
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
+import { navigate } from 'gatsby'
+import { isEmpty, isNil } from 'lodash-es'
 
 /* Internal dependencies */
 import DeviceService from 'services/DeviceService'
@@ -12,9 +13,25 @@ import * as Styled from 'styles/pageStyles/project.styled'
 import Config from '../../config'
 import ConfigProject from '../../configProject'
 
+interface ProjectAttr {
+  name: string
+  mainImage: string
+  tags: string[]
+  title: string
+  period: string
+  images: string[]
+  password?: string
+}
+
 function ProjectPage() {
   const [filter, setFilter] = useState('ALL')
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
+  const [currentProject, setCurrentProject] = useState<ProjectAttr>()
+  const [showModal, setShowModal] = useState(false)
+  const [value, setValue] = useState('')
+  const [error, setError] = useState(false)
+
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const filterSet = ConfigProject.projects.reduce((acc, cur) => {
     cur.tags.forEach(tag => acc.add(tag))
@@ -44,8 +61,76 @@ function ProjectPage() {
     setContactItemIndex(null)
   }, [])
 
+  const handleClickProject = useCallback((project) => {
+    if (!isEmpty(project.password)) {
+      setCurrentProject(project)
+      setShowModal(true)
+      return
+    }
+
+    navigate(project.name)
+  }, [])
+
+  const handleChangeInput = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value)
+    setError(false)
+  }, [])
+
+  const handleClickContainer = useCallback((event: any) => {
+    if (!event.target?.closest(Styled.Modal)) {
+      setCurrentProject(undefined)
+      setShowModal(false)
+      setValue('')
+      setError(false)
+    }
+  }, [])
+
+  const handleClickCancel = useCallback(() => {
+    setCurrentProject(undefined)
+    setShowModal(false)
+    setValue('')
+    setError(false)
+  }, [])
+
+  const handleClickConfirm = useCallback(() => {
+    if (!isNil(currentProject) && currentProject.password === value) {
+      navigate(`${currentProject.name}?key=${ConfigProject.secretKey}`)
+      return
+    }
+
+    setError(true)
+  }, [
+    currentProject,
+    value,
+  ])
+
+  useEffect(() => {
+    if (!isNil(inputRef.current) && showModal) {
+      inputRef.current.focus()
+    }
+  }, [showModal])
+
   return (
     <Styled.ProjectContainer>
+      <Styled.ModalContainer show={showModal} onClick={handleClickContainer}>
+        <Styled.Modal>
+          <Styled.ModalTitle>{ ConfigProject.modal.title }</Styled.ModalTitle>
+          <Styled.ModalContent>
+            <Styled.ModalDescription>{ ConfigProject.modal.description }</Styled.ModalDescription>
+            <Styled.ModalInput
+              ref={inputRef}
+              hasError={error}
+              value={value}
+              onChange={handleChangeInput}
+              placeholder={ConfigProject.modal.placehoder }
+            />
+            <Styled.ModalFooter>
+              <Styled.ModalCancel onClick={handleClickCancel}>{ ConfigProject.modal.cancel }</Styled.ModalCancel>
+              <Styled.ModalConfirm onClick={handleClickConfirm}>{ ConfigProject.modal.confirm }</Styled.ModalConfirm>
+            </Styled.ModalFooter>
+          </Styled.ModalContent>
+        </Styled.Modal>
+      </Styled.ModalContainer>
       <Styled.ProjectTitle>
         { ConfigProject.title.map((titleItem, index) => (
           <p key={index}>{ titleItem }</p>
@@ -68,7 +153,10 @@ function ProjectPage() {
       </Styled.FilterWrapper>
       <Styled.ProjectListWrapper>
         { projects.map((project, index) => (
-          <Styled.ProjectWrapper key={`${project.name}-${index}`} to={project.name}>
+          <Styled.ProjectWrapper
+            key={`${project.name}-${index}`}
+            onClick={() => handleClickProject(project)}
+          >
             <Styled.ProjectMainImage>
               { !isEmpty(project.title) && (
                 <Styled.ProjectImageBackground>
@@ -88,6 +176,9 @@ function ProjectPage() {
                   { `#${tag}` }
                 </Styled.Tag>
               )) }
+              { !isEmpty(project.password) && (
+                <Styled.LockIcon name="lock" size={28} />
+              ) }
             </Styled.ProjectContent>
           </Styled.ProjectWrapper>
         )) }

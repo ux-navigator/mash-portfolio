@@ -1,6 +1,8 @@
 /* External dependencies */
 import React from 'react'
-import { PageProps } from 'gatsby'
+import { PageProps, navigate } from 'gatsby'
+import qs from 'qs'
+import { isEmpty } from 'lodash-es'
 
 /* Internal dependencies */
 import useLayout from 'hooks/useLayout'
@@ -14,7 +16,13 @@ interface PageContext {
 
 function ProjectTemplate({ location, pageContext: { slug } }: PageProps<object, PageContext>) {
   const projectName = location.pathname.split('/')[2]
-  const projectImages = ConfigProject.projects.find(project => project.name === projectName)?.images
+  const project = ConfigProject.projects.find(project => project.name === projectName)
+  const projectImages = project?.images
+  const queryParams = qs.parse(location.search, { ignoreQueryPrefix: true })
+
+  if (!isEmpty(project?.password) && queryParams.key !== ConfigProject.secretKey) {
+    return null
+  }
 
   if (!projectImages) {
     return null
