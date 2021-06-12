@@ -61,6 +61,10 @@ export const Modal = styled.div`
   width: 383px;
   border-radius: 6px;
   background-color: white;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 340px;
+  }
 `
 
 export const ModalTitle = styled.div`
@@ -89,6 +93,10 @@ export const ModalDescription = styled.div`
   color: #2C3E50;
   font-size: 1rem;
   font-family: 'Gothic Regular';
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 84%;
+  }
 `
 
 export const ModalInput = styled.input<ModalInputProps>`
