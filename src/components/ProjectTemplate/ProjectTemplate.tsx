@@ -12,12 +12,6 @@ interface PageContext {
   slug: string
 }
 
-interface Edge {
-  node: {
-    relativePath: string
-  }
-}
-
 function ProjectTemplate({ location, pageContext: { slug } }: PageProps<object, PageContext>) {
   const projectName = location.pathname.split('/')[2]
   const projectImages = ConfigProject.projects.find(project => project.name === projectName)?.images
@@ -29,7 +23,7 @@ function ProjectTemplate({ location, pageContext: { slug } }: PageProps<object, 
   return (
     <Styled.ProjectContainer>
       { projectImages.map(image => (
-        <Image name={`${slug}/${image}`} />
+        <Image key={image} name={`${slug}/${image}`} />
       )) }
     </Styled.ProjectContainer>
   )
