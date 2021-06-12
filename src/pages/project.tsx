@@ -94,7 +94,7 @@ function ProjectPage() {
 
   const handleClickConfirm = useCallback(() => {
     if (!isNil(currentProject) && currentProject.password === value) {
-      navigate(`${currentProject.name}?key=${ConfigProject.secretKey}`)
+      navigate(`${currentProject.name}?key=${window.btoa(decodeURIComponent(currentProject.password))}`)
       return
     }
 
@@ -177,7 +177,7 @@ function ProjectPage() {
                 </Styled.Tag>
               )) }
               { !isEmpty(project.password) && (
-                <Styled.LockIcon name="lock" size={28} />
+                <Styled.LockIcon name="lock" size={DeviceService.getDevice() === Device.Mobile ? 20: 28} />
               ) }
             </Styled.ProjectContent>
           </Styled.ProjectWrapper>

@@ -35,5 +35,4 @@ module.exports = {
     cancel: '취소',
     confirm: '확인',
   },
-  secretKey: 'shjH7sadf8juYHUIHy878uyd6jiom0iH7e45yVJhnOy78RDp',
 }
