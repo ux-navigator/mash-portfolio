@@ -76,21 +76,18 @@ function ProjectPage() {
     setError(false)
   }, [])
 
-  const handleClickContainer = useCallback((event: any) => {
-    if (!event.target?.closest(Styled.Modal)) {
-      setCurrentProject(undefined)
-      setShowModal(false)
-      setValue('')
-      setError(false)
-    }
-  }, [])
-
   const handleClickCancel = useCallback(() => {
     setCurrentProject(undefined)
     setShowModal(false)
     setValue('')
     setError(false)
   }, [])
+
+  const handleClickContainer = useCallback((event: any) => {
+    if (!event.target?.closest(Styled.Modal)) {
+      handleClickCancel()
+    }
+  }, [handleClickCancel])
 
   const handleClickConfirm = useCallback(() => {
     if (!isNil(currentProject) && currentProject.password === value) {
