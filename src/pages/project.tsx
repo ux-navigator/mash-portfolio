@@ -65,6 +65,7 @@ function ProjectPage() {
     if (!isEmpty(project.password)) {
       setCurrentProject(project)
       setShowModal(true)
+      document.body.classList.add('nonScrollable')
       return
     }
 
@@ -81,6 +82,7 @@ function ProjectPage() {
     setShowModal(false)
     setValue('')
     setError(false)
+    document.body.classList.remove('nonScrollable')
   }, [])
 
   const handleClickContainer = useCallback((event: any) => {
@@ -91,6 +93,7 @@ function ProjectPage() {
 
   const handleClickConfirm = useCallback(() => {
     if (!isNil(currentProject) && currentProject.password === value) {
+      document.body.classList.remove('nonScrollable')
       navigate(`${currentProject.name}?key=${window.btoa(decodeURIComponent(currentProject.password))}`)
       return
     }
