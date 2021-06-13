@@ -110,6 +110,10 @@ function ProjectPage() {
     }
   }, [showModal])
 
+  useEffect(() => () => {
+    document.body.classList.remove('nonScrollable')
+  }, [])
+
   return (
     <Styled.ProjectContainer>
       <Styled.ModalContainer show={showModal} onClick={handleClickContainer}>
