@@ -26,7 +26,7 @@ function Navigation() {
   return (
     <Styled.NavigationWrapper isScrolled={isScrolled}>
       <Styled.NavigationContent>
-        <Styled.LogoWrapper>
+        <Styled.LogoWrapper to="/">
           <Styled.Logo>
             <SVGIcon name="logo" size={32} />
           </Styled.Logo>

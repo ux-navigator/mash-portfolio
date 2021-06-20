@@ -48,9 +48,10 @@ export const NavigationContent = styled.div`
   }
 `
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 
 export const Logo = styled.div`
