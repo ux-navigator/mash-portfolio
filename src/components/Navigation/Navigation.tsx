@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useContext, useState, useCallback } from 'react'
+import React, { useContext, useState, useCallback, useEffect } from 'react'
 
 /* Internal dependencies */
 import { GlobalContext } from 'contexts/globalContext'
@@ -20,6 +20,10 @@ function Navigation() {
 
   const handleHideNavigation = useCallback(() => {
     setShowNavigation(false)
+    document.body.classList.remove('nonScrollable')
+  }, [])
+
+  useEffect(() => () => {
     document.body.classList.remove('nonScrollable')
   }, [])
   
