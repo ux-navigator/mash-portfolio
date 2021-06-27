@@ -332,7 +332,7 @@ export const IntroContent = styled.div`
 `
 
 export const NotMobileContentTitle = styled.p`
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
   font-family: 'Gothic Bold';
   font-size: 1.375rem;
 
@@ -760,7 +760,7 @@ export const ProjectButton = styled(Link)`
   align-items: center;
   justify-content: center;
   width: 12.875rem;
-  height: 3.25rem;
+  height: 3rem;
   margin-top: 2.75rem;
   background-color: #FFF;
   border-radius: 3.25rem;
@@ -778,10 +778,14 @@ export const ProjectButton = styled(Link)`
 `
 
 export const ProjectButtonText = styled.p`
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-family: 'Gothic Bold';
   color: #3370E8;
   transform: translateY(7%);
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 1.125rem;
+  }
 
   @media ${({ theme }) => theme.media.mobile} {
     font-size: 1rem;

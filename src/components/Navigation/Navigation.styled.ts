@@ -16,7 +16,7 @@ export const NavigationWrapper = styled.div<NavigationWrapperProps>`
   top: 0;
   left: 0;
   right: 0;
-  padding: ${({ isScrolled }) => isScrolled ? 16 : 56}px 0;
+  padding: ${({ isScrolled }) => isScrolled ? 14 : 56}px 0;
   background-color: #FFFFFF;
   transition: padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   z-index: 9999;

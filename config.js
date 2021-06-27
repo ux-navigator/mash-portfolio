@@ -9,7 +9,7 @@ module.exports = {
     skills: ['UX Research', 'UX/UI Design', 'Publishing'],
   },
   main_second: {
-    title: ['What does', '"UX" mean', 'to you?'],
+    title: ['What does', 'UX mean', 'to you?'],
     notMobileParagraphTitle: '나침반 없이 바다 한가운데에서 떠나는 항해',
     notMobileParagraphs: [
       'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해  프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
