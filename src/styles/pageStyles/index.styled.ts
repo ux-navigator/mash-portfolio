@@ -11,11 +11,6 @@ import Image from 'components/Image'
 import BackgroundSection from 'components/BackgroundSection'
 import SVGIcon from 'components/SVGIcon'
 
-interface IntroPageInnerWrapperProps {
-  fixed: boolean
-  hidden: boolean
-}
-
 interface IntroItemTitleProps {
   show: boolean
 }
@@ -30,10 +25,6 @@ interface IntroItemContentProps {
 
 interface ContactContentProps {
   isKorean: boolean
-}
-
-interface ProjectWrapperProps {
-  limit: boolean
 }
 
 interface CarouselDotProps {
@@ -177,7 +168,7 @@ export const ArrowIcon = styled(SVGIcon)`
   width: 100%;
 `
 
-export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
+export const IntroPageInnerWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
@@ -185,18 +176,6 @@ export const IntroPageInnerWrapper = styled.div<IntroPageInnerWrapperProps>`
   padding-top: 4rem;
   box-sizing: border-box;
   transition: opacity 1s;
-
-  ${({ fixed }) => fixed && css`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  `}
-
-  ${({ hidden }) => hidden && css`
-    opacity: 0;
-  `}
 
   @media ${({ theme }) => theme.media.mobile} {
     padding-top: 3.75rem;
@@ -287,28 +266,6 @@ export const IntroUnderline = styled(Underline)`
   background-color: #C2C2C2;
 `
 
-export const NotMobileIntroListItem = styled.div`
-  display: flex;
-  align-items: center;
-  font-family: 'Gothic Bold';
-  font-size: 1.375rem;
-
-  @media ${({ theme }) => theme.media.mobile} {
-    display: none;
-  }
-`
-
-export const MobileIntroListItem = styled.div`
-  display: none;
-
-  @media ${({ theme }) => theme.media.mobile} {
-    display: flex;
-    align-items: center;
-    font-family: 'Gothic Bold';
-    font-size: 1rem;
-  }
-`
-
 export const IntroContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -318,16 +275,8 @@ export const IntroContent = styled.div`
   height: 242px;
   color: #2C3E50;
 
-  ${NotMobileIntroListItem} + ${NotMobileIntroListItem} {
-    margin-top: 3.75rem;
-  }
-
   @media ${({ theme }) => theme.media.mobile} {
     width: 100%;
-
-    ${MobileIntroListItem} + ${MobileIntroListItem} {
-      margin-top: 1.875rem;
-    }
   }
 `
 
@@ -703,6 +652,7 @@ export const ProjectPageWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 4rem;
+  box-sizing: border-box;
   background-color: rgba(51, 108, 232, 0.9);
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -845,10 +795,11 @@ export const ProjectImage = styled(Image)`
   transition: transform 0.45s;
 `
 
-export const ProjectWrapper = styled.a<ProjectWrapperProps>`
-  display: block;
-  width: 245px;
-  height: 185px;
+export const ProjectWrapper = styled.a`
+  display: flex;
+  flex-direction: column;
+  width: 327px;
+  height: 230px;
   overflow: hidden;
   box-sizing: border-box;
   transition: box-shadow 0.3s;
@@ -864,12 +815,13 @@ export const ProjectWrapper = styled.a<ProjectWrapperProps>`
   }
 
   @media ${({ theme }) => theme.media.tablet} {
-    ${({ limit }) => limit && css`
-      display: none;
-    `}
+    width: 292px;
+    height: 206px;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
+    width: 244px;
+    height: 185px;
     box-shadow: unset;
   }
 `
@@ -879,12 +831,15 @@ export const ProjectListWrapper = styled.div`
   justify-content: space-between;
   align-content: space-between;
   flex-wrap: wrap;
-  width: 855px;
-  height: 405px;
-  margin-top: 4.625rem;
+  width: 1021px;
+  margin-top: 4.25rem;
 
   @media ${({ theme }) => theme.media.tablet} {
-    width: 550px;
+    width: 604px;
+
+    ${ProjectWrapper}:nth-of-type(2) + ${ProjectWrapper} {
+      margin-top: 1.25rem;
+    }
   }
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -896,7 +851,7 @@ export const ProjectListMobileWrapper = styled.div`
   display: none;
   width: 100%;
   height: 223px;
-  margin-top: 5.25rem;
+  margin-top: 4.625rem;
 
   @media ${({ theme }) => theme.media.mobile} {
     display: block;
@@ -925,11 +880,23 @@ export const CarouselDot = styled.div<CarouselDotProps>`
 
 export const ProjectImageWrapper = styled.div`
   width: 100%;
-  height: 118px;
+  height: 152px;
   overflow: hidden;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    height: 128px;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    height: 118px;
+  }
 `
 
 export const ProjectContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
   padding: 1rem;
 `
 
@@ -937,15 +904,81 @@ export const ProjectName = styled.p`
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-family: 'Gothic Regular';
 `
 
 export const ProjectCreatedAt = styled.p`
-  margin-top: 0.375rem;
+  margin-top: 0.5rem;
   color: #747474;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-family: 'Gothic Regular';
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 0.625rem;
+  }
+`
+
+export const LinkIcon = styled(SVGIcon)`
+  width: 2.5rem;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 1.5rem;
+  }
+`
+
+export const LinkText = styled.p`
+  margin-top: 0.625rem;
+  color: #C2C2C2;
+  font-size: 0.75rem;
+  font-family: 'Gothic Regular';
+
+  @media ${({ theme }) => theme.media.mobile} {
+    font-size: 0.625rem;
+  }
+`
+
+export const LinkWrapper = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+export const ProjectLinkListWrapper = styled.div`
+  display: flex;
+  margin-top: 3rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-top: 0;
+  }
+
+  ${LinkWrapper} + ${LinkWrapper} {
+    margin-left: 3rem;
+
+    @media ${({ theme }) => theme.media.mobile} {
+      margin-left: 2rem;
+    }
+  }
+`
+
+export const ProjectNotTabletLinkListWrapper = styled.div`
+  @media ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
+`
+
+export const ProjectTabletLinkListWrapper = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 292px;
+  height: 206px;
+  margin-top: 1.25rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    display: flex;
+  }
 `
 
 export const ContactPageWrapper = styled.div`

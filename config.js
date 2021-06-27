@@ -83,25 +83,9 @@ module.exports = {
         image: 'background.jpeg',
         createdAt: 'Jun 03. 2020',
       },
-      {
-        link: 'https://naver.com',
-        title: '[UX/UI] e-Book 4사 전격 비교!',
-        image: 'background.jpeg',
-        createdAt: 'Jun 03. 2020',
-      },
-      {
-        link: 'https://naver.com',
-        title: '[UX/UI] e-Book 5사 전격 비교!',
-        image: 'background.jpeg',
-        createdAt: 'Jun 03. 2020',
-      },
-      {
-        link: 'https://naver.com',
-        title: '[UX/UI] e-Book 6사 전격 비교!',
-        image: 'background.jpeg',
-        createdAt: 'Jun 03. 2020',
-      },
     ],
+    tistory: 'https://naver.com',
+    brunch: 'https://naver.com',
   },
   main_eight: {
     title: 'Contact Me!',

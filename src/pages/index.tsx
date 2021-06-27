@@ -24,23 +24,11 @@ const IntroIconImages = ['glass.png', 'statistic.png', 'pencil.png']
 function IndexPage() {
   const { state: { currentPage } } = useContext(GlobalContext)
 
-  const [isIntroFixed, setIntroFixed] = useState(false)
   const [currentInfoItemIndex, setCurrentInfoItemIndex] = useState<number | null>(null)
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
   const [currentProjectSlide, setCurrentProjectSlide] = useState(0)
 
   const paginationRef = useRef<{ handleMovePage: (pageIndex: number) => void }>(null)
-
-  const leavingIntroPage = useCallback((pageIndex: number) => {
-    if (
-      (pageIndex === 1 && currentPage === 0) ||
-      (pageIndex === 2 && currentPage === 3)
-    ) {
-      return true
-    }
-
-    return false
-  }, [currentPage])
 
   const handleInfoItem = useCallback((index: number) => {
     if (index === currentInfoItemIndex) {
@@ -63,16 +51,6 @@ function IndexPage() {
       paginationRef.current.handleMovePage(2)
     }
   }, [])
-
-  useEffect(() => {
-    if (currentPage === 1 || currentPage === 2) {
-      setTimeout(() => {
-        setIntroFixed(true)
-      }, SCROLLING_DURATION)
-    } else {
-      setIntroFixed(false)
-    }
-  }, [currentPage])
 
   return (
     <Pagination ref={paginationRef}>
@@ -99,7 +77,7 @@ function IndexPage() {
         </Styled.FirstPageInnerWrapper>
       </Page>
       <Page>
-        <Styled.IntroPageInnerWrapper fixed={isIntroFixed} hidden={!leavingIntroPage(1) && currentPage !== 1}>
+        <Styled.IntroPageInnerWrapper>
           <Styled.EllipseImage1Wrapper>
             <Image name="ellipse1.png" />
           </Styled.EllipseImage1Wrapper>
@@ -132,48 +110,6 @@ function IndexPage() {
                   <Styled.ContentItem key={index}>{paragraph}</Styled.ContentItem>
                 ))}
               </Styled.MobileContentList>
-            </Styled.IntroContent>
-          </Styled.IntroWrapper>
-        </Styled.IntroPageInnerWrapper>
-      </Page>
-      <Page>
-        <Styled.IntroPageInnerWrapper fixed={isIntroFixed} hidden={!leavingIntroPage(2) && currentPage !== 2}>
-          <Styled.EllipseImage1Wrapper>
-            <Image name="ellipse1.png" />
-          </Styled.EllipseImage1Wrapper>
-          <Styled.EllipseImage2Wrapper>
-            <Image name="ellipse2.png" />
-          </Styled.EllipseImage2Wrapper>
-          <Styled.IntroWrapper>
-            <Styled.IntroTitle>
-              {Config.main_third.title.map((text, index) => (
-                <Styled.IntroUnderline
-                  key={text}
-                  trigger={currentPage === 2}
-                  delay={600 + index * 200}
-                  repeat
-                >
-                  {text}
-                </Styled.IntroUnderline>
-              ))}
-            </Styled.IntroTitle>
-            <Styled.IntroContent>
-              {Config.main_third.notMobileParagraphs.map((paragraph, index) => (
-                <Styled.NotMobileIntroListItem key={index}>
-                  <Styled.Icon>
-                    <SVGIcon name="check" size={38} />
-                  </Styled.Icon>
-                  {paragraph}
-                </Styled.NotMobileIntroListItem>
-              ))}
-              {Config.main_third.mobileParagraphs.map((paragraph, index) => (
-                <Styled.MobileIntroListItem key={index}>
-                  <Styled.Icon>
-                    <SVGIcon name="check" size={38} />
-                  </Styled.Icon>
-                  {paragraph}
-                </Styled.MobileIntroListItem>
-              ))}
             </Styled.IntroContent>
           </Styled.IntroWrapper>
         </Styled.IntroPageInnerWrapper>
@@ -225,21 +161,21 @@ function IndexPage() {
           </Styled.IntroParagraph2>
           <Styled.ChattingImageWrapper>
             <Styled.ChattingImage1
-              trigger={currentPage === 4}
+              trigger={currentPage === 3}
               delay={500}
               repeat
             >
               <Image name="chat1" />
             </Styled.ChattingImage1>
             <Styled.ChattingImage2
-              trigger={currentPage === 4}
+              trigger={currentPage === 3}
               delay={1000}
               repeat
             >
               <Image name="chat2" />
             </Styled.ChattingImage2>
             <Styled.ChattingImage3
-              trigger={currentPage === 4}
+              trigger={currentPage === 3}
               delay={1500}
               repeat
             >
@@ -259,7 +195,7 @@ function IndexPage() {
                 { Config.main_sixth.title.map((text, index) => (
                   <Styled.ProjectUnderline
                     key={text}
-                    trigger={currentPage === 5}
+                    trigger={currentPage === 4}
                     delay={600 + index * 500}
                     repeat
                   >
@@ -294,7 +230,6 @@ function IndexPage() {
                 href={project.link}
                 target="_blank"
                 rel="noreferrer noopener"
-                limit={index >= 4}
               >
                 <Styled.ProjectImageWrapper>
                   <Styled.ProjectImage name={`main_project/${project.image}`} />
@@ -309,6 +244,30 @@ function IndexPage() {
                 </Styled.ProjectContent>
               </Styled.ProjectWrapper>
             ))}
+            <Styled.ProjectTabletLinkListWrapper>
+              <Styled.ProjectLinkListWrapper>
+                <Styled.LinkWrapper
+                  href={Config.main_seven.tistory}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Styled.LinkIcon name="tistory" />
+                  <Styled.LinkText>
+                    Tistory
+                  </Styled.LinkText>
+                </Styled.LinkWrapper>
+                <Styled.LinkWrapper
+                  href={Config.main_seven.brunch}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Styled.LinkIcon name="brunch" />
+                  <Styled.LinkText>
+                    Brunch
+                  </Styled.LinkText>
+                </Styled.LinkWrapper>
+              </Styled.ProjectLinkListWrapper>
+            </Styled.ProjectTabletLinkListWrapper>
           </Styled.ProjectListWrapper>
           <Styled.ProjectListMobileWrapper>
             <Slider
@@ -329,7 +288,6 @@ function IndexPage() {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer noopener"
-                  limit={index >= 4}
                 >
                   <Styled.ProjectImageWrapper>
                     <Styled.ProjectImage name={`main_project/${project.image}`} />
@@ -346,6 +304,30 @@ function IndexPage() {
               ))}
             </Slider>
           </Styled.ProjectListMobileWrapper>
+          <Styled.ProjectNotTabletLinkListWrapper>
+            <Styled.ProjectLinkListWrapper>
+              <Styled.LinkWrapper
+                href={Config.main_seven.tistory}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Styled.LinkIcon name="tistory" />
+                <Styled.LinkText>
+                  Tistory
+                </Styled.LinkText>
+              </Styled.LinkWrapper>
+              <Styled.LinkWrapper
+                href={Config.main_seven.brunch}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Styled.LinkIcon name="brunch" />
+                <Styled.LinkText>
+                  Brunch
+                </Styled.LinkText>
+              </Styled.LinkWrapper>
+            </Styled.ProjectLinkListWrapper>
+          </Styled.ProjectNotTabletLinkListWrapper>
         </Styled.BlogPageWrapper>
       </Page>
       <Page>
@@ -354,7 +336,7 @@ function IndexPage() {
             <Styled.ContactTitle>
               <Styled.ContactUnderline
                 key={Config.main_eight.title}
-                trigger={currentPage === 7 || currentPage === 8}
+                trigger={currentPage === 6 || currentPage === 7}
                 delay={600}
                 repeat
               >
