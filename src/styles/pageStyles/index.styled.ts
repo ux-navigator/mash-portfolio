@@ -283,7 +283,7 @@ export const IntroContent = styled.div`
 export const NotMobileContentTitle = styled.p`
   margin-bottom: 1.25rem;
   font-family: 'Gothic Bold';
-  font-size: 1.375rem;
+  font-size: 1.25rem;
 
   @media ${({ theme }) => theme.media.mobile} {
     display: none;
@@ -304,11 +304,12 @@ export const MobileContentTitle = styled.p`
 
 export const ContentItem = styled.p`
   font-family: 'Gothic Regular';
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 
   @media ${({ theme }) => theme.media.mobile} {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
   }
 `
 
@@ -395,7 +396,7 @@ export const IntroItemWrapper = styled.div`
   @media ${({ theme }) => theme.media.tablet} {
     flex-direction: row;
     width: 446px;
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 2rem;
     box-sizing: border-box;
     background-color: #FFF;
     box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, .16);
@@ -415,6 +416,7 @@ export const IntroItemWrapper = styled.div`
 
 export const IntroItemsWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   width: 100%;
   margin-top: 6rem;
 
@@ -511,12 +513,8 @@ export const ContentToggleButton = styled.img<ContentToggleButtonProps>`
 export const IntroItemTitle = styled.div<IntroItemTitleProps>`
   margin-bottom: 0.875rem;
   font-family: 'Mark Pro Bold';
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #3370E8;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    font-size: 1.25rem;
-  }
 
   @media ${({ theme }) => theme.media.mobile} {
     display: flex;
@@ -533,19 +531,23 @@ export const IntroItemTitle = styled.div<IntroItemTitleProps>`
 `
 
 export const IntroItemContent = styled.p<IntroItemContentProps>`
-  width: 272px;
+  width: 250px;
   font-family: 'Gothic Regular';
-  font-size: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
   color: #747474;
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 100%;
+    text-align: unset;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
     display: none;
     width: 100%;
     margin-top: 1.25rem;
+    text-align: unset;
 
     ${({ show }) => show && css`
       display: block;
