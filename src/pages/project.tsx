@@ -23,6 +23,8 @@ interface ProjectAttr {
   password?: string
 }
 
+const PROJECT_FILTER = ['APP', 'WEB', 'RESEARCH']
+
 function ProjectPage() {
   const [filter, setFilter] = useState('ALL')
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
@@ -34,7 +36,11 @@ function ProjectPage() {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const filterSet = ConfigProject.projects.reduce((acc, cur) => {
-    cur.tags.forEach(tag => acc.add(tag))
+    cur.tags.forEach(tag => {
+      if (PROJECT_FILTER.includes(tag)) {
+        acc.add(tag)
+      }
+    })
     return acc
   }, new Set<string>(['ALL']))
 
