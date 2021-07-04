@@ -176,7 +176,7 @@ export const ProjectSubTitle = styled.p`
 export const Filter = styled.div<FilterProps>`
   width: fit-content;
   padding: 2px 0;
-  color: #3370E8;
+  color: #E0E5EB;
   font-family: 'Mark Pro Bold';
   font-size: 40px;
   white-space: nowrap;
@@ -184,6 +184,7 @@ export const Filter = styled.div<FilterProps>`
   cursor: pointer;
 
   ${({ active }) => active && css`
+    color: #3370E8;
     border-bottom-color: #3370E8;
   `}
 `
