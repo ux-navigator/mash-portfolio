@@ -20,6 +20,10 @@ function ProjectTemplate({ location, pageContext: { slug } }: PageProps<object, 
   const projectImages = project?.images
   const queryParams = qs.parse(location.search, { ignoreQueryPrefix: true })
 
+  if (typeof window === 'undefined') {
+    return null
+  }
+
   if (!isEmpty(project?.password) && queryParams.key !== window.btoa(decodeURIComponent(project!.password!))) {
     return null
   }
