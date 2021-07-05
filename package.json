@@ -4,7 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "homepage": "https://hanguk.github.io",
+  "homepage": "https://ux-navigator.github.io",
   "dependencies": {
     "gatsby": "^2.26.1",
     "gatsby-background-image": "^1.5.0",
@@ -50,7 +50,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/hanguk/hanguk.github.io"
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/ux-navigator/ux-navigator.github.io"
   },
   "repository": {
     "type": "git",
