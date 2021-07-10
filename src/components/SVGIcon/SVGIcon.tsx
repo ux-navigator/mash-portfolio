@@ -1,6 +1,6 @@
 /* External dependencies */
 import React, { useMemo } from 'react'
-import _ from 'lodash'
+import { endsWith } from 'lodash-es'
 
 /* Internal dependencies */
 import * as Styled from './SVGIcon.styled'
@@ -13,7 +13,7 @@ interface SVGIconProps {
 
 function SVGIcon({ className, name, size }: SVGIconProps) {
   const src = useMemo(() => {
-    const fileName = _.endsWith(name, '.svg') ? name : `${name}.svg`
+    const fileName = endsWith(name, '.svg') ? name : `${name}.svg`
     try {
       return require(`images/${fileName}`)
     } catch (e) {
