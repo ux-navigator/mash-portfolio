@@ -61,9 +61,10 @@ function ProjectTemplate({ location, pageContext: { slug } }: PageProps<object, 
 
   return (
     <Styled.ProjectContainer>
-      { projectImages.map(image => (
-        <Image key={image} name={`${slug}/${image}`} />
-      )) }
+      { projectImages.map((image, index) => {
+        const src = require(`images/${slug}/${image}`)
+        return <img key={`${image}-${index}`} src={src} width="100%" />
+      }) }
     </Styled.ProjectContainer>
   )
 }

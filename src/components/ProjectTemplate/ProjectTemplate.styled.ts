@@ -8,4 +8,8 @@ export const ProjectContainer = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     padding-top: 60px;
   }
+  & > img {
+    margin-top: -4px;
+  }
+
 `
