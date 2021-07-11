@@ -11,7 +11,7 @@ interface NavItemWrapperProps {
 }
 
 export const NavigationWrapper = styled.div<NavigationWrapperProps>`
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;

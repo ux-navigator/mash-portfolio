@@ -32,7 +32,7 @@ function Pagination(
   const { dispatch } = useContext(GlobalContext)
 
   const pageRefs = useRef<HTMLDivElement[]>([])
-  const currentScrollTop = useRef(typeof window !== 'undefined' ? window.pageYOffset : 0)
+  const currentScrollTop = useRef(0)
   const currentPageIndex = useRef(0)
   const isMounted = useRef(false)
 
@@ -97,13 +97,19 @@ function Pagination(
   }, [handleScroll])
 
   useEffect(() => {
-    window.scroll({
-      behavior: 'smooth',
-      top: 0,
-    })
+    document.body.classList.add('nonScrollable')
     setTimeout(() => {
-      isMounted.current = true
-    }, SCROLLING_DURATION)
+      if (typeof window !== 'undefined') {
+        window.scroll({
+          behavior: 'smooth',
+          top: 0,
+        })
+      }
+      setTimeout(() => {
+        isMounted.current = true
+        document.body.classList.remove('nonScrollable')
+      }, SCROLLING_DURATION)
+    }, 500)
   }, [])
 
   return (

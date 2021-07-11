@@ -1,5 +1,5 @@
 /* External dependencies */
-import React, { useReducer, useMemo } from 'react'
+import React, { useReducer, useMemo, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 /* Internal dependencies */
@@ -24,6 +24,13 @@ function Layout({ children }: LayoutProps) {
   const theme = useMemo(() => ({
     media,
   }), [])
+
+  useEffect(() => {
+    const getsbyWrapper = document.getElementById('gatsby-focus-wrapper')
+    if (getsbyWrapper) {
+      getsbyWrapper.style.overflow = 'hidden'
+    }
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>
