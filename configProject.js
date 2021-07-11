@@ -30,7 +30,7 @@ module.exports = {
         'img10.png',
         'img11.png',
       ],
-      // password: '1234',
+      password: '',
     },
     {
       name: 'at',
@@ -51,6 +51,7 @@ module.exports = {
         'img10.png',
         'img11.png',
       ],
+      password: '',
     },
     {
       name: 'sugarattack',
@@ -70,6 +71,7 @@ module.exports = {
         'img9.png',
         'img10.png',
       ],
+      password: '',
     },
   ],
   modal: {
