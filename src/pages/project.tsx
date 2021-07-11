@@ -1,9 +1,11 @@
 /* External dependencies */
-import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, useRef, useContext } from 'react'
 import { navigate } from 'gatsby'
 import { isEmpty, isNil } from 'lodash-es'
 
 /* Internal dependencies */
+import { setScrolled } from 'reducers/globalReducer'
+import { GlobalContext } from 'contexts/globalContext'
 import DeviceService from 'services/DeviceService'
 import useLayout from 'hooks/useLayout'
 import Device from 'constants/Device'
@@ -26,6 +28,8 @@ interface ProjectAttr {
 const PROJECT_FILTER = ['APP', 'WEB', 'RESEARCH']
 
 function ProjectPage() {
+  const { dispatch, state: { isScrolled } } = useContext(GlobalContext)
+  
   const [filter, setFilter] = useState('ALL')
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
   const [currentProject, setCurrentProject] = useState<ProjectAttr>()
@@ -110,11 +114,34 @@ function ProjectPage() {
     value,
   ])
 
+  const handleScroll = useCallback(() => {
+    if ((document.scrollingElement?.scrollTop ?? 0) > 50) {
+      if (!isScrolled) {
+        dispatch(setScrolled({ isScrolled: true }))
+      }
+      return
+    }
+    if (isScrolled) {
+      dispatch(setScrolled({ isScrolled: false }))
+    }
+  }, [
+    isScrolled,
+    dispatch,
+  ])
+
   useEffect(() => {
     if (!isNil(inputRef.current) && showModal) {
       inputRef.current.focus()
     }
   }, [showModal])
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll)
+
+    return function cleanup() {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll])
 
   useEffect(() => () => {
     document.body.classList.remove('nonScrollable')
