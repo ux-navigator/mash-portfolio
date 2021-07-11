@@ -1,3 +1,4 @@
+
 module.exports = {
   title: 'mash-portfolio',
   description: 'portfolio site',
@@ -27,8 +28,8 @@ module.exports = {
     paragraph2: '이런 것들을 중요하게 생각해요',
     items: [
       {
-        title: 'Observing user behavior',
-        content: '사용자의 행동을 관찰하고 그속에 숨어있는 의미를 찾아 프로덕트에 반영',
+        title: 'User context',
+        content: '사용자 행동맥락을 잘 관찰하고 해석하여 다양한 관점에서 바라보며 UX를 설계',
       },
       {
         title: 'Date-Informed design',
@@ -53,26 +54,26 @@ module.exports = {
     paragraph2: '이런 저런 글을 쓰고 있어요',
     projects: [
       {
-        link: 'https://naver.com',
-        title: '[UX/UI] e-Book 1사 전격 비교!',
-        image: 'background.jpeg',
-        createdAt: 'Jun 03. 2020',
+        link: 'https://ux-navigator-story.tistory.com/6',
+        title: '온투법 1호 기업 등장! P2P 금융 무엇이 달라지나? - 중금리대출 시대 열릴까?',
+        image: 'post1.jpg',
+        createdAt: 'Jul 5. 2021',
       },
       {
-        link: 'https://naver.com',
-        title: '[UX/UI] e-Book 2사 전격 비교!',
-        image: 'background.jpeg',
-        createdAt: 'Jun 03. 2020',
+        link: 'https://brunch.co.kr/@wepostit/8',
+        title: 'Z세대를 사로잡는 브랜드가 되는 법: 국내 브랜드',
+        image: 'post2.png',
+        createdAt: 'Aug 24. 2020',
       },
       {
-        link: 'https://naver.com',
-        title: '[UX/UI] e-Book 3사 전격 비교!',
-        image: 'background.jpeg',
-        createdAt: 'Jun 03. 2020',
+        link: 'https://brunch.co.kr/@wepostit/6',
+        title: '어린이용 교육 앱 UX/UI디자인 시 주의할 점 5가지',
+        image: 'post3.png',
+        createdAt: 'Jun 21. 2020',
       },
     ],
-    tistory: 'https://naver.com',
-    brunch: 'https://naver.com',
+    tistory: 'https://ux-navigator-story.tistory.com',
+    brunch: 'https://brunch.co.kr/@wepostit',
   },
   main_eight: {
     title: 'Contact Me!',
