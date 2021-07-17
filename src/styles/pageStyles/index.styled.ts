@@ -1081,7 +1081,7 @@ export const ContactContent = styled.div<ContactContentProps>`
   }
 `
 
-export const ContactInfoItem = styled.div`
+export const ContactInfoItem = styled.a`
   display: flex;
   align-items: center;
   width: fit-content;

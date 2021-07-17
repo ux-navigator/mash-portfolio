@@ -82,6 +82,7 @@ module.exports = {
       {
         icon: 'letter',
         content: 'Jiny1756@gmail.com',
+        link: 'mailto:Jiny1756@gmail.com',
         language: 'en',
       },
       {
