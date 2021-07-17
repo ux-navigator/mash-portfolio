@@ -232,6 +232,8 @@ function ProjectPage() {
             {Config.main_eight.items.map((item, index) => (
               <Styled.ContactInfoItem
                 key={index}
+                href={item.link}
+                target="_blank"
                 onMouseEnter={() => handleEnterContactItem(index)}
                 onMouseLeave={handleLeaveContactItem}
               >
