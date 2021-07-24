@@ -43,7 +43,7 @@ function Navigation() {
           <Styled.LinkWrapper>
             <Styled.LinkItem to="/" activeClassName="active">HOME</Styled.LinkItem>
             <Styled.LinkItem to="/project" activeClassName="active">PROJECT</Styled.LinkItem>
-            {/* <Styled.LinkItem to="/about" activeClassName="active">ABOUT</Styled.LinkItem> */}
+            <Styled.LinkItem to="/about" activeClassName="active">ABOUT</Styled.LinkItem>
           </Styled.LinkWrapper>
           <Styled.SkillWrapper>
             <Styled.Divider />
