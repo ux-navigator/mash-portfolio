@@ -556,4 +556,3 @@ export const FooterDescription = styled.p`
     font-size: 0.4375rem;
   }
 `
-
