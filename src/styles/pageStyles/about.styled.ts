@@ -79,6 +79,7 @@ export const HistoryContentItem = styled.p`
   font-size: 1rem;
   font-family: 'Gothic Regular';
   line-height: 1.375rem;
+  word-break: break-all;
 `
 
 export const HistpryContentWrapper = styled.div`
@@ -118,6 +119,12 @@ export const ContentSection = styled.section`
 
   ${HistoryWrapper} + ${HistoryWrapper} {
     margin-top: 2.375rem;
+  }
+
+  @media ${({ theme }) => theme.media.mobile} {
+    width: 335px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `
 
