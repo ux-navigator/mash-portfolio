@@ -1,7 +1,9 @@
 /* External dependencies */
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect, useContext } from 'react'
 
 /* Internal dependencies */
+import { setScrolled } from 'reducers/globalReducer'
+import { GlobalContext } from 'contexts/globalContext'
 import DeviceService from 'services/DeviceService'
 import useLayout from 'hooks/useLayout'
 import Device from 'constants/Device'
@@ -12,6 +14,8 @@ import Config from '../../config'
 import ProfileImage from 'images/jinyoung.png'
 
 function AboutPage() {
+  const { dispatch, state: { isScrolled } } = useContext(GlobalContext)
+
   const [contactItemIndex, setContactItemIndex] = useState<number | null>(null)
 
   const handleEnterContactItem = useCallback((index: number) => {
@@ -21,6 +25,29 @@ function AboutPage() {
   const handleLeaveContactItem = useCallback(() => {
     setContactItemIndex(null)
   }, [])
+
+  const handleScroll = useCallback(() => {
+    if ((document.scrollingElement?.scrollTop ?? 0) > 80) {
+      if (!isScrolled) {
+        dispatch(setScrolled({ isScrolled: true }))
+      }
+      return
+    }
+    if (isScrolled) {
+      dispatch(setScrolled({ isScrolled: false }))
+    }
+  }, [
+    isScrolled,
+    dispatch,
+  ])
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll)
+
+    return function cleanup() {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll])
 
   return (
     <Styled.AboutContainer>
