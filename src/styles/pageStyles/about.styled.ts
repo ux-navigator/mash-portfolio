@@ -1,5 +1,9 @@
 /* External dependencies */
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface HistoryItemTitleProps {
+  isKorean: boolean
+}
 
 export const AboutContainer = styled.div`
   width: 1024px;
@@ -64,6 +68,48 @@ export const BirthDay = styled.p`
   font-family: 'Mark Pro Book';
 `
 
+export const HistoryContentItem = styled.p`
+  font-size: 1rem;
+  font-family: 'Gothic Regular';
+  line-height: 1.375rem;
+`
+
+export const HistpryContentWrapper = styled.div`
+  width: 100%;
+
+  ${HistoryContentItem} + ${HistoryContentItem} {
+    margin-top: 0.625rem;
+  }
+`
+
+export const HistoryItemTitle = styled.p<HistoryItemTitleProps>`
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-family: 'Mark Pro Bold';
+  line-height: 1.25rem;
+
+  ${({ isKorean }) => isKorean && css`
+    font-family: 'Gothic Bold';
+  `}
+`
+
+export const HistoryWrapper = styled.div`
+  width: 100%;
+`
+
+export const SectionTitle = styled.p`
+  margin-bottom: 1.25rem;
+  color: #3370E8;
+  font-size: 1.5rem;
+  font-family: 'Mark Pro Bold';
+  line-height: 2rem;
+`
+
 export const ContentSection = styled.section`
+  width: 100%;
   margin-top: 100px;
+
+  ${HistoryWrapper} + ${HistoryWrapper} {
+    margin-top: 2.375rem;
+  }
 `

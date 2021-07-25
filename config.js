@@ -107,5 +107,130 @@ module.exports = {
       nameEng: 'JinYoung Lee',
       birthday: '1996.04.19',
     },
+    history: [
+      {
+        title: 'Career & Work Projects',
+        histories: [
+          {
+            itemTitle: 2021,
+            isKorean: false,
+            items: [
+              '(주)INP - 키즈 신제품 기획을 위한 사용자 경험 리서치, 인사이트 도출 및 분석, Context Framework 개발',
+              'MOUND - 블록체인 기반 거래 어플리케이션 UX설계 (IA, Task Flow, Wireframe 등)',
+              'KOSME - 청년창업사관학교 웹사이트 사용성 평가 및 개선안 도출',
+            ],
+          },
+          {
+            itemTitle: 2020,
+            isKorean: false,
+            items: [
+              '스테이지파이브 - 간편 통신 유통 플랫폼 사용성 평가 및 서비스 개선 방향 도출',
+              'HCI학회- 키워드별 연구실 탐색 웹사이트 설계 및 개발',
+              '(주)비상교육 - UX/UI Designer | 초등 저학년 영어학습 어플리케이션 리뉴얼, 웹페이지 리뉴얼',
+            ],
+          },
+          {
+            itemTitle: 2019,
+            isKorean: false,
+            items: [
+              '(주)비상교육 - UX/UI Designer | 초등 고학년 영문법, 파닉스 학습 어플리케이션 개발, AI기반 음성기술 제안 TF',
+            ],
+          },
+          {
+            itemTitle: 2018,
+            isKorean: false,
+            items: [
+              '(주)캐럿글로벌 - Intern Designer | 영어, 중국어 학습 콘텐츠 설계 및 디자인',
+              '(주)하이트론씨스템즈- Intern Designer | 인공지능 카메라 기반 스트레칭 플랫폼 제안',
+            ],
+          },
+          {
+            itemTitle: 2017,
+            isKorean: false,
+            items: [
+              'Ph∙D 고혜영 연구팀 - 현실체감형 스마트러닝 인터랙션 콘텐츠 캐릭터 디자인 및 모션 개발, 앱 GUI 디자인 외',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Awards',
+        histories: [
+          {
+            itemTitle: '2021',
+            isKorean: false,
+            items: [
+              '우리은행 - 우수상 | 프로젝트 블루아워 온(On)택트 해커톤',
+            ],
+          },
+          {
+            itemTitle: '2020',
+            isKorean: false,
+            items: [
+              'aT 한국농수산식품유통공사 - 최우수상 | 농식품 빅데이터 온라인 해커톤 서비스개발부문',
+            ],
+          },
+          {
+            itemTitle: '2018',
+            isKorean: false,
+            items: [
+              'KIICE - 우수논문상 | KIICE 추계학술대회',
+            ],
+          },
+          {
+            itemTitle: '2016',
+            isKorean: false,
+            items: [
+              '서울특별시청 - 아이디어상 | 아이서울유프렌즈 콘텐츠 제작 발표회',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Activities',
+        histories: [
+          {
+            itemTitle: '2021',
+            isKorean: false,
+            items: [
+              'Mash-Up - IT 연합 동아리',
+            ],
+          },
+          {
+            itemTitle: '2020',
+            isKorean: false,
+            items: [
+              'Post IT - IT 아티클 작성 스터디',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Education',
+        histories: [
+          {
+            itemTitle: '서울여자대학교',
+            isKorean: true,
+            items: [
+              '석사과정 : 일반대학원 인터랙션디자인전공 (2020. 09 - 2022. 08 졸업예정)',
+              '학사과정 : 콘텐츠디자인학과, 복수전공 소프트웨어융합학과 (2015. 03 - 2019. 02)',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Article',
+        histories: [
+          {
+            itemTitle: '',
+            isKorean: true,
+            items: [
+              '티스토리 : https://ux-navigator-story.tistory.com',
+              '브런치 : https://brunch.co.kr/@wepostit',
+            ],
+          },
+        ],
+      },
+    ],
   },
 }
