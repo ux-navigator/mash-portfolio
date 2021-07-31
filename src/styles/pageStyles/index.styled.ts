@@ -264,6 +264,10 @@ export const IntroUnderline = styled(Underline)`
   height: 6.2px;
   opacity: 0.6;
   background-color: #C2C2C2;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    height: 4.8px;
+  }
 `
 
 export const IntroContent = styled.div`
@@ -688,6 +692,10 @@ export const ProjectUnderline = styled(Underline)`
   height: 6.2px;
   opacity: 0.6;
   background-color: #FFF;
+
+  @media ${({ theme }) => theme.media.mobile} {
+    height: 4.8px;
+  }
 `
 
 export const ProjectTitle = styled.div`
@@ -1029,7 +1037,7 @@ export const ContactUnderline = styled(Underline)`
 
   @media ${({ theme }) => theme.media.mobile} {
     bottom: 2px;
-    height: 4px;
+    height: 4.8px;
   }
 `
 
