@@ -93,6 +93,7 @@ module.exports = {
       {
         icon: 'bottom-arrow',
         content: '이력서 내려받기',
+        link: 'https://drive.google.com/file/d/1r9MTvLPMu7TaNf7tuGNSrSCG9U5xaCRJ/view?usp=sharing',
         language: 'ko',
       },
     ],
