@@ -9,7 +9,6 @@ import useLayout from 'hooks/useLayout'
 import Device from 'constants/Device'
 import SEO from 'components/SEO'
 import SVGIcon from 'components/SVGIcon'
-import Image from 'components/Image'
 import * as Styled from 'styles/pageStyles/about.styled'
 import Config from '../../config'
 import ProfileImage from 'images/jinyoung.png'
@@ -108,9 +107,6 @@ function AboutPage() {
                 </Styled.ContactInfoItem>
               ))}
             </Styled.ContactInfoWrapper>
-            <Styled.ContactBackgroundImage>
-              <Image name="background-contact.png" />
-            </Styled.ContactBackgroundImage>
           </Styled.ContactPageInnerWrapper>
         </Styled.ContactPageWrapper>
         <Styled.FooterWrapper>

@@ -10,7 +10,6 @@ import DeviceService from 'services/DeviceService'
 import useLayout from 'hooks/useLayout'
 import Device from 'constants/Device'
 import SEO from 'components/SEO'
-import Image from 'components/Image'
 import SVGIcon from 'components/SVGIcon'
 import * as Styled from 'styles/pageStyles/project.styled'
 import Config from '../../config'
@@ -252,9 +251,6 @@ function ProjectPage() {
                 </Styled.ContactInfoItem>
               ))}
             </Styled.ContactInfoWrapper>
-            <Styled.ContactBackgroundImage>
-              <Image name="background-contact.png" />
-            </Styled.ContactBackgroundImage>
           </Styled.ContactPageInnerWrapper>
         </Styled.ContactPageWrapper>
         <Styled.FooterWrapper>
