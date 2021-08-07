@@ -1131,21 +1131,6 @@ export const ContactInfoWrapper = styled.div`
   }
 `
 
-export const ContactBackgroundImage = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 32.5rem;
-
-  @media ${({ theme }) => theme.media.tablet} {
-    display: none;
-  }
-
-  @media ${({ theme }) => theme.media.mobile} {
-    display: none;
-  }
-`
-
 export const FooterPage = styled(Page)`
   width: 100%;
   height: auto;

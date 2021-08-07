@@ -367,9 +367,6 @@ function IndexPage() {
                 </Styled.ContactInfoItem>
               ))}
             </Styled.ContactInfoWrapper>
-            <Styled.ContactBackgroundImage>
-              <Image name="background-contact.png" />
-            </Styled.ContactBackgroundImage>
           </Styled.ContactPageInnerWrapper>
         </Styled.ContactPageWrapper>
       </Page>
