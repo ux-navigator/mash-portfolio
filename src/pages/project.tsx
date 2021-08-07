@@ -9,6 +9,7 @@ import { GlobalContext } from 'contexts/globalContext'
 import DeviceService from 'services/DeviceService'
 import useLayout from 'hooks/useLayout'
 import Device from 'constants/Device'
+import SEO from 'components/SEO'
 import Image from 'components/Image'
 import SVGIcon from 'components/SVGIcon'
 import * as Styled from 'styles/pageStyles/project.styled'
@@ -148,122 +149,125 @@ function ProjectPage() {
   }, [])
 
   return (
-    <Styled.ProjectContainer>
-      <Styled.ModalContainer show={showModal} onClick={handleClickContainer}>
-        <Styled.Modal>
-          <Styled.ModalTitle>{ ConfigProject.modal.title }</Styled.ModalTitle>
-          <Styled.ModalContent>
-            <Styled.ModalDescription>{ ConfigProject.modal.description }</Styled.ModalDescription>
-            <Styled.ModalInput
-              ref={inputRef}
-              hasError={error}
-              value={value}
-              onChange={handleChangeInput}
-              placeholder={ConfigProject.modal.placehoder }
-            />
-            <Styled.ModalFooter>
-              <Styled.ModalCancel onClick={handleClickCancel}>{ ConfigProject.modal.cancel }</Styled.ModalCancel>
-              <Styled.ModalConfirm onClick={handleClickConfirm}>{ ConfigProject.modal.confirm }</Styled.ModalConfirm>
-            </Styled.ModalFooter>
-          </Styled.ModalContent>
-        </Styled.Modal>
-      </Styled.ModalContainer>
-      <Styled.ProjectTitle>
-        { ConfigProject.title.map((titleItem, index) => (
-          <p key={index}>{ titleItem }</p>
-        )) }
-      </Styled.ProjectTitle>
-      <Styled.ProjectSubTitle>
-        { ConfigProject.subTitle }
-      </Styled.ProjectSubTitle>
-      <Styled.FilterWrapper>
-        { Array.from(filterSet).map(tag => (
-          <Styled.Filter
-            key={tag}
-            data-tag={tag}
-            active={filter === tag}
-            onClick={handleClickFilter}
-          >
-            { tag }
-          </Styled.Filter>
-        )) }
-      </Styled.FilterWrapper>
-      <Styled.ProjectListWrapper>
-        { projects.map((project, index) => (
-          <Styled.ProjectWrapper
-            key={`${project.name}-${index}`}
-            onClick={() => handleClickProject(project)}
-          >
-            <Styled.ProjectMainImage>
-              { !isEmpty(project.title) && (
-                <Styled.ProjectImageBackground>
-                  <Styled.ProjectItemTitle>
-                    { project.title }
-                  </Styled.ProjectItemTitle>
-                  <Styled.ProjectItemPeriod>
-                    { project.period }
-                  </Styled.ProjectItemPeriod>
-                </Styled.ProjectImageBackground>
-              ) }
-              <Styled.ProjectImage name={`projects/${project.mainImage}`} />
-            </Styled.ProjectMainImage>
-            <Styled.ProjectContent>
-              { project.tags.map(tag => (
-                <Styled.Tag key={tag}>
-                  { `#${tag}` }
-                </Styled.Tag>
-              )) }
-              { !isEmpty(project.password) && (
-                <Styled.LockIcon name="lock" size={DeviceService.getDevice() === Device.Mobile ? 20: 28} />
-              ) }
-            </Styled.ProjectContent>
-          </Styled.ProjectWrapper>
-        )) }
-      </Styled.ProjectListWrapper>
-      <Styled.ContactPageWrapper>
-        <Styled.ContactPageInnerWrapper>
-          <Styled.ContactTitle>
-            {Config.main_eight.title}
-          </Styled.ContactTitle>
-          <Styled.ContactSubTitle>
-            {Config.main_eight.subTitle}
-          </Styled.ContactSubTitle>
-          <Styled.ContactInfoWrapper>
-            {Config.main_eight.items.map((item, index) => (
-              <Styled.ContactInfoItem
-                key={index}
-                href={item.link}
-                target="_blank"
-                onMouseEnter={() => handleEnterContactItem(index)}
-                onMouseLeave={handleLeaveContactItem}
-              >
-                <Styled.ContactIcon>
-                  <SVGIcon
-                    name={`${item.icon}${contactItemIndex === index ? '-blue' : ''}`}
-                    size={DeviceService.getDevice() === Device.Mobile ? 20: 28}
-                  />
-                </Styled.ContactIcon>
-                <Styled.ContactContent isKorean={item.language === 'ko'}>
-                  {item.content}
-                </Styled.ContactContent>
-              </Styled.ContactInfoItem>
-            ))}
-          </Styled.ContactInfoWrapper>
-          <Styled.ContactBackgroundImage>
-            <Image name="background-contact.png" />
-          </Styled.ContactBackgroundImage>
-        </Styled.ContactPageInnerWrapper>
-      </Styled.ContactPageWrapper>
-      <Styled.FooterWrapper>
-        <Styled.FooterLogoWrapper>
-          <Styled.FooterLogo name="footer-logo" />
-        </Styled.FooterLogoWrapper>
-        <Styled.FooterContent>
-          <Styled.FooterReserve>{ Config.main_footer.reserve }</Styled.FooterReserve>
-          <Styled.FooterDescription>{ Config.main_footer.description }</Styled.FooterDescription>
-        </Styled.FooterContent>
-      </Styled.FooterWrapper>
-    </Styled.ProjectContainer>
+    <>
+      <SEO title="Lee JinYoung | project" />
+      <Styled.ProjectContainer>
+        <Styled.ModalContainer show={showModal} onClick={handleClickContainer}>
+          <Styled.Modal>
+            <Styled.ModalTitle>{ ConfigProject.modal.title }</Styled.ModalTitle>
+            <Styled.ModalContent>
+              <Styled.ModalDescription>{ ConfigProject.modal.description }</Styled.ModalDescription>
+              <Styled.ModalInput
+                ref={inputRef}
+                hasError={error}
+                value={value}
+                onChange={handleChangeInput}
+                placeholder={ConfigProject.modal.placehoder }
+              />
+              <Styled.ModalFooter>
+                <Styled.ModalCancel onClick={handleClickCancel}>{ ConfigProject.modal.cancel }</Styled.ModalCancel>
+                <Styled.ModalConfirm onClick={handleClickConfirm}>{ ConfigProject.modal.confirm }</Styled.ModalConfirm>
+              </Styled.ModalFooter>
+            </Styled.ModalContent>
+          </Styled.Modal>
+        </Styled.ModalContainer>
+        <Styled.ProjectTitle>
+          { ConfigProject.title.map((titleItem, index) => (
+            <p key={index}>{ titleItem }</p>
+          )) }
+        </Styled.ProjectTitle>
+        <Styled.ProjectSubTitle>
+          { ConfigProject.subTitle }
+        </Styled.ProjectSubTitle>
+        <Styled.FilterWrapper>
+          { Array.from(filterSet).map(tag => (
+            <Styled.Filter
+              key={tag}
+              data-tag={tag}
+              active={filter === tag}
+              onClick={handleClickFilter}
+            >
+              { tag }
+            </Styled.Filter>
+          )) }
+        </Styled.FilterWrapper>
+        <Styled.ProjectListWrapper>
+          { projects.map((project, index) => (
+            <Styled.ProjectWrapper
+              key={`${project.name}-${index}`}
+              onClick={() => handleClickProject(project)}
+            >
+              <Styled.ProjectMainImage>
+                { !isEmpty(project.title) && (
+                  <Styled.ProjectImageBackground>
+                    <Styled.ProjectItemTitle>
+                      { project.title }
+                    </Styled.ProjectItemTitle>
+                    <Styled.ProjectItemPeriod>
+                      { project.period }
+                    </Styled.ProjectItemPeriod>
+                  </Styled.ProjectImageBackground>
+                ) }
+                <Styled.ProjectImage name={`projects/${project.mainImage}`} />
+              </Styled.ProjectMainImage>
+              <Styled.ProjectContent>
+                { project.tags.map(tag => (
+                  <Styled.Tag key={tag}>
+                    { `#${tag}` }
+                  </Styled.Tag>
+                )) }
+                { !isEmpty(project.password) && (
+                  <Styled.LockIcon name="lock" size={DeviceService.getDevice() === Device.Mobile ? 20: 28} />
+                ) }
+              </Styled.ProjectContent>
+            </Styled.ProjectWrapper>
+          )) }
+        </Styled.ProjectListWrapper>
+        <Styled.ContactPageWrapper>
+          <Styled.ContactPageInnerWrapper>
+            <Styled.ContactTitle>
+              {Config.main_eight.title}
+            </Styled.ContactTitle>
+            <Styled.ContactSubTitle>
+              {Config.main_eight.subTitle}
+            </Styled.ContactSubTitle>
+            <Styled.ContactInfoWrapper>
+              {Config.main_eight.items.map((item, index) => (
+                <Styled.ContactInfoItem
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  onMouseEnter={() => handleEnterContactItem(index)}
+                  onMouseLeave={handleLeaveContactItem}
+                >
+                  <Styled.ContactIcon>
+                    <SVGIcon
+                      name={`${item.icon}${contactItemIndex === index ? '-blue' : ''}`}
+                      size={DeviceService.getDevice() === Device.Mobile ? 20: 28}
+                    />
+                  </Styled.ContactIcon>
+                  <Styled.ContactContent isKorean={item.language === 'ko'}>
+                    {item.content}
+                  </Styled.ContactContent>
+                </Styled.ContactInfoItem>
+              ))}
+            </Styled.ContactInfoWrapper>
+            <Styled.ContactBackgroundImage>
+              <Image name="background-contact.png" />
+            </Styled.ContactBackgroundImage>
+          </Styled.ContactPageInnerWrapper>
+        </Styled.ContactPageWrapper>
+        <Styled.FooterWrapper>
+          <Styled.FooterLogoWrapper>
+            <Styled.FooterLogo name="footer-logo" />
+          </Styled.FooterLogoWrapper>
+          <Styled.FooterContent>
+            <Styled.FooterReserve>{ Config.main_footer.reserve }</Styled.FooterReserve>
+            <Styled.FooterDescription>{ Config.main_footer.description }</Styled.FooterDescription>
+          </Styled.FooterContent>
+        </Styled.FooterWrapper>
+      </Styled.ProjectContainer>
+    </>
   )
 }
 

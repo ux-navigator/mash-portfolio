@@ -7,12 +7,12 @@ interface SEOProps {
   description?: string,
   lang?: string,
   meta?: any[],
-  title: string,
+  title?: string,
 }
 
 function SEO({
-  description = '',
-  lang = 'en',
+  description,
+  lang = 'ko',
   meta = [],
   title
 }: SEOProps) {
@@ -30,8 +30,8 @@ function SEO({
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description ?? site.siteMetadata.description
+  const defaultTitle = title ?? site.siteMetadata.title
 
   return (
     <Helmet
@@ -39,7 +39,7 @@ function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle && `%s | ${defaultTitle}`}
+      titleTemplate={defaultTitle}
       meta={[
         {
           name: `description`,
@@ -56,22 +56,6 @@ function SEO({
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
         },
       ].concat(meta)}
     />

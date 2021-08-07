@@ -1,8 +1,8 @@
 
 module.exports = {
-  title: 'mash-portfolio',
+  title: 'Lee Jinyoung',
   description: 'portfolio site',
-  author: 'danivelop',
+  author: 'ux-navigator',
   main_first: {
     mainTitle: 'I\'m a UX Navigator',
     subTitle: 'looking for North Star Metric',
