@@ -193,7 +193,6 @@ export const FilterWrapper = styled.div`
   display: flex;
   width: 100%;
   margin-top: 80px;
-  overflow-x: scroll;
 
   ${Filter} + ${Filter} {
     margin-left: 60px;
