@@ -1,7 +1,7 @@
 
 module.exports = {
   title: 'Lee Jinyoung',
-  description: 'portfolio site',
+  description: '프로덕트 디자이너 이진영의 웹포트폴리오입니다.',
   author: 'ux-navigator',
   main_first: {
     mainTitle: 'I\'m a UX Navigator',
