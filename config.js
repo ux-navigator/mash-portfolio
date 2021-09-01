@@ -7,7 +7,7 @@ module.exports = {
     mainTitle: 'I\'m a UX Navigator',
     subTitle: 'looking for North Star Metric',
     paragraph: 'It\'s about my philosophy.',
-    skills: [''],
+    skills: ['Research', 'UX/UI design'],
   },
   main_second: {
     title: ['What does', 'UX mean', 'to you?'],
@@ -124,7 +124,7 @@ module.exports = {
               '[KOSME] - 청년창업사관학교 웹사이트 사용성 평가 및 개선안 도출',
               '[스테이지파이브] - 간편 통신 유통 플랫폼 사용성 평가 및 서비스 개선 방향 도출',
               '[HCI학회] - 키워드별 연구실 탐색 웹사이트 설계 및 개발',
-              '[비상교육] - UX/UI Designer, 초등 저학년 영어학습 어플리케이션 리뉴얼, 웹페이지 리뉴얼',
+              '[비상교육] - UX/UI Designer | 초등 저학년 영어학습 어플리케이션 리뉴얼, 웹페이지 리뉴얼',
             ],
           },
           {

@@ -103,7 +103,7 @@ export const SubTitle = styled.h2`
 `
 
 export const Paragraph = styled.p`
-  // margin-bottom: 4rem;
+  margin-bottom: 4rem;
   font-size: 1.125rem;
   font-family: 'Mark Pro Bold';
   color: #3370E8;
