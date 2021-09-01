@@ -240,7 +240,7 @@ export const ProjectImageBackground = styled.div`
   bottom: 0;
   right: 0;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.45s;
   z-index: 9998;
 `
@@ -407,6 +407,7 @@ export const ContactSubTitle = styled.p`
   font-family: 'Mark Pro Light';
   font-size: 1.375rem;
   color: #2C3E50;
+  line-height: 1.75rem;
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 25.5rem;

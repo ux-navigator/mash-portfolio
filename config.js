@@ -7,20 +7,20 @@ module.exports = {
     mainTitle: 'I\'m a UX Navigator',
     subTitle: 'looking for North Star Metric',
     paragraph: 'It\'s about my philosophy.',
-    skills: ['UX Research', 'UX/UI Design', 'Publishing'],
+    skills: [''],
   },
   main_second: {
     title: ['What does', 'UX mean', 'to you?'],
-    notMobileParagraphTitle: '나침반 없이 바다 한가운데에서 떠나는 항해',
+    notMobileParagraphTitle: '나침반 없이 떠나는 항해',
     notMobileParagraphs: [
-      'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해  프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
-      '나침반이 없던 고대의 항해사들이 파도, 바람, 별 등을 분석하여 배의 위치, 속도, 방향을 정확하게 파악했던 것 처럼, ',
-      '정량적 / 정성적 데이터들이 넘쳐나는 광활한 바다에서 프로덕트의 길을 잃지 않고 전체를 조망하며 나아가겠습니다.',
+      'UX는 맥락을 파악하여 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
+      '나침반이 없던 고대 항해사들이 파도, 바람, 별을 통해 위치, 속도, 방향을 정확하게 파악했던 것 처럼, ',
+      '정성/정량 데이터를 수집하고 분석하여 프로덕트의 길을 찾아 나아가겠습니다.',
     ],
-    mobileParagraphTitle: '나침반 없이<br />바다 한가운데에서 떠나는 항해',
+    mobileParagraphTitle: '나침반 없이 떠나는 항해',
     mobileParagraphs: [
-      'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해  프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
-      '나침반이 없던 고대의 항해사들처럼 데이터들이 넘쳐나는 광활한 바다에서 프로덕트의 길을 잃지 않고 전체를 조망하며 나아가겠습니다.',
+      'UX는 맥락을 파악하고 흩어져있는 데이터들을 통해 프로덕트의 현재 위치와 나아가야 할 방향을 찾는 것이라고 생각합니다.',
+      '나침반이 없던 고대의 항해사들처럼 정성/정량 데이터를 수집하고 분석하여 프로덕트의 길을 찾아 나아가겠습니다.',
     ],
   },
   main_fourth: {
@@ -29,7 +29,7 @@ module.exports = {
     items: [
       {
         title: 'User context',
-        content: '사용자 행동맥락을 잘 관찰하고 해석하여 다양한 관점에서 바라보며 UX를 설계',
+        content: '사용자 맥락을 파악하고 다양한 관점에서 바라보며 UX설계',
       },
       {
         title: 'Date-Informed design',
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         title: 'UX writing',
-        content: '동기를 부여하며 결국 행동을 끌어내어 퍼널별 전환율을 높이는 Writing',
+        content: '동기를 부여하고 행동을 이끌어내어 퍼널별 전환율을 높이는 Writing',
       },
     ],
   },
@@ -77,7 +77,7 @@ module.exports = {
   },
   main_eight: {
     title: 'Contact Me!',
-    subTitle: 'Do you want to know more about me? Always Welcome!',
+    subTitle: 'Do you want to know more about me? Always welcome!',
     items: [
       {
         icon: 'letter',
@@ -111,40 +111,42 @@ module.exports = {
             itemTitle: 2021,
             isKorean: false,
             items: [
-              '(주)INP - 키즈 신제품 기획을 위한 사용자 경험 리서치, 인사이트 도출 및 분석, Context Framework 개발',
-              'MOUND - 블록체인 기반 거래 어플리케이션 UX설계 (IA, Task Flow, Wireframe 등)',
-              'KOSME - 청년창업사관학교 웹사이트 사용성 평가 및 개선안 도출',
+              '[LG전자] - 건강기능식품 개인 맞춤 플랫폼 서비스 기획 및 디자인 (기능 정의, IA, UX시나리오, 브랜딩 등)',
+              '[MOUND] - DeFi 이자 농사 플랫폼 UX설계 (벤치마킹, IA, Wireframe 등)',
+              '[INP] - 키즈 신제품 기획을 위한 UX리서치 (인사이트 도출 및 분석, Context Framework 개발 등)',
+              '[MOUND] - DeFi 거래 모바일 어플리케이션 UX설계 (벤치마킹, IA, Task Flow, Wireframe 등)',
             ],
           },
           {
             itemTitle: 2020,
             isKorean: false,
             items: [
-              '스테이지파이브 - 간편 통신 유통 플랫폼 사용성 평가 및 서비스 개선 방향 도출',
-              'HCI학회- 키워드별 연구실 탐색 웹사이트 설계 및 개발',
-              '(주)비상교육 - UX/UI Designer | 초등 저학년 영어학습 어플리케이션 리뉴얼, 웹페이지 리뉴얼',
+              '[KOSME] - 청년창업사관학교 웹사이트 사용성 평가 및 개선안 도출',
+              '[스테이지파이브] - 간편 통신 유통 플랫폼 사용성 평가 및 서비스 개선 방향 도출',
+              '[HCI학회] - 키워드별 연구실 탐색 웹사이트 설계 및 개발',
+              '[비상교육] - UX/UI Designer, 초등 저학년 영어학습 어플리케이션 리뉴얼, 웹페이지 리뉴얼',
             ],
           },
           {
             itemTitle: 2019,
             isKorean: false,
             items: [
-              '(주)비상교육 - UX/UI Designer | 초등 고학년 영문법, 파닉스 학습 어플리케이션 개발, AI기반 음성기술 제안 TF',
+              '[비상교육] - UX/UI Designer | 초등 고학년 영문법, 파닉스 학습 어플리케이션 개발, AI기반 음성기술 제안 TF',
             ],
           },
           {
             itemTitle: 2018,
             isKorean: false,
             items: [
-              '(주)캐럿글로벌 - Intern Designer | 영어, 중국어 학습 콘텐츠 설계 및 디자인',
-              '(주)하이트론씨스템즈- Intern Designer | 인공지능 카메라 기반 스트레칭 플랫폼 제안',
+              '[캐럿글로벌] - Intern Designer | 영어, 중국어 학습 콘텐츠 설계 및 디자인',
+              '[하이트론씨스템즈] - Intern Designer | 인공지능 카메라 기반 스트레칭 플랫폼 제안',
             ],
           },
           {
             itemTitle: 2017,
             isKorean: false,
             items: [
-              'Ph∙D 고혜영 연구팀 - 현실체감형 스마트러닝 인터랙션 콘텐츠 캐릭터 디자인 및 모션 개발, 앱 GUI 디자인 외',
+              '[Ph∙D 고혜영연구팀] - 현실체감형 스마트러닝 인터랙션 콘텐츠 캐릭터 디자인 및 모션 개발, 앱 GUI 디자인 외',
             ],
           },
         ],

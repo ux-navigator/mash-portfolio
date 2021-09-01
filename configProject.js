@@ -1,5 +1,5 @@
 module.exports = {
-  title: ['사용자 맥락을 읽을줄 아는', '프로덕트 디자이너, 이진영입니다'],
+  title: ['맥락을 읽는', 'UXer, 이진영입니다'],
   subTitle: '제 최근 작업물을 살펴보세요!',
   projects: [
     {

@@ -39,7 +39,7 @@ export const FirstPageInnerWrapper = styled.div`
   width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding-top: 9rem;
+  padding-top: 7rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.media.tablet} {
@@ -103,8 +103,8 @@ export const SubTitle = styled.h2`
 `
 
 export const Paragraph = styled.p`
-  margin-bottom: 4rem;
-  font-size: 1.25rem;
+  // margin-bottom: 4rem;
+  font-size: 1.125rem;
   font-family: 'Mark Pro Bold';
   color: #3370E8;
 
@@ -308,18 +308,18 @@ export const MobileContentTitle = styled.p`
 
 export const ContentItem = styled.p`
   font-family: 'Gothic Regular';
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 
   @media ${({ theme }) => theme.media.mobile} {
-    font-size: 0.875rem;
-    line-height: 1.3125rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 `
 
 export const NotMobileContentList = styled.div`
   ${ContentItem} + ${ContentItem} {
-    margin-top: 1.125rem;
+    margin-top: 0.5rem;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -330,7 +330,7 @@ export const NotMobileContentList = styled.div`
 export const MobileContentList = styled.div`
   display: none;
   ${ContentItem} + ${ContentItem} {
-    margin-top: 1.125rem;
+    margin-top: 0.5rem;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
@@ -382,9 +382,10 @@ export const IntroParagraph1 = styled.p`
 `
 
 export const IntroParagraph2 = styled.p`
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   font-family: 'Gothic Bold';
   font-size: 2rem;
+  color: #2C3E50;
 
   @media ${({ theme }) => theme.media.mobile} {
     font-size: 1.25rem;
@@ -535,12 +536,12 @@ export const IntroItemTitle = styled.div<IntroItemTitleProps>`
 `
 
 export const IntroItemContent = styled.p<IntroItemContentProps>`
-  width: 250px;
+  width: 260px;
   font-family: 'Gothic Regular';
   text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.3125rem;
-  color: #747474;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #3C556F;
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 100%;
@@ -1046,6 +1047,7 @@ export const ContactSubTitle = styled.p`
   font-family: 'Mark Pro Light';
   font-size: 1.375rem;
   color: #2C3E50;
+  line-height: 1.75rem;
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 25.5rem;
