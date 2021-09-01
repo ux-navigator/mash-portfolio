@@ -158,28 +158,28 @@ module.exports = {
             itemTitle: '2021',
             isKorean: false,
             items: [
-              '우리은행 - 우수상 | 프로젝트 블루아워 온(On)택트 해커톤',
+              '[우리은행] - 우수상 | 프로젝트 블루아워 온(On)택트 해커톤',
             ],
           },
           {
             itemTitle: '2020',
             isKorean: false,
             items: [
-              'aT 한국농수산식품유통공사 - 최우수상 | 농식품 빅데이터 온라인 해커톤 서비스개발부문',
+              '[aT 한국농수산식품유통공사] - 최우수상 | 농식품 빅데이터 온라인 해커톤 서비스개발부문',
             ],
           },
           {
             itemTitle: '2018',
             isKorean: false,
             items: [
-              'KIICE - 우수논문상 | KIICE 추계학술대회',
+              '[KIICE] - 우수논문상 | KIICE 추계학술대회',
             ],
           },
           {
             itemTitle: '2016',
             isKorean: false,
             items: [
-              '서울특별시청 - 아이디어상 | 아이서울유프렌즈 콘텐츠 제작 발표회',
+              '[서울특별시청] - 아이디어상 | 아이서울유프렌즈 콘텐츠 제작 발표회',
             ],
           },
         ],
@@ -191,14 +191,14 @@ module.exports = {
             itemTitle: '2021',
             isKorean: false,
             items: [
-              'Mash-Up - IT 연합 동아리',
+              '[Mash-Up] - IT 연합 동아리',
             ],
           },
           {
             itemTitle: '2020',
             isKorean: false,
             items: [
-              'Post IT - IT 아티클 작성 스터디',
+              '[Post IT] - IT 아티클 작성 스터디',
             ],
           },
         ],
