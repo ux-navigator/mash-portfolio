@@ -111,6 +111,7 @@ module.exports = {
             itemTitle: 2021,
             isKorean: false,
             items: [
+              '[DRIMAES] - Automotive System UI 설계 (디자인 원칙 수립, UX/UI 등)',
               '[LG전자] - 건강기능식품 개인 맞춤 플랫폼 서비스 기획 및 디자인 (기능 정의, IA, UX시나리오, 브랜딩 등)',
               '[MOUND] - DeFi 이자 농사 플랫폼 UX설계 (벤치마킹, IA, Wireframe 등)',
               '[INP] - 키즈 신제품 기획을 위한 UX리서치 (인사이트 도출 및 분석, Context Framework 개발 등)',
