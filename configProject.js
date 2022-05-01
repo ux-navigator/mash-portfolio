@@ -6,7 +6,7 @@ module.exports = {
       name: 'PUDDY',
       mainImage: 'PUDDY.png',
       tags: ['RESEARCH', 'UX/UI', 'APP'],
-      title: 'PUDDY : 반려동물의 노후대비를 위ㄴ 저축 서비스',
+      title: 'PUDDY : 반려동물의 노후대비를 위한 저축 서비스',
       period: '2021.10 ~ 2022.04',
       images: [
         '0.png',
