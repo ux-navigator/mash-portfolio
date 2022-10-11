@@ -75,7 +75,7 @@ module.exports = {
         'img10.png',
         'img11.png',
       ],
-      password: 'FinDa1234',
+      password: 'qwe123!',
     },
     {
       name: 'at',
