@@ -60,12 +60,12 @@ function IndexPage() {
         <Page>
           <Styled.FirstPageInnerWrapper>
             <Styled.ContentWrapper>
-              <Styled.MainTitle>{ Config.main_first.mainTitle }</Styled.MainTitle>
-              <Styled.SubTitle>{ Config.main_first.subTitle }</Styled.SubTitle>
-              <Styled.Paragraph>{ Config.main_first.paragraph }</Styled.Paragraph>
-              { Config.main_first.skills.map(skill => (
+              <Styled.MainTitle>{Config.main_first.mainTitle}</Styled.MainTitle>
+              <Styled.SubTitle>{Config.main_first.subTitle}</Styled.SubTitle>
+              <Styled.Paragraph>{Config.main_first.paragraph}</Styled.Paragraph>
+              {Config.main_first.skills.map(skill => (
                 <Styled.Skill key={skill}>{skill}</Styled.Skill>
-              )) }
+              ))}
             </Styled.ContentWrapper>
             <Styled.ShipImageWrapper>
               {
@@ -101,15 +101,15 @@ function IndexPage() {
                 ))}
               </Styled.IntroTitle>
               <Styled.IntroContent>
-                <Styled.NotMobileContentTitle>{ Config.main_second.notMobileParagraphTitle }</Styled.NotMobileContentTitle>
+                <Styled.NotMobileContentTitle>{Config.main_second.notMobileParagraphTitle}</Styled.NotMobileContentTitle>
                 <Styled.NotMobileContentList>
-                  { Config.main_second.notMobileParagraphs.map((paragraph, index) => (
+                  {Config.main_second.notMobileParagraphs.map((paragraph, index) => (
                     <Styled.ContentItem key={index}>{paragraph}</Styled.ContentItem>
                   ))}
                 </Styled.NotMobileContentList>
                 <Styled.MobileContentTitle dangerouslySetInnerHTML={{ __html: Config.main_second.mobileParagraphTitle }} />
                 <Styled.MobileContentList>
-                  { Config.main_second.mobileParagraphs.map((paragraph, index) => (
+                  {Config.main_second.mobileParagraphs.map((paragraph, index) => (
                     <Styled.ContentItem key={index}>{paragraph}</Styled.ContentItem>
                   ))}
                 </Styled.MobileContentList>
@@ -195,7 +195,7 @@ function IndexPage() {
             <Styled.ProjectPageWrapper>
               <Styled.ProjectPageInnerWrapper>
                 <Styled.ProjectTitle>
-                  { Config.main_sixth.title.map((text, index) => (
+                  {Config.main_sixth.title.map((text, index) => (
                     <Styled.ProjectUnderline
                       key={text}
                       trigger={currentPage === 4}
@@ -208,7 +208,7 @@ function IndexPage() {
                 </Styled.ProjectTitle>
                 <Styled.ProjectButton to="/project">
                   <Styled.ProjectButtonText>
-                    { Config.main_sixth.button }
+                    {Config.main_sixth.button}
                   </Styled.ProjectButtonText>
                   <Styled.ProjectButtonIcon>
                     <SVGIcon name="right-arrow" size={16} />
@@ -221,13 +221,13 @@ function IndexPage() {
         <Page>
           <Styled.BlogPageWrapper>
             <Styled.BlogMainTitle>
-            { Config.main_seven.paragraph1 }
+              {Config.main_seven.paragraph1}
             </Styled.BlogMainTitle>
             <Styled.BlogSubTitle>
-            { Config.main_seven.paragraph2 }
+              {Config.main_seven.paragraph2}
             </Styled.BlogSubTitle>
             <Styled.ProjectListWrapper>
-              { Config.main_seven.projects.map((project, index) => (
+              {Config.main_seven.projects.map((project, index) => (
                 <Styled.ProjectWrapper
                   key={index}
                   href={project.link}
@@ -239,10 +239,10 @@ function IndexPage() {
                   </Styled.ProjectImageWrapper>
                   <Styled.ProjectContent>
                     <Styled.ProjectName>
-                      { project.title }
+                      {project.title}
                     </Styled.ProjectName>
                     <Styled.ProjectCreatedAt>
-                      { project.createdAt }
+                      {project.createdAt}
                     </Styled.ProjectCreatedAt>
                   </Styled.ProjectContent>
                 </Styled.ProjectWrapper>
@@ -285,7 +285,7 @@ function IndexPage() {
                 customPaging={(index) => <Styled.CarouselDot active={index === currentProjectSlide} />}
                 beforeChange={(_, nextSlide) => setCurrentProjectSlide(nextSlide)}
               >
-                { Config.main_seven.projects.map((project, index) => (
+                {Config.main_seven.projects.map((project, index) => (
                   <Styled.ProjectWrapper
                     key={index}
                     href={project.link}
@@ -297,10 +297,10 @@ function IndexPage() {
                     </Styled.ProjectImageWrapper>
                     <Styled.ProjectContent>
                       <Styled.ProjectName>
-                        { project.title }
+                        {project.title}
                       </Styled.ProjectName>
                       <Styled.ProjectCreatedAt>
-                        { project.createdAt }
+                        {project.createdAt}
                       </Styled.ProjectCreatedAt>
                     </Styled.ProjectContent>
                   </Styled.ProjectWrapper>
@@ -361,7 +361,7 @@ function IndexPage() {
                     <Styled.ContactIcon>
                       <SVGIcon
                         name={`${item.icon}${contactItemIndex === index ? '-blue' : ''}`}
-                        size={DeviceService.getDevice() === Device.Mobile ? 20: 28}
+                        size={DeviceService.getDevice() === Device.Mobile ? 20 : 28}
                       />
                     </Styled.ContactIcon>
                     <Styled.ContactContent isKorean={item.language === 'ko'}>
@@ -379,8 +379,8 @@ function IndexPage() {
               <Styled.FooterLogo name="footer-logo" />
             </Styled.FooterLogoWrapper>
             <Styled.FooterContent>
-              <Styled.FooterReserve>{ Config.main_footer.reserve }</Styled.FooterReserve>
-              <Styled.FooterDescription>{ Config.main_footer.description }</Styled.FooterDescription>
+              <Styled.FooterReserve>{Config.main_footer.reserve}</Styled.FooterReserve>
+              <Styled.FooterDescription>{Config.main_footer.description}</Styled.FooterDescription>
             </Styled.FooterContent>
           </Styled.FooterWrapper>
         </Styled.FooterPage>
